@@ -1,0 +1,6 @@
+/* Make some RLBot colored changes */
+
+:root {
+  /* This green is just picked from the logo, is there a rlbot green? */
+  --md-primary-fg-color: #2f662c;
+}

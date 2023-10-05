@@ -1,0 +1,9 @@
+site_name: RLBot Wiki
+
+theme:
+  name: material
+  palette:
+    primary: custom
+
+extra_css:
+  - stylesheets/extra.css
