@@ -2,6 +2,8 @@ site_name: RLBot Wiki
 
 theme:
   name: material
+  logo: assets/rlbot-logo.svg
+  favicon: assets/rlbot-logo.svg
   palette:
     primary: custom
 
