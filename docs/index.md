@@ -16,26 +16,26 @@ Welcome to the RLBot wiki!
 
 ## Language-specific wikis
 - **[Officially supported languages](http://rlbot.org/)**
-- [Other community supported languages](/supported-programming-languages#community-supported-languages)
-- [Machine Learning FAQ](/machine-learning-faq)
+- [Other community supported languages](/framework/supported-programming-languages#community-supported-languages)
+- [Machine Learning FAQ](/botmaking/machine-learning-faq)
 - [RLGym](https://rlgym.org/)
 
 ## Text tutorials
-- [Shooting the ball towards or away from a target](/shooting-the-ball-towards-or-away-from-a-target)
+- [Shooting the ball towards or away from a target](/botmaking/shooting-the-ball-towards-or-away-from-a-target)
 - [Dodges (C#)](https://tangil.me/posts/dodges)
 - [State systems (C#)](https://tangil.me/posts/state)
 
 # Commonly Used Resources
-- [GameTickPacket, FieldInfo, and Controllers](/input-and-output-data)
-- [Useful Game Values (Field Size, Boost Pad Locations, and more)](/useful-game-values)
+- [GameTickPacket, FieldInfo, and Controllers](/botmaking/input-and-output-data)
+- [Useful Game Values (Field Size, Boost Pad Locations, and more)](/botmaking/useful-game-values)
 - [Quickchats](https://github.com/RLBot/RLBotPythonExample/wiki/Quickchat)
-- [Rendering](/rendering)
-- [Dropshot and Related Information](/dropshot)
-- [Appearance Customization](/bot-customization)
-- [Ball Prediction](/ball-path-prediction)
+- [Rendering](/botmaking/rendering)
+- [Dropshot and Related Information](/botmaking/dropshot)
+- [Appearance Customization](/botmaking/bot-customization)
+- [Ball Prediction](/botmaking/ball-path-prediction)
 - [The RLBotPack](https://github.com/RLBot/RLBotPack)
-- [Team Match Communication Protocol (TMCP)](/team-match-communication-protocol)
-- [Troubleshooting](/troubleshooting)
+- [Team Match Communication Protocol (TMCP)](/botmaking/team-match-communication-protocol)
+- [Troubleshooting](/troubleshooting/installation-errors)
 
 ## Physics
 - [RocketSim by Zealan](https://github.com/ZealanL/RocketSim)
@@ -47,8 +47,8 @@ Welcome to the RLBot wiki!
 - [Aerial ball intercept/hit by @Chip](https://samuelpmish.github.io/notes/RocketLeague/aerial_hit/)
 - [How Car and Ball Interact by @Chip](https://samuelpmish.github.io/notes/RocketLeague/car_ball_interaction/)
 - [How to Analyze Drivable Paths by @Chip](https://samuelpmish.github.io/notes/RocketLeague/path_analysis/)
-- [The Physics Of Jumping by Impossibum](/jumping-physics)
-- [Extracting Map Meshes by Virx](/extracting-map-meshes)
+- [The Physics Of Jumping by Impossibum](/botmaking/jumping-physics)
+- [Extracting Map Meshes by Virx](/miscellaneous/extracting-map-meshes)
 
 # Unofficial but Helpful Code Repositories
 - [Utilities by @Chip](https://github.com/samuelpmish/RLUtilities) 
