@@ -4,7 +4,7 @@ Hello everyone! We're proud to announce that the Psyonix bot API has finally bee
 
 Check out this diagram to get some intuition for this migration. Everything on the left staying the same or as close to the same as possible, so your bots are expected to keep working with no changes required!
 
-![](img/psyonix-api-notes/details.png)
+![](/img/psyonix-api-notes/details.png)
 
 ## What you can expect from this new version of RLBot
 We're aiming for a backwards compatibility with this first bot API release, so expect your bots to play almost exactly like they used to!

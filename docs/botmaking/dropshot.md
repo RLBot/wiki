@@ -32,7 +32,7 @@ The tiles will be sorted the same way in FieldInfo and GameTickPacket so indices
 
 The tiles are hexagonal in shape. The distance between centres is 768 uu (except for the middle where the distance from blue tiles to orange tiles is 256 uu. A neutral strip about 128 uu wide covers the tiles partially). The image below shows the relative dimensions of a Dropshot tile.
 
-![A Dropshot tile's dimensions](img/dropshot/tiles.png)
+![A Dropshot tile's dimensions](/img/dropshot/tiles.png)
 
 ## Arena
 
@@ -40,7 +40,7 @@ The tiles are layed out in rows of 7,8,9,10,11,12,13 |middle| 13,12,11,10,9,8,7.
 
 The overall layout of the arena and tile indices can be seen below.
 
-![Layout of Core707](img/dropshot/arena.png)
+![Layout of Core707](/img/dropshot/arena.png)
 
 The arena is a regular hexagon except its rounded corners. Here are some dimensions:
 - Center: (0, 0)

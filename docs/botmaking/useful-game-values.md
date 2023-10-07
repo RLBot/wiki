@@ -1,6 +1,6 @@
 # Useful game values
 
-_If you are making a bot, some of these values are given in FieldInfo. You can find more information on that [here](/input-and-output-data)_.
+_If you are making a bot, some of these values are given in FieldInfo. You can find more information on that [here](/botmaking/input-and-output-data)_.
 
 Rocket League is made in Unreal Engine, which means any dimensions will be in unreal units (uu).
 
@@ -28,7 +28,7 @@ Rocket League uses a coordinate system (X, Y, Z), where Z is upwards. Note also 
 
 For wall lengths, the curvature at the intersections is ignored.
 
-![](img/useful-game-values/basic-dimensions.png)
+![](/img/useful-game-values/basic-dimensions.png)
 
 ## Boost Pads
 Small boost pads:
@@ -50,7 +50,7 @@ A car picks up a boost pad if the car's center of mass (not hitbox) enters the p
 
 The coordinates of the 34 boost pads (in the order that RLBot uses):
 
-![](img/useful-game-values/boost-pads.jpg)
+![](/img/useful-game-values/boost-pads.jpg)
 
 ```
 [    0.0, -4240.0, 70.0] (0)
@@ -147,7 +147,7 @@ More information on car bodies [in this spreadsheet](https://onedrive.live.com/v
   * due to braking (any amount): -3500.0 uu/s^2
   * due to slowing during zero-throttle coasting: -525.0 uu/s^2
 * Acceleration in the air due to throttle: ~66.667 uu/s^2   (yes, throttling accelerates the car in the air)
-* Jumping - [](/jumping-physics)
+* Jumping - [](/botmaking/jumping-physics)
 * Double jump
   * An instantaneous velocity increase of ~291.667 uu/s in the direction of your roof.
 * Minimum and maximum rotation (in radians):
@@ -188,7 +188,7 @@ def curvature(v):
     * While turning with steer set to 1 (or -1), the maximum forwards velocity the car can reach is around 1234. It reaches this after 5 seconds.
     * The speed of the car after x time can be estimated with the following equation: `1234 * (1 - e ^ [-{time / 0.74704}])`
 
-      ![Graph of the velocity while turning starting from 0](img/useful-game-values/car1.png)
+      ![Graph of the velocity while turning starting from 0](/img/useful-game-values/car1.png)
 
       Example Python implementation:
 ```python
@@ -210,7 +210,7 @@ def get_turn_time_from_speed(speed):
     * While turning with steer set to 1 (or -1), the minimum forward velocity the car can reach is around 1234. It reaches this after 7.5 seconds.
     * The speed and time can both be estimated with linear piecewise functions. The blue lines is the real velocity, and the orange line is the velocity that is predicted by the piecewise.
 
-      ![Graph of the velocity while turning starting from 2300](img/useful-game-values/car2.png)
+      ![Graph of the velocity while turning starting from 2300](/img/useful-game-values/car2.png)
 
       Example Python implementation:
 

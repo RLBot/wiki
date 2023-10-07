@@ -85,7 +85,7 @@ team_color(team=None, alt_color=False)
 * alt_color - (Optional, False by default) Wether or not to return the alternate team color instead. If set to False, this method returns blue for blue team and orange for orange team. If set to True, this method returns cyan for blue team and red for orange team.
 
 # renderer.draw_rect_2d
-This draws a rectangle on screen. Example : draw_rect_2d(20, 20, 200, 200, True, self.renderer.black()) ![example](img/rendering/rect.jpg)
+This draws a rectangle on screen. Example : draw_rect_2d(20, 20, 200, 200, True, self.renderer.black()) ![example](/img/rendering/rect.jpg)
 
 ```
 draw_rect_2d(x, y, width, height, fill, color)
@@ -107,7 +107,7 @@ draw_line_2d(start_x, start_y, end_x, end_y)
 * end_x, end_y - Where the line ends.
 
 # renderer.draw_string_2d
-Draws 2D text flat on the screen. Example : draw_string_2d(20, 20, 3, 3, ball_text, self.renderer.black()) [example](img/rendering/string.jpg)
+Draws 2D text flat on the screen. Example : draw_string_2d(20, 20, 3, 3, ball_text, self.renderer.black()) [example](/img/rendering/string.jpg)
 
 ```
 draw_string_2d(x, y, scale_x, scale_y, text, color)

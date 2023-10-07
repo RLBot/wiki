@@ -62,7 +62,7 @@ def naive_double_jump_simulation(time_allowed: float) -> list:
 
     return jump_slices
 ```
-![The output of naive_double_jump_simulation(2) graphed](img/jumping-physics/jump-graph.png)
+![The output of naive_double_jump_simulation(2) graphed](/img/jumping-physics/jump-graph.png)
 
 Calling naive_doublejump_simulation(2.0) will return a list showing the simulated height of the car at every increment from 0 to 2 seconds into the future. A more robust solution should account for more variability in circumstances such as the car's current relative up direction as well as current velocity. 
 

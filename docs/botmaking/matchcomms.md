@@ -8,7 +8,7 @@ Use cases:
 Currently only broadcasting to all participants is supported.
 
 ### Architecture
-![matchcomms architecture](img/matchcomms/architecture.png)
+![matchcomms architecture](/img/matchcomms/architecture.png)
 
 ### Examples
 [Python example for reading and replying to messages in a bot.](https://github.com/RLBot/RLBotTraining/blob/master/rlbottraining/example_bots/tweak_demonstration_bot/tweaked_bot.py)
@@ -19,7 +19,7 @@ Currently only broadcasting to all participants is supported.
 
 *TMCP* stands for the *Team Match Communication Protocol*. It is an attempt at standardizing inter-bot communication via the match comms system.
 
-[See this wiki page for implementation details](/team-match-communication-protocol).
+[See this wiki page for implementation details](/botmaking/team-match-communication-protocol).
 
 ### Supported Languages
 - Python has strong support, as described above

@@ -74,30 +74,30 @@ These files contain all of the available field collision information.
 
 Open Blender, and select "General." This will load a default 3D scene, with a cube, light source, and camera.
 
-![image](img/extracting-map-meshes/1.png)
+![image](/img/extracting-map-meshes/1.png)
 
 Next, in the top right, delete all three of these things. (Right-click -> Delete)
 
-![image](img/extracting-map-meshes/2.png)
+![image](/img/extracting-map-meshes/2.png)
 
 Now, we import ONE of our objects. This is important - we can only convert one at a time unless changes are made to the script in the next section. When you want to convert another object, delete the only one in the scene first. The process is the same as deleting the cube, as we did previously.
 
 To import an object, go to the top right -> Files -> Import -> Skeleton Mesh (.psk). Use this to import one of the `.pskx` collision files that we got earlier.
 
-![image](img/extracting-map-meshes/3.png)
+![image](/img/extracting-map-meshes/3.png)
 
 For this, I have imported DFH Stadium's `Field_STD_Collision_Corner.pskx`.
 
-![image](img/extracting-map-meshes/4.png)
+![image](/img/extracting-map-meshes/4.png)
 
 ## Converting the object to binary data
 
 At the top of Blender, select the Scripting tab.
 
-![image](img/extracting-map-meshes/5.png)
+![image](/img/extracting-map-meshes/5.png)
 In the top middle, select New.
 
-![image](img/extracting-map-meshes/6.png)
+![image](/img/extracting-map-meshes/6.png)
 
 Copy & paste the below Python script:
 
@@ -167,11 +167,11 @@ You can edit the line `obj_name = "soccar_corner"` near the top to adjust the na
 
 Click on the Play/Run button in the top middle to run the script.
 
-![image](img/extracting-map-meshes/7.png)
+![image](/img/extracting-map-meshes/7.png)
 
 This creates the two bin files containing the ids and vertices from the object.
 
-![image](img/extracting-map-meshes/8.png)
+![image](/img/extracting-map-meshes/8.png)
 
 If you want an example of using collision data and compiling them into a mesh to run collision queries on, check out the [rl_ball_sym Rust project](https://github.com/VirxEC/rl_ball_sym):
 

@@ -1,16 +1,16 @@
 ## Startup
 
-![](img/architecture/general.png)
+![](/img/architecture/general.png)
 
 ## Bots
 
 ### Python Bot
 
-![](img/architecture/python.png)
+![](/img/architecture/python.png)
 
 ### Java Bot
 
-![](img/architecture/java.png)
+![](/img/architecture/java.png)
 
 ## Diagram Source Code
 Created at sequencediagram.org with:

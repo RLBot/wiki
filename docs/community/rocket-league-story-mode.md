@@ -1,4 +1,4 @@
-![screenshot](img/rocket-league-story-mode/screenshot.png)
+![screenshot](/img/rocket-league-story-mode/screenshot.png)
 
 ## Playing Rocket League Story Mode
 

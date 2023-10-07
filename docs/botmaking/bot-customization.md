@@ -77,13 +77,13 @@ NOTE: The shade of the colors may not be correspond exactly with following pictu
 
 `team_color_id` are the primary color of the car. The top left color is index 0 increasing as you go right:
 
-![](img/bot-customization/blue-team.png)
+![](/img/bot-customization/blue-team.png)
 
-![](img/bot-customization/orange-team.png)
+![](/img/bot-customization/orange-team.png)
 
 `custom_color_id` is the secondary color, also called accent. These are identical for both teams:
 
-![](img/bot-customization/secondary-color.png)
+![](/img/bot-customization/secondary-color.png)
 
 ### Painted Items
 

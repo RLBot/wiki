@@ -2,7 +2,7 @@ Sometimes it can be useful to have access to game values, debug rendering or sta
 
 Scripts are very similiar to normal bots. They need a config file and a python executable. The config file can be loaded by RLBotGUI like a normal bot - to enable it, just click the checkbox next to its name. The script will be automatically started and terminated by the framework.
 
-![Enabled script in RLBotGUI](img/scripts/screenshot.png)
+![Enabled script in RLBotGUI](/img/scripts/screenshot.png)
 
 Example config:
 ```
