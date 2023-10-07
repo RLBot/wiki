@@ -21,6 +21,13 @@ theme:
         icon: material/brightness-4
         name: Switch to system preference
 
+extra:
+  social:
+    - icon: fontawesome/brands/discord
+      link: https://discord.gg/zbaAKPt
+    - icon: fontawesome/brands/github
+      link: https://github.com/RLBot
+
 extra_css:
   - stylesheets/extra.css
 
