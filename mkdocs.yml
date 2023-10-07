@@ -5,7 +5,21 @@ theme:
   logo: assets/rlbot-logo.svg
   favicon: assets/rlbot-logo.svg
   palette:
-    primary: custom
+    # Palette toggle for light mode
+    - media: "(prefers-color-scheme: light)"
+      primary: custom
+      scheme: default 
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+
+    # Palette toggle for dark mode
+    - media: "(prefers-color-scheme: dark)"
+      primary: custom
+      scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: Switch to system preference
 
 extra_css:
   - stylesheets/extra.css
