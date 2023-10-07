@@ -15,8 +15,8 @@ Other languages are not supported yet.
 ## Known Console Commands
 All of these are confirmed to work as intended. Please add more as you find them!
 - `QueSaveReplay` - Creates a replay keyframe and causes a replay to be saved at the end of the match.
-- `Set WorldInfo WorldGravityZ 0.0000001` - Zero gravity (pretty much). Setting to 0 returns it to default. You can also use [state setting](/manipulating-game-state) to set gravity. **Warning:** Sending this command every frame will likely make your game lag!
-- `Set WorldInfo TimeDilation 3` - Speeds up the game by 3 times. Can also be used to slow down the game with a number between 0 and 1. You can also use [state setting](/manipulating-game-state) to set game speed.
+- `Set WorldInfo WorldGravityZ 0.0000001` - Zero gravity (pretty much). Setting to 0 returns it to default. You can also use [state setting](/botmaking/manipulating-game-state) to set gravity. **Warning:** Sending this command every frame will likely make your game lag!
+- `Set WorldInfo TimeDilation 3` - Speeds up the game by 3 times. Can also be used to slow down the game with a number between 0 and 1. You can also use [state setting](/botmaking/manipulating-game-state) to set game speed.
 - `Stat FPS` - Turns on a little in-game FPS counter. Can be turned back off with `Stat FPS 0`
 - `ShowDebug PHYSICS` - Nice little text readout which shows you some values, and also the names of some specific classes/attributes that you can use `Set` on.
 - `Pause` - Pauses the game. Send `Pause` to unpause the game. `get_output`/`GetOutput`/`getOutput` will still be called when the game is paused. This pause is the same as the pause when Escape is pressed.

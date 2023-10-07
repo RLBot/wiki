@@ -2,7 +2,7 @@
 ### You are using a third-party antivirus
 RLBotGUI may open for a second before closing, it may install but fail to work, or produce other weird behavior.
 A list of known antivirus-related error messages is listed down below under Miscellaneous Issues
-1. Check out our other wiki page: [Antivirus Notes](/antivirus-notes)
+1. Check out our other wiki page: [Antivirus Notes](/troubleshooting/antivirus-notes)
 
 ### RLBotGUI gets stuck updating/collecting packages during installation
 This usually happens because of:
@@ -51,7 +51,7 @@ This currently happens to people with strange letters/characters in their Steam 
 * `[WinError 225] Operation did not complete successfully because the file contains a virus or potentially unwanted software`
 
 For all of the above:
-1. Check out our other wiki page for this issue: [Antivirus Notes](/antivirus-notes)
+1. Check out our other wiki page for this issue: [Antivirus Notes](/troubleshooting/antivirus-notes)
 
 
 ### Cannot proceed because VCRUNTIME140.dll was not found
