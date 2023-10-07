@@ -16,4 +16,4 @@ Refer to `mkdocs --help` for serving locally, building and deploying
 
 - [X] Move all* pages from RLBot/RLBot wiki (*see docs/missing-pages.md)
 - [ ] Move language specific wikis
-- [ ] Sort pages into categories
+- [X] Sort pages into categories
