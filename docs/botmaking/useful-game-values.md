@@ -32,12 +32,14 @@ For wall lengths, the curvature at the intersections is ignored.
 
 ## Boost Pads
 Small boost pads:
+
 * Hitbox is a cylinder, height of 165uu, radius of 144uu
 * 28 in total.
 * Gives 12 boost.
 * Takes 4 seconds to refresh.
 
 Big boost pads:
+
 * Hitbox is a cylinder, height of 168uu, radius of 208uu
 * 6 in total.
 * Gives 100 boost.

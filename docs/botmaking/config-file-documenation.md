@@ -4,6 +4,7 @@
 
 ### Locations
 This section is poorly named at this point, but oh well. It includes:
+
 - looks_config: The location of your bot's appearance config, relative to the cfg file.
 - python_file: The location of your bot's python file, relative to the cfg file.
 - logo_file: Optional. The location of an image that will represent your bot in RLBotGUI, tournament overlays, etc.
@@ -19,6 +20,7 @@ This is mainly for bot makers to add arbitrary config values useful to them. Gen
 
 ### Details
 This section is for metadata about your bot which can be displayed to people in RLBotGUI, tournament overlays, etc. Common details included:
+
 - developer: The name of the developer(s) of the bot.
 - description: Textual description of the bot, its playstyle, how to use it, etc.
 - fun_fact: A short fun fact about the bot. Sometimes displayed on stream during tournaments.
@@ -28,6 +30,7 @@ This section is for metadata about your bot which can be displayed to people in 
 
 ## Early Start System
 If a bot adds `supports_early_start = True` then it will be started up before the Rocket League match loads, which gives it lots of extra time. To live happily in this situation the bot MUST be able to deal with weird game tick packets, e.g.:
+
 - Could have unexpected bots / unexpected teams
 - The bot's index might be higher than the packet's num_cars
 - The packet may transition suddenly to a different set of cars, different game type, etc
@@ -51,6 +54,7 @@ This configuration controls which bots are in the game, what arena to play on, w
 
 ### Team Configuration
 NOTE:  None of these take an effect currently
+
 - Team Blue Color:  Changes Blue team color, use 0 to use default color
 - Team Blue Name: Changes the Team name to use instead of 'Blue'
 - Team Orange Color: Changes Blue team color, use 0 to use default color
@@ -90,8 +94,7 @@ All of these default to the "normal" value (the first in the list) if you don't 
 ### Participant Configuration
 - participant_config_NUMBER:  The path to a participant configuration
 - participant_team_NUMBER: what team the bot is on
-- participant_type_NUMBER: the type of the bot Accepted values are "human", "rlbot", "psyonix", "party_member_bot", and "controller_passthrough", You can have up to 4 local humans and they must be activated in game or it will crash.
-If no player is specified you will be spawned in as spectator!
+- participant_type_NUMBER: the type of the bot Accepted values are "human", "rlbot", "psyonix", "party_member_bot", and "controller_passthrough", You can have up to 4 local humans and they must be activated in game or it will crash. If no player is specified you will be spawned in as spectator!
   - human - not controlled by the framework (but must appear before bot entries)
   - rlbot - controlled by the framework
   - psyonix - default bots (skill level can be changed with participant_bot_skill
