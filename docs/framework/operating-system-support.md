@@ -3,6 +3,7 @@
 RLBot was originally made for Windows, so Windows has the best support. Users are encouraged to watch [this video](https://www.youtube.com/watch?v=oXkbizklI2U) to get started quickly with RLBotGUI!
 
 ## Instructions for Debian-based Linux
+
 RLBotGUI has it's own installer/launcher for Debian-based Linux. Download [RLBotGUI.sh](https://raw.githubusercontent.com/RLBot/RLBotGUI/master/linux-install/RLBotGUI.sh) to get it.
 
 [View this page for more information](https://github.com/RLBot/RLBotGUI/tree/master/linux-install). This includes information on how to run shell scripts, and what commands need sudo in order to run.
@@ -21,9 +22,10 @@ RLBotGUI (not the RLBot Framework!) gained full support for Debian-based Linux d
 - Our Mac and Linux binaries may not be updated as frequently as the Windows ones.
 
 ### Instructions
+
 1. Make sure you have Python 3.7 or higher (`sudo apt install python3`).
-1. Make sure you have pip (`sudo apt install python3-pip`).
-1. Make yourself a shell script with: 
+2. Make sure you have pip (`sudo apt install python3-pip`).
+3. Make yourself a shell script with:
 
 ```
 python3 -m pip install --user --upgrade pip
@@ -31,8 +33,10 @@ python3 -m pip install --user gevent eel
 python3 -m pip install --user --upgrade rlbot rlbot_gui
 python3 -c "from rlbot_gui import gui; gui.start()"
 ```
+
 Run it and expect the GUI to open. Check the windows video to see what to expect. Make sure Rocket League is **closed** before starting your first match.
 
 ### Troubleshooting
+
 - No module named setuptools: try https://stackoverflow.com/questions/14426491/python-3-importerror-no-module-named-setuptools
 - Header Python.h does not exist: try installing the package python-dev

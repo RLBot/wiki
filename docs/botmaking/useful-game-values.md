@@ -5,48 +5,50 @@ _If you are making a bot, some of these values are given in FieldInfo. You can f
 Rocket League is made in Unreal Engine, which means any dimensions will be in unreal units (uu).
 
 ## Basic Dimensions
+
 **WARNING:** Note that the X-axis is left and it is not the normal Cartesian layout. Also, yaw is zero at the positive x-axis and increases clockwise. Trig functions work out as usual because the two reversed conventions cancel each other.
 
-Rotations are represented as YZX-ordered Euler angles. 
+Rotations are represented as YZX-ordered Euler angles.
 
 **Note:** For scratch divide the values by 32.
 
 Rocket League uses a coordinate system (X, Y, Z), where Z is upwards. Note also that **negative Y is towards Blue's goal (team 0)**.
 
-* Floor: 0
-* Center field: (0, 0)
-* Side wall: x=±4096
-* Side wall length: 7936
-* Back wall: y=±5120
-* Back wall length: 5888
-* Ceiling: z=2044
-* Goal height: z=642.775
-* Goal center-to-post: 892.755
-* Goal depth: 880
-* Corner wall length: 1629.174
-* The corner planes intersect the axes at ±8064 at a 45 degrees angle
+- Floor: 0
+- Center field: (0, 0)
+- Side wall: x=±4096
+- Side wall length: 7936
+- Back wall: y=±5120
+- Back wall length: 5888
+- Ceiling: z=2044
+- Goal height: z=642.775
+- Goal center-to-post: 892.755
+- Goal depth: 880
+- Corner wall length: 1629.174
+- The corner planes intersect the axes at ±8064 at a 45 degrees angle
 
 For wall lengths, the curvature at the intersections is ignored.
 
 ![](/img/useful-game-values/basic-dimensions.png)
 
 ## Boost Pads
+
 Small boost pads:
 
-* Hitbox is a cylinder, height of 165uu, radius of 144uu
-* 28 in total.
-* Gives 12 boost.
-* Takes 4 seconds to refresh.
+- Hitbox is a cylinder, height of 165uu, radius of 144uu
+- 28 in total.
+- Gives 12 boost.
+- Takes 4 seconds to refresh.
 
 Big boost pads:
 
-* Hitbox is a cylinder, height of 168uu, radius of 208uu
-* 6 in total.
-* Gives 100 boost.
-* Takes 10 seconds to refresh.
-* The pads with a z-component of 73.0 are the big pads. Mirror these coordinates to get all 6:
-  * Midfield: (3584, 0)
-  * Corner: (3072, 4096)
+- Hitbox is a cylinder, height of 168uu, radius of 208uu
+- 6 in total.
+- Gives 100 boost.
+- Takes 10 seconds to refresh.
+- The pads with a z-component of 73.0 are the big pads. Mirror these coordinates to get all 6:
+  - Midfield: (3584, 0)
+  - Corner: (3072, 4096)
 
 A car picks up a boost pad if the car's center of mass (not hitbox) enters the pad's hitbox. This interaction is different when cars are standing still (see the [Rocket Science video on boost pad hitboxes](https://www.youtube.com/watch?v=xgfa-qZyInw))
 
@@ -90,9 +92,11 @@ The coordinates of the 34 boost pads (in the order that RLBot uses):
 [ 1792.0,  4184.0, 70.0] (32)
 [    0.0,  4240.0, 70.0] (33)
 ```
+
 **NOTE:** Some boost pad locations vary from map to map. It is recommended to use the [FieldInfo](https://github.com/RLBot/RLBotPythonExample/wiki/Input-and-Output-Data#field-info), if you want to have the correct locations for any map.
 
 ## Spawn Locations
+
 | Kickoff         | Blue                              | Orange                            |
 |-----------------|-----------------------------------|-----------------------------------|
 | Right corner    | loc: (-2048, -2560), yaw: 0.25 pi | loc: (2048, 2560), yaw: -0.75 pi  |
@@ -109,61 +113,66 @@ The coordinates of the 34 boost pads (in the order that RLBot uses):
 | Left outside    | loc: (2688, -4608), yaw: 0.5 pi   | loc: (-2688, 4608), yaw: -0.5 pi  |
 
 ## Elevation of Objects at Rest
-* Ball: 92.75 (its radius)
-* Hybrid: 17.00
-* Octane: 17.01
-* Dominus: 17.05
-* Breakout: 18.33
-* Batmobile/Plank: 18.65
+
+- Ball: 92.75 (its radius)
+- Hybrid: 17.00
+- Octane: 17.01
+- Dominus: 17.05
+- Breakout: 18.33
+- Batmobile/Plank: 18.65
 
 More information on car bodies [in this spreadsheet](https://onedrive.live.com/view.aspx?resid=F0182A0BAEBB5DFF!14583&ithint=file%2cxlsx&app=Excel&authkey=!ALu0cMkDZDoWOws) by HalfwayDead.
 
 ## Physics
+
 **Conversion:** 1 uu = 1 cm
 (e.g. 2778 uu/s = 100 km/h)
 
-* Gravity: 650 uu/s^2
-  * "Low" mutator: 325 uu/s^2
-  * "High" mutator: 1137.5 uu/s^2
-  * "Super High" mutator: 3250 uu/s^2
+- Gravity: 650 uu/s^2
+  - "Low" mutator: 325 uu/s^2
+  - "High" mutator: 1137.5 uu/s^2
+  - "Super High" mutator: 3250 uu/s^2
 
 ### Ball
-* Radius: 92.75 uu
-* Max speed: 6000 uu/s
-  * "Slow" mutator: 1500 uu/s
-  * "Fast" mutator: 9000 uu/s
-  * "Super Fast" mutator: 15000 uu/s
-* Mass: 30.0 (unit is arbitrary)
-* Coefficient of restitution: 60% (it loses 40% of the component of its velocity that's toward the surface)
-* Maximum ball angular velocity: 6.0 radians/s
+
+- Radius: 92.75 uu
+- Max speed: 6000 uu/s
+  - "Slow" mutator: 1500 uu/s
+  - "Fast" mutator: 9000 uu/s
+  - "Super Fast" mutator: 15000 uu/s
+- Mass: 30.0 (unit is arbitrary)
+- Coefficient of restitution: 60% (it loses 40% of the component of its velocity that's toward the surface)
+- Maximum ball angular velocity: 6.0 radians/s
 
 ### Car
-* Max car speed (boosting): 2300 uu/s
-* Supersonic speed threshold: 2200 uu/s
-* Max driving speed (forward and backward) with no boost: 1410 uu/s
-* Car mass: 180.0 (unit is arbitrary)
-* Boost consumption rate: 33.3/s
-* Boost acceleration: 991.666 uu/s^2
-* Acceleration in the ground:
-  * due to throttle: depends on velocity - https://samuelpmish.github.io/notes/RocketLeague/ground_control/#throttle
-  * due to braking (any amount): -3500.0 uu/s^2
-  * due to slowing during zero-throttle coasting: -525.0 uu/s^2
-* Acceleration in the air due to throttle: ~66.667 uu/s^2   (yes, throttling accelerates the car in the air)
-* Jumping - [](/botmaking/jumping-physics)
-* Double jump
-  * An instantaneous velocity increase of ~291.667 uu/s in the direction of your roof.
-* Minimum and maximum rotation (in radians):
-  * Pitch: [-pi/2, pi/2]
-  * Yaw: [-pi, pi]
-  * Roll: [-pi, pi]
-* Maximum car angular acceleration:
-  * Yaw: 9.11 radians/s^2
-  * Pitch: 12.46 radians/s^2
-  * Roll: 38.34 radians/s^2
-* Maximum car angular velocity: 5.5 radians/s
-* Turning
-  * Turning in Rocket League is very complex and not a lot is known. Hopefully, the numbers below can help you out a bit!
-  * Turn radius: https://samuelpmish.github.io/notes/RocketLeague/ground_control/#turning. Python implementation:
+
+- Max car speed (boosting): 2300 uu/s
+- Supersonic speed threshold: 2200 uu/s
+- Max driving speed (forward and backward) with no boost: 1410 uu/s
+- Car mass: 180.0 (unit is arbitrary)
+- Boost consumption rate: 33.3/s
+- Boost acceleration: 991.666 uu/s^2
+- Acceleration in the ground:
+  - due to throttle: depends on velocity - https://samuelpmish.github.io/notes/RocketLeague/ground_control/#throttle
+  - due to braking (any amount): -3500.0 uu/s^2
+  - due to slowing during zero-throttle coasting: -525.0 uu/s^2
+- Acceleration in the air due to throttle: ~66.667 uu/s^2   (yes, throttling accelerates the car in the air)
+- Jumping - [](/botmaking/jumping-physics)
+- Double jump
+  - An instantaneous velocity increase of ~291.667 uu/s in the direction of your roof.
+- Minimum and maximum rotation (in radians):
+  - Pitch: \[-pi/2, pi/2\]
+  - Yaw: \[-pi, pi\]
+  - Roll: \[-pi, pi\]
+- Maximum car angular acceleration:
+  - Yaw: 9.11 radians/s^2
+  - Pitch: 12.46 radians/s^2
+  - Roll: 38.34 radians/s^2
+- Maximum car angular velocity: 5.5 radians/s
+- Turning
+  - Turning in Rocket League is very complex and not a lot is known. Hopefully, the numbers below can help you out a bit!
+  - Turn radius: https://samuelpmish.github.io/notes/RocketLeague/ground_control/#turning. Python implementation:
+
 ```python
 def turn_radius(v):
     if v == 0:
@@ -185,14 +194,17 @@ def curvature(v):
 
     return 0.0
 ```
-  * No matter if you're accelerating or decelerating, (as the throttle is 1) the car's turn radius and velocity balance out so the car turns 90 degrees in about 0.775 seconds, 180 degrees in 1.55 seconds, and 360 degrees in 3.1 seconds.
-  * Accelerating while turning (starting from a standstill with throttle and steer set to 1)
-    * While turning with steer set to 1 (or -1), the maximum forwards velocity the car can reach is around 1234. It reaches this after 5 seconds.
-    * The speed of the car after x time can be estimated with the following equation: `1234 * (1 - e ^ [-{time / 0.74704}])`
 
-      ![Graph of the velocity while turning starting from 0](/img/useful-game-values/car1.png)
+- No matter if you're accelerating or decelerating, (as the throttle is 1) the car's turn radius and velocity balance out so the car turns 90 degrees in about 0.775 seconds, 180 degrees in 1.55 seconds, and 360 degrees in 3.1 seconds.
+- Accelerating while turning (starting from a standstill with throttle and steer set to 1)
+  - While turning with steer set to 1 (or -1), the maximum forwards velocity the car can reach is around 1234. It reaches this after 5 seconds.
 
-      Example Python implementation:
+  - The speed of the car after x time can be estimated with the following equation: `1234 * (1 - e ^ [-{time / 0.74704}])`
+
+    ![Graph of the velocity while turning starting from 0](/img/useful-game-values/car1.png)
+
+    Example Python implementation:
+
 ```python
 import math
 
@@ -208,13 +220,14 @@ def get_turn_time_from_speed(speed):
 
 ```
 
-  * Decelerating while turning (starting from the top speed with throttle and steer set to 1)
-    * While turning with steer set to 1 (or -1), the minimum forward velocity the car can reach is around 1234. It reaches this after 7.5 seconds.
-    * The speed and time can both be estimated with linear piecewise functions. The blue lines is the real velocity, and the orange line is the velocity that is predicted by the piecewise.
+- Decelerating while turning (starting from the top speed with throttle and steer set to 1)
+  - While turning with steer set to 1 (or -1), the minimum forward velocity the car can reach is around 1234. It reaches this after 7.5 seconds.
 
-      ![Graph of the velocity while turning starting from 2300](/img/useful-game-values/car2.png)
+  - The speed and time can both be estimated with linear piecewise functions. The blue lines is the real velocity, and the orange line is the velocity that is predicted by the piecewise.
 
-      Example Python implementation:
+    ![Graph of the velocity while turning starting from 2300](/img/useful-game-values/car2.png)
+
+    Example Python implementation:
 
 ```python
 def get_speed_from_time_turning(time):

@@ -5,6 +5,7 @@ You can use https://github.com/RLBot/RLBot/tree/master/src/main/cpp/RLBotInterfa
 ## Data Format
 
 Unless otherwise specified, data is sent and received on the socket in this format:
+
 - First two bytes are an integer (big-endian) which specifies the data type (see list below).
 - Next two bytes are an integer (big endian) which specifies the number of bytes in the payload.
 - Remaining bytes are a payload. The logic for parsing it will depend on the data type, but generally it will be binary data in [flatbuffer format](https://google.github.io/flatbuffers/). Using tools provided by Google (i.e. flatc.exe) and [rlbot.fbs](https://github.com/RLBot/RLBot/blob/master/src/main/flatbuffers/rlbot.fbs) you can auto-generate code in various languages suitable for writing / parsing the payload data.
@@ -13,15 +14,15 @@ Unless otherwise specified, data is sent and received on the socket in this form
 
 Types expected to flow from RLBot to the client are in bold. Some are bi-directional.
 
-1. **[Game tick packet](https://github.com/RLBot/RLBot/blob/master/src/main/flatbuffers/rlbot.fbs#L205-L212)** (arrives at a high rate according to /Tick-Rate except "desired tick rate" is not relevant here)
-2. **[Field info](https://github.com/RLBot/RLBot/blob/master/src/main/flatbuffers/rlbot.fbs#L260-L263)** (sent once when a match starts, or when you first connect)
-3. **[Match settings](https://github.com/RLBot/RLBot/blob/master/src/main/flatbuffers/rlbot.fbs#L807-L825)** (sent once when a match starts, or when you first connect)
-4. [Player input](https://github.com/RLBot/RLBot/blob/master/src/main/flatbuffers/rlbot.fbs#L33-L36)
-5. Actor mapping data (deprecated, related to [Remote RLBot](https://github.com/RLBot/RLBot/wiki/Remote-RLBot))
-6. Computer id (deprecated, related to [Remote RLBot](https://github.com/RLBot/RLBot/wiki/Remote-RLBot))
-7. [Desired game state](https://github.com/RLBot/RLBot/blob/master/src/main/flatbuffers/rlbot.fbs#L327-L333)
-8. [Render group](https://github.com/RLBot/RLBot/blob/master/src/main/flatbuffers/rlbot.fbs#L371-L375)
-9. **[Quick chat](https://github.com/RLBot/RLBot/blob/master/src/main/flatbuffers/rlbot.fbs#L466-L478)**
+01. **[Game tick packet](https://github.com/RLBot/RLBot/blob/master/src/main/flatbuffers/rlbot.fbs#L205-L212)** (arrives at a high rate according to /Tick-Rate except "desired tick rate" is not relevant here)
+02. **[Field info](https://github.com/RLBot/RLBot/blob/master/src/main/flatbuffers/rlbot.fbs#L260-L263)** (sent once when a match starts, or when you first connect)
+03. **[Match settings](https://github.com/RLBot/RLBot/blob/master/src/main/flatbuffers/rlbot.fbs#L807-L825)** (sent once when a match starts, or when you first connect)
+04. [Player input](https://github.com/RLBot/RLBot/blob/master/src/main/flatbuffers/rlbot.fbs#L33-L36)
+05. Actor mapping data (deprecated, related to [Remote RLBot](https://github.com/RLBot/RLBot/wiki/Remote-RLBot))
+06. Computer id (deprecated, related to [Remote RLBot](https://github.com/RLBot/RLBot/wiki/Remote-RLBot))
+07. [Desired game state](https://github.com/RLBot/RLBot/blob/master/src/main/flatbuffers/rlbot.fbs#L327-L333)
+08. [Render group](https://github.com/RLBot/RLBot/blob/master/src/main/flatbuffers/rlbot.fbs#L371-L375)
+09. **[Quick chat](https://github.com/RLBot/RLBot/blob/master/src/main/flatbuffers/rlbot.fbs#L466-L478)**
 10. **[Ball prediction](https://github.com/RLBot/RLBot/blob/master/src/main/flatbuffers/rlbot.fbs#L514-L519)** (sent every time the ball diverges from the previous prediction, or when the previous prediction no longer gives a full 6 seconds into the future).
 11. [Ready Message](https://github.com/RLBot/RLBot/blob/master/src/main/flatbuffers/rlbot.fbs#L831-L841) (clients must send this after connecting to the socket)
 12. **[Message Packet](https://github.com/RLBot/RLBot/blob/d0c8031f0b2e4bbb5156b26cd74113f526c68bc9/src/main/flatbuffers/rlbot.fbs#L879-L886)**: List of messages, having one of the following types:
@@ -30,7 +31,9 @@ Types expected to flow from RLBot to the client are in bold. Some are bi-directi
     - [PlayerInputChange](https://github.com/RLBot/RLBot/blob/master/src/main/flatbuffers/rlbot.fbs#L870-L880) - Human or bot has touched their controller, e.g. turned on boost, changed steering, etc.
 
 ## Connecting
+
 Prerequisites (handled automatically by RLBotGUI / the RLBot framework):
+
 - Rocket League must be running under the `-rlbot` flag.
 - RLBot.exe must be running. After it successfully connects to Rocket League, it will start listening on TCP port 23234.
 
@@ -46,13 +49,17 @@ Send data to the same TCP socket, using the same format (two bytes for type, two
 Consult [google.github.io/flatbuffers](https://google.github.io/flatbuffers/) to learn how to construct the byte array for your payload in the language of your choice.
 
 ## Future plans
+
 - Allow clients to connect on a different port and exchange data in json format instead of flatbuffers.
 
 ## Client Libraries
+
 ### Python
+
 - [https://github.com/RLBot/RLBot/tree/master/src/main/python/rlbot/socket](https://github.com/RLBot/RLBot/tree/master/src/main/python/rlbot/socket)
 
 ## Who's Using Sockets
+
 - The core RLBot framework uses sockets from Python to start matches.
 - The core RLBot framework uses sockets from within RLBotInterface.dll to run bots.
 - Javascript / Typescript: [easyrlbot](https://github.com/SWZ-github/EasyRLBot)

@@ -8,7 +8,7 @@ Under normal circumstances, gravity functions much like you'd expect. It constan
 
 ## Sticky Force
 
-This force is responsible for the magnet-like effect pulling your wheels to walls and other surfaces. This force unlike gravity is applied in the relative down direction pushing the car's wheels towards a surface in the immediate vicinity with the force of `325 uu/s^2`. This effect only persists for a short time after jumping thankfully and is no longer a consideration after 3 frames in the air after a jump. This results in a force of `8.125` (`(1/120) * 3 * 325`) being negated from jumps. 
+This force is responsible for the magnet-like effect pulling your wheels to walls and other surfaces. This force unlike gravity is applied in the relative down direction pushing the car's wheels towards a surface in the immediate vicinity with the force of `325 uu/s^2`. This effect only persists for a short time after jumping thankfully and is no longer a consideration after 3 frames in the air after a jump. This results in a force of `8.125` (`(1/120) * 3 * 325`) being negated from jumps.
 
 ## Jump Impulse
 
@@ -62,12 +62,14 @@ def naive_double_jump_simulation(time_allowed: float) -> list:
 
     return jump_slices
 ```
+
 ![The output of naive_double_jump_simulation(2) graphed](/img/jumping-physics/jump-graph.png)
 
-Calling naive_doublejump_simulation(2.0) will return a list showing the simulated height of the car at every increment from 0 to 2 seconds into the future. A more robust solution should account for more variability in circumstances such as the car's current relative up direction as well as current velocity. 
+Calling naive_doublejump_simulation(2.0) will return a list showing the simulated height of the car at every increment from 0 to 2 seconds into the future. A more robust solution should account for more variability in circumstances such as the car's current relative up direction as well as current velocity.
 
 ### Useful Considerations For Implementing Jumping Simulations And Mechanics
-* The second jump remains viable for between 1.25 and 1.45 seconds with the potential 0.2s time extension provided by holding the first jump for the maximum bonus duration.
-* The maximum speed of a car in Rocket League is `2300`. Any forces applied that would result in a magnitude exceeding `2300` will be applied as per usual but then normalized back down to the limit of `2300`.
 
-Note: Rocket League's physics engine runs at 120hz so all calculations provided are based on that number as the base of a time step (`1/120`). 
+- The second jump remains viable for between 1.25 and 1.45 seconds with the potential 0.2s time extension provided by holding the first jump for the maximum bonus duration.
+- The maximum speed of a car in Rocket League is `2300`. Any forces applied that would result in a magnitude exceeding `2300` will be applied as per usual but then normalized back down to the limit of `2300`.
+
+Note: Rocket League's physics engine runs at 120hz so all calculations provided are based on that number as the base of a time step (`1/120`).

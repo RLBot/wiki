@@ -14,6 +14,6 @@ Refer to `mkdocs --help` for serving locally, building and deploying
 
 ## Todo
 
-- [X] Move all* pages from RLBot/RLBot wiki (*see docs/missing-pages.md)
-- [ ] Move language specific wikis
-- [X] Sort pages into categories
+- \[X\] Move all\* pages from RLBot/RLBot wiki (\*see docs/missing-pages.md)
+- \[ \] Move language specific wikis
+- \[X\] Sort pages into categories

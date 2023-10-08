@@ -33,6 +33,7 @@ We can see here that every `get_output` call, the on-screen drawings get updated
 # Rendering a large amount
 
 There are a few limits you can hit when rendering:
+
 - MessageLargerThanMax
 - Not sending message to Rocket League because that would bring the bytes sent since last receive to...
 
@@ -57,9 +58,11 @@ If you hit the other limit, you're out of luck.
 ```
 create_color(a, r, g, b)
 ```
-* a, r, g, b - Alpha, red, green, blue. From 0 to 255.
+
+- a, r, g, b - Alpha, red, green, blue. From 0 to 255.
 
 This doesn't draw anything on screen, but it is used for creating colors that you can use for the other methods that draw on screen. The renderer also has a list of color methods that gives you the most common colors:
+
 ```
 renderer.black()
 renderer.white()
@@ -81,21 +84,25 @@ Lastly, there's the `team_color` method. Using this your bot renders with differ
 ```
 team_color(team=None, alt_color=False)
 ```
-* team - (Optional, None by default) Index of a team (0 for blue, 1 for orange) or None. If set to None, it will use calling bot's team.
-* alt_color - (Optional, False by default) Wether or not to return the alternate team color instead. If set to False, this method returns blue for blue team and orange for orange team. If set to True, this method returns cyan for blue team and red for orange team.
+
+- team - (Optional, None by default) Index of a team (0 for blue, 1 for orange) or None. If set to None, it will use calling bot's team.
+- alt_color - (Optional, False by default) Wether or not to return the alternate team color instead. If set to False, this method returns blue for blue team and orange for orange team. If set to True, this method returns cyan for blue team and red for orange team.
 
 # renderer.draw_rect_2d
+
 This draws a rectangle on screen. Example : draw_rect_2d(20, 20, 200, 200, True, self.renderer.black()) ![example](/img/rendering/rect.jpg)
 
 ```
 draw_rect_2d(x, y, width, height, fill, color)
 ```
-* x, y - The top left x and y screen coordinates for the rectangle. (0, 0) is the top left of the screen.
-* width, height - The width and height of the rectangle.
-* fill - If True, the entire rectangle is filled with color, else it is just an outline of color.
-* color - The color of the rectangle. See `renderer.create_color`.
+
+- x, y - The top left x and y screen coordinates for the rectangle. (0, 0) is the top left of the screen.
+- width, height - The width and height of the rectangle.
+- fill - If True, the entire rectangle is filled with color, else it is just an outline of color.
+- color - The color of the rectangle. See `renderer.create_color`.
 
 # renderer.draw_line_2d
+
 **NOTE: Currently not supported.**
 
 Draws a 2D line flat on the screen.
@@ -103,68 +110,84 @@ Draws a 2D line flat on the screen.
 ```
 draw_line_2d(start_x, start_y, end_x, end_y)
 ```
-* start_x, start_y - Where the line starts. (0, 0) is the top left of the screen.
-* end_x, end_y - Where the line ends.
+
+- start_x, start_y - Where the line starts. (0, 0) is the top left of the screen.
+- end_x, end_y - Where the line ends.
 
 # renderer.draw_string_2d
+
 Draws 2D text flat on the screen. Example : draw_string_2d(20, 20, 3, 3, ball_text, self.renderer.black()) [example](/img/rendering/string.jpg)
 
 ```
 draw_string_2d(x, y, scale_x, scale_y, text, color)
 ```
-* x, y - The top left x and y screen coordinates for the string. (0, 0) is the top left of the screen.
-* scale_x, scale_y - The horizontal and vertical scale of the text.
-* text - The text to render.
-* color - The color of the string. See `renderer.create_color`.
+
+- x, y - The top left x and y screen coordinates for the string. (0, 0) is the top left of the screen.
+- scale_x, scale_y - The horizontal and vertical scale of the text.
+- text - The text to render.
+- color - The color of the string. See `renderer.create_color`.
 
 # renderer.draw_rect_3d
+
 Draws a 2D rectangle in game's 3D space. Size does not change with distance.
- <!-- TODO: Broken gfycat example [Example : draw_rect_3d(ball_location, 20, 20, True, self.renderer.black())](https://gfycat.com/SharpEllipticalAmericanwirehair) -->
+
+<!-- TODO: Broken gfycat example [Example : draw_rect_3d(ball_location, 20, 20, True, self.renderer.black())](https://gfycat.com/SharpEllipticalAmericanwirehair) -->
 
 ```
 draw_rect_3d(location, width, height, fill, color)
 ```
-* location - The 3D game location where the rectangle should be drawn. Must be a Python list or a tuple (cannot be a ctypes or flatbuffers type).
-* width, height - The width and height of the rectangle.
-* fill - If True, the entire rectangle is filled with color, else it is just an outline of color.
-* color - The color of the rectangle. See `renderer.create_color`.
+
+- location - The 3D game location where the rectangle should be drawn. Must be a Python list or a tuple (cannot be a ctypes or flatbuffers type).
+- width, height - The width and height of the rectangle.
+- fill - If True, the entire rectangle is filled with color, else it is just an outline of color.
+- color - The color of the rectangle. See `renderer.create_color`.
 
 # renderer.draw_string_3d
-Draws 2D text in game's 3D space. Size does not change with distance. 
+
+Draws 2D text in game's 3D space. Size does not change with distance.
+
 <!-- TODO: Broken gfycat example [Example : draw_string_3d((0, 0, 0), 2, 2, "Hello RLBot!", self.renderer.black())](https://gfycat.com/FairMilkyCuscus) -->
 
 ```
 draw_string_3d(location, scale_x, scale_y, text, color)
 ```
-* location - The 3D game location where the text should be drawn. Must be a Python list or a tuple (cannot be a ctypes or flatbuffers type).
-* scale_x, scale_y - The horizontal and vertical scale of the text.
-* text - The text to render.
-* color - The color of the text. See `renderer.create_color`.
+
+- location - The 3D game location where the text should be drawn. Must be a Python list or a tuple (cannot be a ctypes or flatbuffers type).
+- scale_x, scale_y - The horizontal and vertical scale of the text.
+- text - The text to render.
+- color - The color of the text. See `renderer.create_color`.
 
 # renderer.draw_line_3d
+
 Draws a 2D line in game's 3D space. Size does not change with distance.
+
 <!-- TODO: Broken gfycat example [Example :_draw_line_3d(car_location, enemy_location, self.renderer.red())](https://gfycat.com/RemorsefulFormalJellyfish) -->
 
 ```
 draw_line_3d(start, end, color)
 ```
-* start, end - The starting and ending 3D game locations of the line. Must be Python lists or tuples (cannot be ctypes or flatbuffers types).
-* color - The color of the line. See `renderer.create_color`.
+
+- start, end - The starting and ending 3D game locations of the line. Must be Python lists or tuples (cannot be ctypes or flatbuffers types).
+- color - The color of the line. See `renderer.create_color`.
 
 # renderer.draw_line_2d_3d
+
 **NOTE: Currently not supported.**
 
 Draws a 2D line which starts at screen coordinates and ends at the game's 3D coordinate.
+
 <!-- TODO: Broken gfycat example [Example : draw_line_2d_3d(0, 0, (0, 0, 0), self.renderer.black())](https://gfycat.com/ScentedQuarterlyLemming) -->
 
 ```
 draw_line_2d_3d(start_2d_x, start_2d_y, end_3d, color)
 ```
-* start_2d_x, start_2d_y - Where the line starts (on the screen).
-* end_3d - Where the line ends (in 3D space). Must be a Python list or tuple (cannot be a ctypes or flatbuffers type).
-* color - The color of the line. See `renderer.create_color`.
+
+- start_2d_x, start_2d_y - Where the line starts (on the screen).
+- end_3d - Where the line ends (in 3D space). Must be a Python list or tuple (cannot be a ctypes or flatbuffers type).
+- color - The color of the line. See `renderer.create_color`.
 
 # renderer.draw_polyline_2d
+
 **NOTE: Currently not supported.**
 
 Draws multiple connected 2D lines flat on the screen. Useful for rendering paths or pictures.
@@ -172,14 +195,17 @@ Draws multiple connected 2D lines flat on the screen. Useful for rendering paths
 ```
 draw_polyline_2d(locations, color)
 ```
-* locations - A list of 2D points. A line will be drawn from first point to the second point, and from second point to the third point, ect. (0, 0) is the top left of the screen.
-* color - The color of the line. See `renderer.create_color`.
+
+- locations - A list of 2D points. A line will be drawn from first point to the second point, and from second point to the third point, ect. (0, 0) is the top left of the screen.
+- color - The color of the line. See `renderer.create_color`.
 
 # renderer.draw_polyline_3d
+
 Draws multiple connected lines in the game's 3D space. Useful for rendering paths. Size does not change with distance.
 
 ```
 draw_polyline_3d(locations, color)
 ```
-* locations - A list of 3D locations. A line will be drawn from first location to the second location, and from second location to the third location, ect. Each location must be a Python list or tuple (cannot be a ctypes or flatbuffers type).
-* color - The color of the line. See `renderer.create_color`.
+
+- locations - A list of 3D locations. A line will be drawn from first location to the second location, and from second location to the third location, ect. Each location must be a Python list or tuple (cannot be a ctypes or flatbuffers type).
+- color - The color of the line. See `renderer.create_color`.

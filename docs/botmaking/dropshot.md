@@ -1,12 +1,14 @@
 As of August 19. 2018 the RLBot framework officially supports Dropshot with access to locations and states of floor tiles. This page contains information and useful values related to the Dropshot game mode.
 
 To make RLBot start a Dropshot game you have to set the following values in `rlbot.cfg`:
+
 ```
 game_mode = Dropshot
 game_map = DropShot_Core707
 ```
 
 ## Tiles
+
 There are 140 tiles in total.
 Locations and owning team can be found in the agent's FieldInfo as GoalInfo objects. In Python `self.get_field_info().goals` will be a list of the floor tiles with following attributes:
 
@@ -17,6 +19,7 @@ GoalInfo: {
   'direction': Vector3,
 }
 ```
+
 Example: To access the location of tile 0 in Python, write: `self.get_field_info().goals[0].location`
 
 A list of all locations can be found [here](https://pastebin.com/w79VhU8W).
@@ -43,6 +46,7 @@ The overall layout of the arena and tile indices can be seen below.
 ![Layout of Core707](/img/dropshot/arena.png)
 
 The arena is a regular hexagon except its rounded corners. Here are some dimensions:
+
 - Center: (0, 0)
 - Floor level: 3.2 uu
 - Center to wall: 4555 uu
@@ -51,12 +55,14 @@ The arena is a regular hexagon except its rounded corners. Here are some dimensi
 - Wall length: about 5026 uu
 - Arena height: 1986 uu
 
-Note that the tiles on the boundaries are not complete - the rounded base of the walls overlaps the tiles to varying degrees (approximately 30-40% of the tile is overlapped, and the tile centrepoints are always visible). 
+Note that the tiles on the boundaries are not complete - the rounded base of the walls overlaps the tiles to varying degrees (approximately 30-40% of the tile is overlapped, and the tile centrepoints are always visible).
 
 You may notice that tiles' locations are at z=0, but floor level is z=3.2. This is because the tiles have a thickness.
 
 #### Within arena script
+
 Here's a small script to check if a point is within the arena:
+
 ```python
 def is_within_arena(point):
 	HEIGHT = 1986
@@ -82,13 +88,15 @@ Ball radius: 102.24 uu
 The GameTickPacket contains Dropshot info about the ball. It can be found in the DropshotBallInfo object at `packet.game_ball.drop_shot_info` which contains the variables: `absorbed_force`, `damage_index`, and `force_accum_recent`.
 
 The ball has three phases. The current phase is the variable `damage_index` where:
+
 - 0: Normal
 - 1: Charged
 - 2: Super Charged
 
 The ball gains charge as it is hit by cars. When a car exerts a force on the ball, the ball charges up equal to the magnitude of the force (energy). The ball enters the next phase when it reaches a certain threshold:
-* Charged: 2500 energy
-* Super Charged: 11000 energy
+
+- Charged: 2500 energy
+- Super Charged: 11000 energy
 
 The current amount of energy (force absorded) is the `absorbed_force` variable.
 
@@ -103,6 +111,7 @@ You can tell which team last hit the ball by checking the `packet.game_ball.late
 At kickoff the ball is launched straight up into the air with a velocity of 1000 uu/s and reaches a height of about 847 uu in 1.54 seconds.
 
 ## Spawning
+
 You always spawn with 100 boost.
 
 Kickoff spawn locations are similar to soccer spawn locations, but not identical. In dropshot spawn locations are:
@@ -121,4 +130,5 @@ Kickoff spawn locations are similar to soccer spawn locations, but not identical
 | Left corner     | loc: (2176, -3408), yaw: 0.5 pi  | loc: (-2176, 3408), yaw: -0.5 pi |
 
 ## Boost regeneration
+
 In Dropshot you regenerate boost at a rate of about 10 boost/sec. However, you do not regen boost while boosting. When you stop boosting (or run out of boost), there is a delay of about 0.5 second before you start gaining boost again. If you are at 0 boost and boost button is pressed, the timer will reset every 0.5 seconds until the button is released.

@@ -3,10 +3,12 @@
 Welcome to the RLBot wiki!
 
 ## Getting Started
+
 - **[Download RLBot](http://www.rlbot.org/)**
 - [Botmaking Setup Guides](http://www.rlbot.org/)
 
 ## Video tutorials
+
 - [Setup/Python/GoslingUtils Tutorials by GooseFairy](https://www.youtube.com/playlist?list=PL2MGDOTjPtl8fuoXmqxTmASW1ZtrPEXQ2)
 - [C#/RedUtils tutorial by CodeRed](https://youtube.com/playlist?list=PLya5kk1rYdS4PqJV19B3KIH7l3P6lZPwX)
 - [Java tutorial by Eastvillage](https://youtube.com/playlist?list=PL0Chr9HhL2DQijgJ4b4ho4pBpxFfHXP0m)
@@ -15,17 +17,20 @@ Welcome to the RLBot wiki!
 - [Language agnostic tutorial explaining useful concepts by b2studios](https://youtu.be/DJtK0bmSMGs)
 
 ## Language-specific wikis
+
 - **[Officially supported languages](http://rlbot.org/)**
 - [Other community supported languages](/framework/supported-programming-languages#community-supported-languages)
 - [Machine Learning FAQ](/botmaking/machine-learning-faq)
 - [RLGym](https://rlgym.org/)
 
 ## Text tutorials
+
 - [Shooting the ball towards or away from a target](/botmaking/shooting-the-ball-towards-or-away-from-a-target)
 - [Dodges (C#)](https://tangil.me/posts/dodges)
 - [State systems (C#)](https://tangil.me/posts/state)
 
 # Commonly Used Resources
+
 - [GameTickPacket, FieldInfo, and Controllers](/botmaking/input-and-output-data)
 - [Useful Game Values (Field Size, Boost Pad Locations, and more)](/botmaking/useful-game-values)
 - [Quickchats](https://github.com/RLBot/RLBotPythonExample/wiki/Quickchat)
@@ -38,6 +43,7 @@ Welcome to the RLBot wiki!
 - [Troubleshooting](/troubleshooting/installation-errors)
 
 ## Physics
+
 - [RocketSim by Zealan](https://github.com/ZealanL/RocketSim)
 - [Ball Physics by @Chip](https://samuelpmish.github.io/notes/RocketLeague/ball_bouncing/)
 - [Ball Collision by @Chip](https://samuelpmish.github.io/notes/RocketLeague/field_geometry/)
@@ -51,7 +57,8 @@ Welcome to the RLBot wiki!
 - [Extracting Map Meshes by Virx](/miscellaneous/extracting-map-meshes)
 
 # Unofficial but Helpful Code Repositories
-- [Utilities by @Chip](https://github.com/samuelpmish/RLUtilities) 
+
+- [Utilities by @Chip](https://github.com/samuelpmish/RLUtilities)
 - [GoslingUtils by GooseFairy](https://github.com/ddthj/GoslingUtils)
 - [VirxERLU (aka GoslingUtils 2.0) by VirxEC](https://github.com/VirxEC/VirxERLU)
 - [Source code to East's Java Tutorial](https://github.com/NicEastvillage/RLBotJavaTutorialSourceCode)

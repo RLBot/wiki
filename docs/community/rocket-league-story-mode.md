@@ -4,7 +4,7 @@
 
 To get started with Story Mode, install [RLBotGUI](https://github.com/RLBot/RLBotGUI#installation).
 
-Once installed, go to Add->Download Botpack to download the community's bots. 
+Once installed, go to Add->Download Botpack to download the community's bots.
 Once they are downloaded you can click on "Story Mode" on the top right.
 
 ## Upgrades and Teammates
@@ -52,7 +52,7 @@ If you actually want to change the challenges, then you can add/remove/modify th
 |completionConditions| Optional. More details below.|
 |limitations|Optional. List that can contain: "half-field". This maps to heatseeker mode|
 
-`completionConditions` is an object. If multiple fields are provided, each condition is "and"-ed 
+`completionConditions` is an object. If multiple fields are provided, each condition is "and"-ed
 with the other conditions. A user completes a challenge if all of them are true. The default
 condition is that a player must win.
 

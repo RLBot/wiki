@@ -3,6 +3,7 @@
 ## Sections
 
 ### Locations
+
 This section is poorly named at this point, but oh well. It includes:
 
 - looks_config: The location of your bot's appearance config, relative to the cfg file.
@@ -11,14 +12,16 @@ This section is poorly named at this point, but oh well. It includes:
 - name: The name of your bot in-game.
 - supports_early_start: Optional. Indicates whether your bot can handle the early start system. Read below for details.
 - requirements_file: Optional. The location of a requirements.txt for your bot. If specified, RLBotGUI will use it to warn people if there's a missing dependency, and they'll have the option to install your requirements.txt file.
-- use_virtual_environment: Optional, defaults to False. Installs your bot's requirements from the requirements.txt file into a python venv so they're isolated from potentially conflicting requirements from other bots. See [pr #535](https://github.com/RLBot/RLBot/pull/536) 
+- use_virtual_environment: Optional, defaults to False. Installs your bot's requirements from the requirements.txt file into a python venv so they're isolated from potentially conflicting requirements from other bots. See [pr #535](https://github.com/RLBot/RLBot/pull/536)
 - loadout_generator: Optional. Location of a script that can influence your bot's appearance on startup for randomization / index-dependent changes. See [loadout generator](/bot-customization#loadout-generator)
 - requires_tkinter: Optional. Set it to true if your bot needs tkinter, and if the user is running a GUI which lacks tkinter, they will be warned.
 
 ### Bot Parameters
+
 This is mainly for bot makers to add arbitrary config values useful to them. Generally the framework doesn't care what you put here, except in the case of Scratch bots.
 
 ### Details
+
 This section is for metadata about your bot which can be displayed to people in RLBotGUI, tournament overlays, etc. Common details included:
 
 - developer: The name of the developer(s) of the bot.
@@ -29,18 +32,20 @@ This section is for metadata about your bot which can be displayed to people in 
 - tags: A comma separated list of tags. Primarily used by the RLBotGUI to put the bot in the correct tabs. Common tags include: 1v1, teamplay, goalie, hoops, dropshot, snow-day, rumble, spike-rush, heatseeker, memebot
 
 ## Early Start System
+
 If a bot adds `supports_early_start = True` then it will be started up before the Rocket League match loads, which gives it lots of extra time. To live happily in this situation the bot MUST be able to deal with weird game tick packets, e.g.:
 
 - Could have unexpected bots / unexpected teams
 - The bot's index might be higher than the packet's num_cars
 - The packet may transition suddenly to a different set of cars, different game type, etc
 
-
 # Match Config File (rlbot.cfg)
+
 This configuration controls which bots are in the game, what arena to play on, what mutators to use, etc.
 [Example config](https://github.com/RLBot/RLBot/blob/master/rlbot.cfg)
 
 ## Sections
+
 - RLBot Configuration:  Contains miscellaneous overall configurations
 - Team Configuration:  Configurations at the team level
 - Match Configuration:  Configurations for a specific match
@@ -49,10 +54,12 @@ This configuration controls which bots are in the game, what arena to play on, w
 - Scripts: What scripts should be ran
 
 ### RLBot Configuration
+
 - extensions_path:  A path to the extension file used later on for extra game controlling needs
 - launcher_preference: 'steam' or 'epic'. For people who have the game on both, determines which launcher is preferred for opening Rocket League.
 
 ### Team Configuration
+
 NOTE:  None of these take an effect currently
 
 - Team Blue Color:  Changes Blue team color, use 0 to use default color
@@ -61,6 +68,7 @@ NOTE:  None of these take an effect currently
 - Team Orange Name: Changes the Team name to use instead of 'Orange'
 
 ### Match Configuration
+
 - num_participants: The total number of cars that will be spawned into the match.
 - game_mode: 'Soccer', 'Hoops', 'Dropshot', 'Hockey', 'Rumble'
 - game_map, e.g. "Mannfield". [All possible values](https://github.com/RLBot/RLBot/blob/master/src/main/python/rlbot/parsing/match_settings_config_parser.py#L40-L78)
@@ -73,6 +81,7 @@ NOTE:  None of these take an effect currently
 - auto_save_replay: If True, the match replay is automatically saved.
 
 ### Mutator Configuration
+
 All of these default to the "normal" value (the first in the list) if you don't specify them.
 
 - Match Length: Changes the length of the match. '5 Minutes', '10 Minutes', '20 Minutes', 'Unlimited'
@@ -92,6 +101,7 @@ All of these default to the "normal" value (the first in the list) if you don't 
 - Respawn Time: '3 Seconds', '2 Seconds', '1 Second', 'Disable Goal Reset'
 
 ### Participant Configuration
+
 - participant_config_NUMBER:  The path to a participant configuration
 - participant_team_NUMBER: what team the bot is on
 - participant_type_NUMBER: the type of the bot Accepted values are "human", "rlbot", "psyonix", "party_member_bot", and "controller_passthrough", You can have up to 4 local humans and they must be activated in game or it will crash. If no player is specified you will be spawned in as spectator!
@@ -104,6 +114,7 @@ All of these default to the "normal" value (the first in the list) if you don't 
 - participant_loadout_config_NUMBER: the path to the loadout.   This overrides the agent config if not None
 
 Example contents:
+
 ```
 participant_config_0 = my_folder/my_bot.cfg
 participant_config_1 = my_folder/other_bot.cfg
@@ -119,11 +130,13 @@ participant_bot_skill_1 = 1.0
 ```
 
 ### Scripts
+
 This field is optional, by default no scripts will be ran.
 
 - script_config_NUMBER: The path to the script configuration
 
 Example contents:
+
 ```
 script_config_0 = src/test/python/agents/script/sample_script.cfg
 script_config_1 = src/test/python/agents/script/sample_script.cfg

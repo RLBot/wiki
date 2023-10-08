@@ -7,6 +7,7 @@ It's now possible to read quick chat too, assuming the framework for your chosen
 Using quick chat is a little different in each language, see the specific links below.
 
 ## Language-specific documentation
+
 - [Python](https://github.com/RLBot/RLBotPythonExample/wiki/Quickchat)
 - [Java](https://github.com/RLBot/RLBotJavaExample/wiki/Quickchat)
 - [C#](https://github.com/RLBot/RLBotCSharpExample/wiki/Quickchat)

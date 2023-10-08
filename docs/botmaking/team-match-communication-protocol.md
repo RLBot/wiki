@@ -20,7 +20,7 @@ If you want to refine a time estimate sent in a previous message, only do so if 
 
 Packets will only be received when something has changed. If you haven't received a packet from another bot, assume that nothing has changed.
 
-***
+______________________________________________________________________
 
 # TMCP 1.0
 
@@ -39,6 +39,7 @@ This is what a packet following TMCP looks like:
 ```
 
 - `tmcp_version`
+
   - Major: Breaking revision number
   - Minor: Non-breaking revision number
 
@@ -47,7 +48,6 @@ This is what a packet following TMCP looks like:
 - `index` - The index of the bot that sent the packet. If you are using the hivemind, make this the index of the bot which is carrying out the action.
 
 - `action` - The current action that the bot is taking. This is an object. The types can be seen below.
-
 
 ### "BALL"
 
@@ -61,8 +61,8 @@ The bot is going for the ball.
 }
 ```
 
-+ `time` - Game time that your bot will arrive at the ball. Set to `-1` if this is unknown.
-+ `direction` - Anticipated normalized direction of ball travel AFTER contact is made. `[0, 0, 0]` for unknown.
+- `time` - Game time that your bot will arrive at the ball. Set to `-1` if this is unknown.
+- `direction` - Anticipated normalized direction of ball travel AFTER contact is made. `[0, 0, 0]` for unknown.
 
 ### "BOOST"
 
@@ -75,7 +75,7 @@ The bot is going for boost.
 }
 ```
 
-+ `target` - Index of the boost pad the bot is going to collect.
+- `target` - Index of the boost pad the bot is going to collect.
 
 ### "DEMO"
 
@@ -89,10 +89,10 @@ The bot is going to demolish another car.
 }
 ```
 
-+ `time` - Game time that the bot will demo the other bot. `-1` for unknown.
-+ `target` - Index of the bot that will be demoed.
+- `time` - Game time that the bot will demo the other bot. `-1` for unknown.
+- `target` - Index of the bot that will be demoed.
 
-### "READY" 
+### "READY"
 
 The bot is waiting for a chance to go for the ball. Some examples are positioning (retreating/shadowing) and recovering.
 
@@ -103,7 +103,7 @@ The bot is waiting for a chance to go for the ball. Some examples are positionin
 }
 ```
 
-+ `time` - The game time when the bot could arrive at the ball (if it was to go for it). `-1` for unknown.
+- `time` - The game time when the bot could arrive at the ball (if it was to go for it). `-1` for unknown.
 
 ### "DEFEND"
 
@@ -143,6 +143,7 @@ It should return -1 if you can't find a shot and the game time of the shot if yo
 Will made a [TMCP python package](https://pypi.org/project/tmcp/) with helper classes that handle everything protocol-related.
 
 To install, just do
+
 ```
 pip install tmcp
 ```
@@ -179,6 +180,7 @@ class MyBot(BaseAgent):
 The [TGDSMELLS Handler](https://pypi.org/project/tgdsmells/) is very similar in usage to Will's TMCP Handler.
 
 Can be installed with
+
 ```
 pip install tgdsmells
 ```

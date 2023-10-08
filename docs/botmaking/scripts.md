@@ -5,6 +5,7 @@ Scripts are very similiar to normal bots. They need a config file and a python e
 ![Enabled script in RLBotGUI](/img/scripts/screenshot.png)
 
 Example config:
+
 ```
 [Locations]
 script_file = ./my_script.py
@@ -15,7 +16,8 @@ description = Example script
 language = python
 ```
 
-Example ``my_script.py``:
+Example `my_script.py`:
+
 ```python
 import time
 
@@ -56,13 +58,14 @@ if __name__ == "__main__":
 
 This script will render some text on the screen every 0.5 seconds.
 
-If you want your loop to be run every tick, you might want to use a blocking call instead of ``time.sleep`` like this:
+If you want your loop to be run every tick, you might want to use a blocking call instead of `time.sleep` like this:
+
 ```python
 while True:
    packet = self.wait_game_tick_packet()
    ...
 ```
 
-For all available methods in the ``BaseScript`` class and their descriptions, see [its implementation here](https://github.com/RLBot/RLBot/blob/master/src/main/python/rlbot/agents/base_script.py).
+For all available methods in the `BaseScript` class and their descriptions, see [its implementation here](https://github.com/RLBot/RLBot/blob/master/src/main/python/rlbot/agents/base_script.py).
 
 [Another fully functional script example](https://github.com/RLBot/RLBot/tree/master/src/test/python/agents/script)

@@ -32,10 +32,12 @@ Also encourage them to do [this](https://github.com/RLBot/RLBotJavaExample/wiki/
 People who program their bots in Scratch should submit their whole folder.
 
 Scratch program (sb3) requirements
+
 - All the tournament code should be in the player 1 sprite.
 - Clicking the green flag should be the only thing necessary to start your program.
 
 CFG file requirements
+
 ```
 headless = True
 separate_browsers = True
@@ -51,6 +53,7 @@ Encourage early submissions so you can get a head-start on testing, and allow pe
 ## Pre-Tournament Bot Testing
 
 You should test all the bots beforehand.
+
 - Do they start successfully?
 - Do they have any obvious behavior problems that might be a problem with your setup?
   - Feel free to check with the bot maker about the expected behavior.
@@ -69,7 +72,8 @@ You should test all the bots beforehand.
 
 Prerequisite: You will need to have the Java Runtime Environment (JRE) installed. You are likely to need the latest one (Java 11 at time of writing) in case any of the botmakers compiled with it.
 
-You hopefully received a zip file for each bot. Extract it somewhere and consult the README. 
+You hopefully received a zip file for each bot. Extract it somewhere and consult the README.
+
 - In the ideal case, if they followed [Auto Launching Java](https://github.com/RLBot/RLBotJavaExample/wiki/Auto-Launching-Java) successfully, you will only need to load the cfg file like you would for a Python bot.
 - Otherwise, you will need to locate the .bat file associated with the Java portion of their bot and run it manually. The RLBot framework output will hint about this.
 - Make sure the bot's port is different from the rest of the bots.
@@ -85,7 +89,9 @@ If the bot is very old and does not auto run, they may need to do [this](https:/
 ## Streaming and Casting
 
 ### Co-casters
+
 If you want to invite others to do commentary with you, you'll need to:
+
 - Give them a real-time view of the action so they can comment on things as they happen.
 - Get the sound of their voice flowing through your system audio.
 
@@ -95,7 +101,7 @@ A good way to do this is to start a Discord call and share your screen. If you h
 
 ### Bot Response Rate
 
-You can hit the [home] key to start rendering bot response rates in the upper left corner of Rocket League. You'll see a percentage that indicates how many of the rendered frames in Rocket League received fresh control inputs from a given bot.
+You can hit the \[home\] key to start rendering bot response rates in the upper left corner of Rocket League. You'll see a percentage that indicates how many of the rendered frames in Rocket League received fresh control inputs from a given bot.
 
 - If you have capped your framerate at 60fps, then you should expect to see 100% for all bots if they are performing well. - If your framerate is higher than 60, you will see percentages lower than 100 for some languages, and that's OK.
 - If you ever see a percentage above 100, that's a big concern. It may mean that there are multiple bot processes trying to control the same player. Make sure bots from the previous match are truly dead.

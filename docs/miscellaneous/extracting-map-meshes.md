@@ -1,10 +1,10 @@
 ## Prerequisites
 
-* 64-bit Windows
-* Rocket League
-* [U-Model](https://www.gildor.org/en/projects/umodel#files)
-* [Blender 2.9+](https://www.blender.org/)
-* [Blender .psk addon](https://github.com/Befzz/blender3d_import_psk_psa)
+- 64-bit Windows
+- Rocket League
+- [U-Model](https://www.gildor.org/en/projects/umodel#files)
+- [Blender 2.9+](https://www.blender.org/)
+- [Blender .psk addon](https://github.com/Befzz/blender3d_import_psk_psa)
 
 ## Additional notes before getting started
 
@@ -63,10 +63,11 @@ All files are extracted to the `UmodelExport` folder in whatever folder you save
 ## Identifying collision files
 
 Inside the folder of the map you extracted, there should be 5 more folders - the one that you want is called `StaticMesh3`. In this folder, simply look for any `.pskx` files that have the word `collision` in them. For DFH Stadium, there are 4 files:
-* `Goal_STD_Collision.pskx`
-* `Field_STD_Collision_Corner.pskx`
-* `Field_STD_Collision_SideTop.pskx`
-* `Field_STD_Collision_SideBot.pskx`
+
+- `Goal_STD_Collision.pskx`
+- `Field_STD_Collision_Corner.pskx`
+- `Field_STD_Collision_SideTop.pskx`
+- `Field_STD_Collision_SideBot.pskx`
 
 These files contain all of the available field collision information.
 
@@ -175,6 +176,6 @@ This creates the two bin files containing the ids and vertices from the object.
 
 If you want an example of using collision data and compiling them into a mesh to run collision queries on, check out the [rl_ball_sym Rust project](https://github.com/VirxEC/rl_ball_sym):
 
-* [Reading into a mesh](https://github.com/VirxEC/rl_ball_sym/blob/master/src/uncompressed.rs#L13-L25)
-* [Loading all collision data](https://github.com/VirxEC/rl_ball_sym/blob/master/src/simulation/mesh.rs#L17-L44)
-* [Compiling all collision data into a big mesh, then triangles and a BVH](https://github.com/VirxEC/rl_ball_sym/blob/master/src/simulation/field.rs#L20-L56)
+- [Reading into a mesh](https://github.com/VirxEC/rl_ball_sym/blob/master/src/uncompressed.rs#L13-L25)
+- [Loading all collision data](https://github.com/VirxEC/rl_ball_sym/blob/master/src/simulation/mesh.rs#L17-L44)
+- [Compiling all collision data into a big mesh, then triangles and a BVH](https://github.com/VirxEC/rl_ball_sym/blob/master/src/simulation/field.rs#L20-L56)

@@ -1,6 +1,7 @@
 # Bot customization
 
 ## GUI Customization
+
 The easiest way to customize your bot appearance is via RLBotGUI. To bring up the appearance editor, click on the bot info icon and then click Edit Appearance.
 
 [![Image from Gyazo](https://i.gyazo.com/7e09e6d7d0861a4f1b91f244b3e77891.gif)](https://gyazo.com/7e09e6d7d0861a4f1b91f244b3e77891)
@@ -17,6 +18,7 @@ You can also click the bottom left buttons to preview your loadout in-game insta
 In your bot's config file you can set your bot's display name. You can have a name of max 31 characters. If your name is too long or there is duplicates that is handled in the framework.
 
 Example (`bot.cfg` file):
+
 ```
 [Locations]
 # Path to loadout config. Can use relative path from here.
@@ -68,6 +70,7 @@ To see the items, you might want to browse at: https://rocket-league.com/items/
 ### Colors
 
 There are two ways to specify your colors:
+
 1. Use `team_color_id` and `custom_color_id` to index into the swatches (see images below).
 2. Use `primary_color_lookup` and `secondary_color_lookup` to choose a swatch closest to the RGB value you provide.
 
@@ -88,6 +91,7 @@ NOTE: The shade of the colors may not be correspond exactly with following pictu
 ### Painted Items
 
 You can use a number based on this list:
+
 - 0 - None
 - 1 - Crimson
 - 2 - Lime
@@ -104,6 +108,7 @@ You can use a number based on this list:
 - 13 - Saffron
 
 These are set in your appearance cfg file. Example:
+
 ```
 [Bot Paint Blue]
 car_paint_id = 12
@@ -120,11 +125,13 @@ goal_explosion_paint_id = 0
 ```
 
 ### Loadout Generator
+
 **This is completely optional!**
 
 Recently we added the ability to generate your bot's loadout with a python script. This lets you choose different loadouts based on player index, randomize parts of your loadout, etc. The script is executed at the beginning of every match.
 
-To use this feature, put a line like `loadout_generator = loadout_generator_example.py` in your bot cfg file, in the [Locations] section. Then create a python file like this:
+To use this feature, put a line like `loadout_generator = loadout_generator_example.py` in your bot cfg file, in the \[Locations\] section. Then create a python file like this:
+
 ```python
 import random
 from pathlib import Path
@@ -152,7 +159,9 @@ class SampleLoadoutGenerator(BaseLoadoutGenerator):
 ```
 
 ### Bot Logos
+
 Either put a file called logo.png in the same folder as your bot cfg, OR specify logo_file = ... in your bot cfg in the same section as python_file. Dimensions of 400x300 px are preferred. It will appear in RLBotGUI, and maybe on stream!
 
 ## Need inspiration?
+
 [reddit.com/r/RLFashionAdvice](https://www.reddit.com/r/RLFashionAdvice/)

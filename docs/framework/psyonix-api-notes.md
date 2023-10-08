@@ -7,7 +7,9 @@ Check out this diagram to get some intuition for this migration. Everything on t
 ![](/img/psyonix-api-notes/details.png)
 
 ## What you can expect from this new version of RLBot
+
 We're aiming for a backwards compatibility with this first bot API release, so expect your bots to play almost exactly like they used to!
+
 - The renderer now has occlusion, so 3D lines disappear behind objects correctly!
 - You can still use state setting, except:
   - Can’t manipulate boost pads
@@ -23,6 +25,7 @@ We're aiming for a backwards compatibility with this first bot API release, so e
 - The Psyonix API itself and the code that interfaces with it directly are closed source at the moment.
 
 ## What you can look forward to in the future
+
 - No more breaking after updates! Since RLBot no longer relies on DLL injection, RLBot will continue to work after every Rocket League update.
 - LAN support is a possibility in the future. With a virtual LAN (VLAN), this could mean being able to play against bots on different machines over the internet, with your friends!
 - Support for Linux and macOS is planned! (C++ and C# bots won't work)
@@ -33,14 +36,16 @@ We're aiming for a backwards compatibility with this first bot API release, so e
 
 ## Regarding Bugs
 
-This is a lot buggier than a normal release--RLBot broke due to a Rocket League patch and we chose to move forward with the official API rather than fix our old injection technique. Sorry for the bugs / missing features! 
+This is a lot buggier than a normal release--RLBot broke due to a Rocket League patch and we chose to move forward with the official API rather than fix our old injection technique. Sorry for the bugs / missing features!
 
 Please test out your bots and report any bugs to #issues-and-bugs or the GitHub repository's Issues page: https://github.com/RLBot/RLBot/issues. We appreciate all the help we can get!
 
 List of Busted Bots
+
 - NV Derevo, on some computers
 
 ### Rollback Instructions
+
 If it's a serious problem for you, you can roll back your Rocket League and use our old 1.14.12 version. Note that while you're on the old Rocket League, you will be unable to play online!
 
 You can do it by clicking steam://nav/console and then entering `download_depot 252950 252951 6062228629972172324`. Then read https://www.reddit.com/r/Steam/comments/611h5e/guide_how_to_download_older_versions_of_a_game_on/ starting with step 7.
@@ -50,4 +55,5 @@ You can do it by clicking steam://nav/console and then entering `download_depot 
 If you're using the new colorful RLBotGUI, you'll need to go find rlbot-requirements.txt in the vicinity of `C:\Users\yourname\AppData\Local\RLBotGUI\rlbot-requirements.txt` and do the change there.
 
 ## Thanks
+
 Thank you to everyone for sticking with the community! Of course, a massive thank you to Psyonix for supporting us and giving us the API! We can't wait to see RLBot evolve further!

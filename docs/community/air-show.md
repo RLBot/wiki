@@ -1,9 +1,11 @@
 ## Summary
+
 Rocket League, Music, and Programming: It all comes together in the 2021 Rocket League Air Show, hosted by [Rocket Sledge](https://www.youtube.com/channel/UC9t5ff1rz71eC4ZObmq6Yqg)!
 
 The best bot choreography presentation will win **$1000**! Open to both team and solo entries. The bar has been set high by the [original video](https://www.youtube.com/watch?v=x53kCucaLlI) in February 2020. What will you do to rise above the rest and earn the viewers' votes?
 
 ## Dates
+
 **February 15th:** Check-in and progress report with Sledge. At this time we may be able to indicate how many spots are available for the video and even confirmation of your entry (based on quality and progress).
 
 **March 15th:** Full Submission due.
@@ -18,9 +20,11 @@ Tutorial: [Youtube](https://www.youtube.com/watch?v=F3OpOdUavfw)
 You can chat / get help / form teams in the [special air show discord channel](https://discord.gg/XhqP5PNfeq).
 
 ## Previous year's submissions
+
 The code from last year's entries is open source!
 
 #### 2020
+
 - [Scripted](https://github.com/tarehart/RLBotChoreography/tree/scripted)
 - [\_Fool\_](https://github.com/DaCoolOne/HiveWriter)
 - [Awakening](https://github.com/Darxeal/Choreography)
@@ -28,6 +32,7 @@ The code from last year's entries is open source!
 You shouldn't lift entire scenes, but feel free to borrow code and concepts.
 
 ## Getting Help
+
 - Ask questions on the [RLBot #air-show chat room](https://discord.gg/XhqP5PNfeq)
 - We've heard interest from a few video editing experts, you might be able to team up! Check in the chat room.
 - The folks at the [Rocket League Mapmaking Discord](https://discord.gg/Bby3tZrMhk) might want to collaborate if you have a cool idea.
@@ -37,6 +42,7 @@ You shouldn't lift entire scenes, but feel free to borrow code and concepts.
 2021: TBA
 
 ## Rules
+
 You may enter solo or as a team.
 
 In order to win, you must be one of Sledge's personal picks to include in the showcase video on his channel, and then within that group, you must get the most votes from viewers via a google form, similar to [the one from last year](https://docs.google.com/forms/d/e/1FAIpQLSeR8-4XD2K_DK6xOcJZ7YpsazTU0Dyzmt0mrEiA_5KSRMUPBQ/viewanalytics).

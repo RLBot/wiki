@@ -13,7 +13,9 @@
 ![](/img/architecture/java.png)
 
 ## Diagram Source Code
+
 Created at sequencediagram.org with:
+
 ```
 title RLBot Startup Sequence
 

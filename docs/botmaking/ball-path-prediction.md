@@ -4,8 +4,10 @@ Note: this is just an _estimate_ of what the ball will be doing in the future, *
 
 The fruit of that labor is now available to your bot with a simple function! Just call the function and you get 6 seconds' worth of ball positions, each advancing 1/60 of a second into the future.
 
-### Language-specific examples 
+### Language-specific examples
+
 (support for more languages coming soon):
+
 - [Python](https://github.com/RLBot/RLBotPythonExample/wiki/Ball-Path-Prediction)
 - [Java](https://github.com/RLBot/RLBotJavaExample/wiki/Ball-Path-Prediction)
 - [C#](https://github.com/RLBot/RLBotCSharpExample/wiki/Ball-Path-Prediction)
