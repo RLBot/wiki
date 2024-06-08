@@ -45,14 +45,14 @@ Welcome to the RLBot wiki!
 ## Physics
 
 - [RocketSim by Zealan](https://github.com/ZealanL/RocketSim)
-- [Ball Physics by @Chip](https://samuelpmish.github.io/notes/RocketLeague/ball_bouncing/)
-- [Ball Collision by @Chip](https://samuelpmish.github.io/notes/RocketLeague/field_geometry/)
-- [Ground Car Control by @Chip](https://samuelpmish.github.io/notes/RocketLeague/ground_control/)
-- [Aerial Car Control by @Chip](https://samuelpmish.github.io/notes/RocketLeague/aerial_control/)
-- [Inverted Aerial Car Control by @Chip](https://samuelpmish.github.io/notes/RocketLeague/aerial_control_inverse/)
-- [Aerial ball intercept/hit by @Chip](https://samuelpmish.github.io/notes/RocketLeague/aerial_hit/)
-- [How Car and Ball Interact by @Chip](https://samuelpmish.github.io/notes/RocketLeague/car_ball_interaction/)
-- [How to Analyze Drivable Paths by @Chip](https://samuelpmish.github.io/notes/RocketLeague/path_analysis/)
+- [Ball Physics by @Chip](https://samuelpmish.github.io/rocket_league/ball_simulation_1/)
+- [Ball Collision by @Chip](https://samuelpmish.github.io/rocket_league/ball_simulation_2/)
+- [Ground Car Control by @Chip](https://samuelpmish.github.io/rocket_league/ground_control/)
+- [Aerial Car Control by @Chip](https://samuelpmish.github.io/rocket_league/aerial_control/)
+- [Inverse Aerial Car Control by @Chip](https://samuelpmish.github.io/rocket_league/inverse_aerial_control/)
+- [Aerial ball intercept/hit by @Chip](https://samuelpmish.github.io/rocket_league/aerial_hit/)
+- [How Car and Ball Interact by @Chip](https://samuelpmish.github.io/rocket_league/ball_simulation_3/)
+- [How to Analyze Drivable Paths by @Chip](https://samuelpmish.github.io/rocket_league/path_analysis/)
 - [The Physics Of Jumping by Impossibum](/botmaking/jumping-physics)
 - [Extracting Map Meshes by Virx](/miscellaneous/extracting-map-meshes)
 
