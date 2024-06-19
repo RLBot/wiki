@@ -113,12 +113,14 @@ The coordinates of the 34 boost pads (in the order that RLBot uses):
 | Left outside    | loc: (2688, -4608), yaw: 0.5 pi   | loc: (-2688, 4608), yaw: -0.5 pi  |
 
 ## Elevation of Objects at Rest:
+
 - Ball: 93.15
 - Hybrid: 17.00
 - Octane: 17.01
 - Dominus: 17.05
 - Breakout: 18.33
 - Batmobile/Plank: 18.65
+
 (these may vary slightly)
 
 More information on car bodies [in this spreadsheet](https://onedrive.live.com/view.aspx?resid=F0182A0BAEBB5DFF!14583&ithint=file%2cxlsx&app=Excel&authkey=!ALu0cMkDZDoWOws) by HalfwayDead.
