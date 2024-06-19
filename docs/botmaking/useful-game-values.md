@@ -112,14 +112,16 @@ The coordinates of the 34 boost pads (in the order that RLBot uses):
 | Left inside     | loc: (2304, -4608), yaw: 0.5 pi   | loc: (-2304, 4608), yaw: -0.5 pi  |
 | Left outside    | loc: (2688, -4608), yaw: 0.5 pi   | loc: (-2688, 4608), yaw: -0.5 pi  |
 
-## Elevation of Objects at Rest
+## Elevation of Objects at Rest:
 
-- Ball: 92.75 (its radius)
+- Ball: 93.15
 - Hybrid: 17.00
 - Octane: 17.01
 - Dominus: 17.05
 - Breakout: 18.33
 - Batmobile/Plank: 18.65
+
+(these may vary slightly)
 
 More information on car bodies [in this spreadsheet](https://onedrive.live.com/view.aspx?resid=F0182A0BAEBB5DFF!14583&ithint=file%2cxlsx&app=Excel&authkey=!ALu0cMkDZDoWOws) by HalfwayDead.
 
@@ -135,7 +137,7 @@ More information on car bodies [in this spreadsheet](https://onedrive.live.com/v
 
 ### Ball
 
-- Radius: 92.75 uu
+- Radius: 91.25 uu
 - Max speed: 6000 uu/s
   - "Slow" mutator: 1500 uu/s
   - "Fast" mutator: 9000 uu/s
@@ -151,13 +153,15 @@ More information on car bodies [in this spreadsheet](https://onedrive.live.com/v
 - Max driving speed (forward and backward) with no boost: 1410 uu/s
 - Car mass: 180.0 (unit is arbitrary)
 - Boost consumption rate: 33.3/s
-- Boost acceleration: 991.666 uu/s^2
+- Boost acceleration:
+  - on the ground: 991.666 uu/s^2
+  - in the air: 1058.333 uu/s^2
 - Acceleration in the ground:
   - due to throttle: depends on velocity - https://samuelpmish.github.io/notes/RocketLeague/ground_control/#throttle
   - due to braking (any amount): -3500.0 uu/s^2
   - due to slowing during zero-throttle coasting: -525.0 uu/s^2
 - Acceleration in the air due to throttle: ~66.667 uu/s^2   (yes, throttling accelerates the car in the air)
-- Jumping - [](/botmaking/jumping-physics)
+- [Jumping](/botmaking/jumping-physics)
 - Double jump
   - An instantaneous velocity increase of ~291.667 uu/s in the direction of your roof.
 - Minimum and maximum rotation (in radians):
