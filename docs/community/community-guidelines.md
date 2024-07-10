@@ -19,25 +19,9 @@ Most communication happens on our [discord](https://discord.gg/zbaAKPt)
 
 Discord users can be assigned roles, which is useful for granting privileges to different groups of people, contacting them all at once, etc.
 
-#### Language Roles
+#### Tournament Roles
 
-We have roles for users of various supported languages.
-
-- When somebody asks for help, people can see at a glance what language they are probably asking about.
-- If there's a major new feature or a breaking change for a language, users of that language can be pinged.
-- Getting the role is a nice rite of passage.
-
-To gain an existing role, post video evidence of your bot in the #bot-clips channel, then a moderator will give you the role.
-
-If you have used a new language and want a role to be created for it, you need to satisfy ONE of these criteria:
-
-- Document and support your language so well that we can comfortably advertise it to new users on rlbot.org.
-- OR, win one of our big official tournaments.
-- OR, complete the ancient and mysterious *induction ritual*:
-  - Gather three people who have made bots in the language.
-  - Arrange an event where the bots will perform.
-  - The event must be streamed (and the bots run) by somebody who has never made a bot in that language.
-  - By the time you're done, your language is somewhat user-friendly and popular, in theory.
+Roles are awarded based on your placement in the latest official tournament. The current roles are Champion, Top 4, Top 8, and Top 16. These roles are permenant, however only the ones from the latest tournament will be colored and displayed seperately from the RLBot member list.
 
 ## Competition
 
