@@ -63,3 +63,9 @@ Python BotManager->DLL: send controls
 DLL->RLBot.exe: send controls
 parallel off
 ```
+
+## RLBot v5
+
+The following document can be edited after making a personal copy of this document: <https://drive.google.com/file/d/13LW0l7nzc_dbwgT20cGHywx_5vNu4RTc/view?usp=sharing>
+
+![](/img/architecture/v5.png)
