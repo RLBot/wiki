@@ -6,7 +6,7 @@ Check out this diagram to get some intuition for this migration. Everything on t
 
 ![](/img/psyonix-api-notes/details.png)
 
-## What you can expect from this new version of RLBot
+## What you can expect from this new version of RLBot (v4)
 
 We're aiming for a backwards compatibility with this first bot API release, so expect your bots to play almost exactly like they used to!
 

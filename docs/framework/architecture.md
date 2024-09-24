@@ -63,3 +63,9 @@ Python BotManager->DLL: send controls
 DLL->RLBot.exe: send controls
 parallel off
 ```
+
+## RLBot v5
+
+![](/img/architecture/v5_diagram.png)
+
+<!-- The original drawio version of the above diagram can be found at `/img/achitecture/v5_diagram.drawio`-->

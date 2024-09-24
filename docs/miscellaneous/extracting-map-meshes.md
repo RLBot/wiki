@@ -176,6 +176,5 @@ This creates the two bin files containing the ids and vertices from the object.
 
 If you want an example of using collision data and compiling them into a mesh to run collision queries on, check out the [rl_ball_sym Rust project](https://github.com/VirxEC/rl_ball_sym):
 
-- [Reading into a mesh](https://github.com/VirxEC/rl_ball_sym/blob/master/src/uncompressed.rs#L13-L25)
-- [Loading all collision data](https://github.com/VirxEC/rl_ball_sym/blob/master/src/simulation/mesh.rs#L17-L44)
-- [Compiling all collision data into a big mesh, then triangles and a BVH](https://github.com/VirxEC/rl_ball_sym/blob/master/src/simulation/field.rs#L20-L56)
+- [Reading into a mesh](https://github.com/VirxEC/rl_ball_sym/blob/a9179cbb5bf39bd8550acd507ddf1fa9dc4f5192/src/simulation/mesh.rs#L30-L55)
+- [Compiling all collision data into a big mesh, then triangles and a BVH](https://github.com/VirxEC/rl_ball_sym/blob/a9179cbb5bf39bd8550acd507ddf1fa9dc4f5192/src/simulation/field.rs#L49-L88)
