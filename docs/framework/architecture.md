@@ -66,6 +66,6 @@ parallel off
 
 ## RLBot v5
 
-The following document can be edited after making a personal copy of this document: <https://drive.google.com/file/d/13LW0l7nzc_dbwgT20cGHywx_5vNu4RTc/view?usp=sharing>
+![](/img/architecture/v5_diagram.png)
 
-![](/img/architecture/v5.png)
+<!-- The original drawio version of the above diagram can be found at `/img/achitecture/v5_diagram.drawio`-->
