@@ -7,8 +7,8 @@ To be a part of the pack, you just need to create a pull request with your bot t
 To qualify:
 
 - Your bot must be capable of auto-run
-  - Use Python or Rust? You're all set.
-  - Other languages? We have a [Java wiki](https://github.com/RLBot/RLBotJavaExample/wiki/Auto-Launching-Java), a [C# wiki](https://github.com/RLBot/RLBotCSharpExample/wiki/Auto-Launching) and a [Scratch video](https://www.youtube.com/watch?v=4oK44syo49Y).
+    - Use Python or Rust? You're all set.
+    - Other languages? We have a [Java wiki](https://github.com/RLBot/RLBotJavaExample/wiki/Auto-Launching-Java), a [C# wiki](https://github.com/RLBot/RLBotCSharpExample/wiki/Auto-Launching) and a [Scratch video](https://www.youtube.com/watch?v=4oK44syo49Y).
 - Your bot must not have any crazy external requirements (except for very common ones like Java or Google Chrome)
 - You must be willing to trim out any extra bot configs from your folder that people wouldn't care about
 - Obey the [guidelines](/community-guidelines)

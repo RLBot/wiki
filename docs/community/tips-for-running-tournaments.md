@@ -56,7 +56,7 @@ You should test all the bots beforehand.
 
 - Do they start successfully?
 - Do they have any obvious behavior problems that might be a problem with your setup?
-  - Feel free to check with the bot maker about the expected behavior.
+    - Feel free to check with the bot maker about the expected behavior.
 - Do they run properly on *both* blue and orange team? Consider running test matches of each bot vs itself.
 - Are the C#/Java bots running on different ports? Each C# and Java bot must run on a separate port from the rest of the bots.
 

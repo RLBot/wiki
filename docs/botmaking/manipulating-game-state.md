@@ -5,9 +5,9 @@ We have a feature that lets you set exact positions, velocities, etc. for the ba
 ### Possibilities
 
 - Set up a specific scenario for your bot to try over and over. Better than custom training, because:
-  - You have control over car orientation, velocity, angular velocity, and boost amount
-  - You can do it in the middle of an exhibition match with opponents
-  - You can control it all from inside your bot code
+    - You have control over car orientation, velocity, angular velocity, and boost amount
+    - You can do it in the middle of an exhibition match with opponents
+    - You can control it all from inside your bot code
 - Build training sets for machine learning
 - Record snapshots during a game and "rewind" if you encounter a natural situation you want to iterate on
 - Hover your car in midair while you work on your orientation code

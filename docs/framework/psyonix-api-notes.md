@@ -12,13 +12,13 @@ We're aiming for a backwards compatibility with this first bot API release, so e
 
 - The renderer now has occlusion, so 3D lines disappear behind objects correctly!
 - You can still use state setting, except:
-  - Can’t manipulate boost pads
-  - Can’t mess with the car’s jump state
-  - Can’t provide partial location / velocity, must fully specify
+    - Can’t manipulate boost pads
+    - Can’t mess with the car’s jump state
+    - Can’t provide partial location / velocity, must fully specify
 - The GameTickPacket will have all the same data except:
-  - It will have non-interpolated values straight from the physics engine, same as RigidBodyTick!
-  - Latest ball touch will always be blank for now (fixed)
-  - Boost respawn timers don't work yet
+    - It will have non-interpolated values straight from the physics engine, same as RigidBodyTick!
+    - Latest ball touch will always be blank for now (fixed)
+    - Boost respawn timers don't work yet
 - Unfortunately, quick chat is not supported yet (1/2 fixed)
 - We only support Soccer, exhibition mode at the moment. (More modes are supported)
 - The game data will currently update in memory at 60Hz, ~~regardless of Rocket League's frame rate~~ (anecdotally it seems to be capped at the frame rate). We may be able to tune that later. (We now have 120hz)
@@ -31,8 +31,8 @@ We're aiming for a backwards compatibility with this first bot API release, so e
 - Support for Linux and macOS is planned! (C++ and C# bots won't work)
 - Rumble support is planned. Bots will be able to take part in the mayhem! (Done)
 - Unrelated to the API:
-  - DomNomNom is working on a team communication system for bots. (Done)
-  - Chip is working on advanced pathfinding for bots.
+    - DomNomNom is working on a team communication system for bots. (Done)
+    - Chip is working on advanced pathfinding for bots.
 
 ## Regarding Bugs
 

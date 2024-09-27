@@ -47,8 +47,8 @@ Big boost pads:
 - Gives 100 boost.
 - Takes 10 seconds to refresh.
 - The pads with a z-component of 73.0 are the big pads. Mirror these coordinates to get all 6:
-  - Midfield: (3584, 0)
-  - Corner: (3072, 4096)
+    - Midfield: (3584, 0)
+    - Corner: (3072, 4096)
 
 A car picks up a boost pad if the car's center of mass (not hitbox) enters the pad's hitbox. This interaction is different when cars are standing still (see the [Rocket Science video on boost pad hitboxes](https://www.youtube.com/watch?v=xgfa-qZyInw))
 
@@ -131,17 +131,17 @@ More information on car bodies [in this spreadsheet](https://onedrive.live.com/v
 (e.g. 2778 uu/s = 100 km/h)
 
 - Gravity: 650 uu/s^2
-  - "Low" mutator: 325 uu/s^2
-  - "High" mutator: 1137.5 uu/s^2
-  - "Super High" mutator: 3250 uu/s^2
+    - "Low" mutator: 325 uu/s^2
+    - "High" mutator: 1137.5 uu/s^2
+    - "Super High" mutator: 3250 uu/s^2
 
 ### Ball
 
 - Radius: 91.25 uu
 - Max speed: 6000 uu/s
-  - "Slow" mutator: 1500 uu/s
-  - "Fast" mutator: 9000 uu/s
-  - "Super Fast" mutator: 15000 uu/s
+    - "Slow" mutator: 1500 uu/s
+    - "Fast" mutator: 9000 uu/s
+    - "Super Fast" mutator: 15000 uu/s
 - Mass: 30.0 (unit is arbitrary)
 - Coefficient of restitution: 60% (it loses 40% of the component of its velocity that's toward the surface)
 - Maximum ball angular velocity: 6.0 radians/s
@@ -154,28 +154,28 @@ More information on car bodies [in this spreadsheet](https://onedrive.live.com/v
 - Car mass: 180.0 (unit is arbitrary)
 - Boost consumption rate: 33.3/s
 - Boost acceleration:
-  - on the ground: 991.666 uu/s^2
-  - in the air: 1058.333 uu/s^2
+    - on the ground: 991.666 uu/s^2
+    - in the air: 1058.333 uu/s^2
 - Acceleration in the ground:
-  - due to throttle: depends on velocity - https://samuelpmish.github.io/notes/RocketLeague/ground_control/#throttle
-  - due to braking (any amount): -3500.0 uu/s^2
-  - due to slowing during zero-throttle coasting: -525.0 uu/s^2
+    - due to throttle: depends on velocity - https://samuelpmish.github.io/notes/RocketLeague/ground_control/#throttle
+    - due to braking (any amount): -3500.0 uu/s^2
+    - due to slowing during zero-throttle coasting: -525.0 uu/s^2
 - Acceleration in the air due to throttle: ~66.667 uu/s^2   (yes, throttling accelerates the car in the air)
 - [Jumping](/botmaking/jumping-physics)
 - Double jump
-  - An instantaneous velocity increase of ~291.667 uu/s in the direction of your roof.
+    - An instantaneous velocity increase of ~291.667 uu/s in the direction of your roof.
 - Minimum and maximum rotation (in radians):
-  - Pitch: \[-pi/2, pi/2\]
-  - Yaw: \[-pi, pi\]
-  - Roll: \[-pi, pi\]
+    - Pitch: \[-pi/2, pi/2\]
+    - Yaw: \[-pi, pi\]
+    - Roll: \[-pi, pi\]
 - Maximum car angular acceleration:
-  - Yaw: 9.11 radians/s^2
-  - Pitch: 12.46 radians/s^2
-  - Roll: 38.34 radians/s^2
+    - Yaw: 9.11 radians/s^2
+    - Pitch: 12.46 radians/s^2
+    - Roll: 38.34 radians/s^2
 - Maximum car angular velocity: 5.5 radians/s
 - Turning
-  - Turning in Rocket League is very complex and not a lot is known. Hopefully, the numbers below can help you out a bit!
-  - Turn radius: https://samuelpmish.github.io/notes/RocketLeague/ground_control/#turning. Python implementation:
+    - Turning in Rocket League is very complex and not a lot is known. Hopefully, the numbers below can help you out a bit!
+    - Turn radius: https://samuelpmish.github.io/notes/RocketLeague/ground_control/#turning. Python implementation:
 
 ```python
 def turn_radius(v):
@@ -201,9 +201,9 @@ def curvature(v):
 
 - No matter if you're accelerating or decelerating, (as the throttle is 1) the car's turn radius and velocity balance out so the car turns 90 degrees in about 0.775 seconds, 180 degrees in 1.55 seconds, and 360 degrees in 3.1 seconds.
 - Accelerating while turning (starting from a standstill with throttle and steer set to 1)
-  - While turning with steer set to 1 (or -1), the maximum forwards velocity the car can reach is around 1234. It reaches this after 5 seconds.
+    - While turning with steer set to 1 (or -1), the maximum forwards velocity the car can reach is around 1234. It reaches this after 5 seconds.
 
-  - The speed of the car after x time can be estimated with the following equation: `1234 * (1 - e ^ [-{time / 0.74704}])`
+    - The speed of the car after x time can be estimated with the following equation: `1234 * (1 - e ^ [-{time / 0.74704}])`
 
     ![Graph of the velocity while turning starting from 0](/img/useful-game-values/car1.png)
 
@@ -225,9 +225,9 @@ def get_turn_time_from_speed(speed):
 ```
 
 - Decelerating while turning (starting from the top speed with throttle and steer set to 1)
-  - While turning with steer set to 1 (or -1), the minimum forward velocity the car can reach is around 1234. It reaches this after 7.5 seconds.
+    - While turning with steer set to 1 (or -1), the minimum forward velocity the car can reach is around 1234. It reaches this after 7.5 seconds.
 
-  - The speed and time can both be estimated with linear piecewise functions. The blue lines is the real velocity, and the orange line is the velocity that is predicted by the piecewise.
+    - The speed and time can both be estimated with linear piecewise functions. The blue lines is the real velocity, and the orange line is the velocity that is predicted by the piecewise.
 
     ![Graph of the velocity while turning starting from 2300](/img/useful-game-values/car2.png)
 
