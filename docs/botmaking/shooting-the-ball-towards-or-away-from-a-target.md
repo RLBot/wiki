@@ -5,12 +5,12 @@ This tutorial is based on the systems used by [VirxERLU](https://github.com/Virx
 ### TOC
 
 - [This tutorial is NOT language-specific!](#this-tutorial-is-not-language-specific)
-  - [TOC](#toc)
-  - [Targets and anti-targets](#targets-and-anti-targets)
-  - [Direction of approach](#direction-of-approach)
-  - [Ball location offset](#ball-location-offset)
-  - [Aligning with the direction of approach](#aligning-with-the-direction-of-approach)
-  - [Driving](#driving)
+    - [TOC](#toc)
+    - [Targets and anti-targets](#targets-and-anti-targets)
+    - [Direction of approach](#direction-of-approach)
+    - [Ball location offset](#ball-location-offset)
+    - [Aligning with the direction of approach](#aligning-with-the-direction-of-approach)
+    - [Driving](#driving)
 
 ### Targets and anti-targets
 

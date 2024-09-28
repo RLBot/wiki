@@ -40,8 +40,8 @@ This is what a packet following TMCP looks like:
 
 - `tmcp_version`
 
-  - Major: Breaking revision number
-  - Minor: Non-breaking revision number
+    - Major: Breaking revision number
+    - Minor: Non-breaking revision number
 
 - `team` - The team of the bot that sent the packet. 0 for blue and 1 for orange. This will be removed once match comms allow for team-only communication.
 
