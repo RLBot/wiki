@@ -1,9 +1,15 @@
 site_name: RLBot Wiki
+site_url: https://wiki.rlbot.org/
+repo_name: RLBot/RLBot
+repo_url: https://github.com/RLBot/RLBot
+edit_uri: https://github.com/RLBot/wiki/edit/main/docs/
 
 theme:
   name: material
   logo: assets/rlbot-logo.svg
   favicon: assets/rlbot-logo.svg
+  icon:
+    repo: fontawesome/brands/github
   palette:
     # Palette toggle for light mode
     - media: "(prefers-color-scheme: light)"
@@ -21,18 +27,36 @@ theme:
         icon: material/brightness-4
         name: Switch to light mode
 
+  features:
+    # Expand nav folders by default
+    - navigation.expand
+    # Enable the footer
+    - navigation.footer
+    # Auto hide the header after scrolling
+    - header.autohide
+    - content.action.edit
+
 extra:
   social:
     - icon: fontawesome/brands/discord
       link: https://discord.gg/zbaAKPt
     - icon: fontawesome/brands/github
       link: https://github.com/RLBot
+    - icon: fontawesome/brands/youtube
+      link: https://www.youtube.com/RLBotOfficial
+    - icon: fontawesome/brands/twitter
+      link: https://x.com/RLBotOfficial
+    - icon: fontawesome/brands/twitch
+      link: https://www.twitch.tv/rlbotofficial
 
 extra_css:
   - stylesheets/extra.css
 
 markdown_extensions:
+  - admonition
+  - pymdownx.critic
+  - pymdownx.details
   - pymdownx.highlight:
       anchor_linenums: true
       use_pygments: true
-  - pymdownx.superfences 
+  - pymdownx.superfences

@@ -1,6 +1,9 @@
-# RLBot
+# Overview
 
 Welcome to the RLBot wiki!
+RLBot is a framework for creating offline Rocket League bots.
+The framework uses an official Psyonix API making our bots safe to play with and against.
+This wiki primarily houses resources for bot development, but you can also find guides for users, framework documentation, and community insights.
 
 ## Getting Started
 
