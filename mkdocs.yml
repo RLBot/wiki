@@ -32,7 +32,7 @@ theme:
     - navigation.expand
     # Enable the footer
     - navigation.footer
-    # Enagled 'Edit this page' button
+    # Enale 'Edit this page' button
     - content.action.edit
 
 extra:
