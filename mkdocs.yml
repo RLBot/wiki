@@ -28,12 +28,11 @@ theme:
         name: Switch to light mode
 
   features:
-    # Expand nav folders by default
+    # Expand navigation folders by default
     - navigation.expand
     # Enable the footer
     - navigation.footer
-    # Auto hide the header after scrolling
-    - header.autohide
+    # Enagled 'Edit this page' button
     - content.action.edit
 
 extra:
@@ -54,9 +53,11 @@ extra_css:
 
 markdown_extensions:
   - admonition
+  # Code block features
   - pymdownx.critic
   - pymdownx.details
   - pymdownx.highlight:
       anchor_linenums: true
       use_pygments: true
+  # Enable code blocks in multiple language
   - pymdownx.superfences
