@@ -1,5 +1,7 @@
 # RLBot config files
 
+RLBot uses the standard `.toml` format for all config files. To see how TOML works, check out the [TOML spec](https://toml.io/en/).
+
 ## Bot & script config files
 
 There's a new naming convention for the toml files:
@@ -15,7 +17,7 @@ There's a new naming convention for the toml files:
 
 It should also be noted that whatever prefixes the `.bot.toml`/`.script.toml` file name will not be used by anything in RLBot.
 
-Example of a `bot.toml` file that runs in a virtual environment:
+Example of a `bot.toml` file that runs a Python bot in a virtual environment:
 
 ```toml
 [settings]
@@ -80,13 +82,6 @@ tags = []
     - `memebot`
 
 ## Loadout config files
-
-There's fewer differences between the `.toml` and `.cfg` files for loadouts - all of they keys have stayed the same, only the headers are differently named.
-
-- `[Bot Loadout]` -> `[blue_loadout]`
-- `[Bot Loadout Orange]` -> `[orange_loadout]`
-- `[Bot Paint Blue]` -> `[blue_loadout.paint]`
-- `[Bot Paint Orange]` -> `[orange_loadout.paint]`
 
 Example of a `loadout.toml` file:
 
