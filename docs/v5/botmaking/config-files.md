@@ -169,7 +169,7 @@ Sections and fields:
         - `"legendary" (Custom)` - Start Rocket League using [Legendary](https://github.com/derrod/legendary)
     - `auto_start_bots` - Boolean. Whether bots should be started using their run command.
 - `[match]`
-    - `game_mode` - The game mode. Either `"soccer"`, `"hoops"`, `"dropshot"`, `"hockey"`, `"rumble"`, `"heatseeker"`, `"gridiron"`, or `"knockout"`. This affects a few of the game rules although many game modes can also be recreated solely from mutators. See what mutators and game mode combinations make up the official modes [here](https://github.com/VirxEC/python-interface/tree/master/tests/gamemodes).
+    - `game_mode` - The game mode. Either `"Soccer"`, `"Hoops"`, `"Dropshot"`, `"Hockey"`, `"Rumble"`, `"Heatseeker"`, `"Gridiron"`, or `"Knockout"`. This affects a few of the game rules although many game modes can also be recreated solely from mutators. See what mutators and game mode combinations make up the official modes [here](https://github.com/VirxEC/python-interface/tree/master/tests/gamemodes).
     - `game_map_upk` - The map upk file to load, e.g. `"UtopiaStadium_P"`. On Steam version of Rocket League this can be used to load custom map files, but on Epic version it only works on the Psyonix maps. Available maps can be found [here](https://github.com/VirxEC/python-interface/blob/master/rlbot/utils/maps.py).
     - `cars` - A list of players in the match. See the car section below for fields of cars.
     - `scripts` - A list of scripts in the match. See the script section below for fields of scripts.
@@ -181,14 +181,33 @@ Sections and fields:
     - `auto_save_replay` - Boolean. Whether the match replay should be saved.
     - `freeplay` - Boolean. Whether or not to use freeplay instead of an exhibition match. This allows the players to use training keybinds, Bakkesmod plugins, and other features that are only allowed in free play.
 - `[mutators]`
-    - ... TODO. See [flatbuffer schema](https://github.com/RLBot/flatbuffers-schema/blob/main/matchconfig.fbs#L288).
+    - `match_length` - Duration of the match. Either `"FiveMinutes"` (default), `"TenMinutes"`, `"TwentyMinutes"`, or `"Unlimited"`.
+    - `max_score` - Max score of match. If this score is reached, the team immediately wins. Either `"Default"`, `"OneGoal"`, `"ThreeGoals"`, `"FiveGoals"`, `"SevenGoals"`, or `"Unlimited"`.
+    - `multi_ball` - The number of balls. Either `"One"`, `"Two"`, `"Four"`, or `"Six"`.
+    - `overtime` - The overtime rules and tiebreaker. Either `"Unlimited"` (default), `"FiveMaxFirstScore"`, or `"FiveMaxRandomTeam"`.
+    - `series_length` - The series length (no effect in practice). Either `"Unlimited"` (default), `"ThreeGames"`, `"FiveGames"`, or `"SevenGames"`.
+    - `game_speed` - A game speed multiplier. Either `"Default"`, `"SloMo"`, or `"TimeWarp"`.
+    - `ball_max_speed` - Ball max speed. Either `"Default"`, `"Slow"`, `"Fast"`, or `"SuperFast"`.
+    - `ball_type` - Ball type and shape. Either `"Default"`, `"Cube"`, `"Puck"`, `"Basketball"`, `"Beachball"`, `"Anniversary"`, `"Haunted"`, `"Ekin"`, or `"SpookyCube"`.
+    - `ball_weight` - Ball weight and how much is curves. Either `"Default"`, `"Light"`, `"Heavy"`, `"SuperLight"`, `"CurveBall"`, `"BeachBallCurve"`, or `"MagnusFutBall"`.
+    - `ball_size` - Ball size. Either `"Default"`, `"Small"`, `"Medium"`, `"Large"`, or `"Gigantic"`.
+    - `ball_bounciness` - Ball bounciness. Either `"Default"`, `"Low"`, `"High"`, `"SuperHigh"`, or `"LowishBounciness"`.
+    - `boost_amount` - Boost meter behaviour. Either `"NormalBoost"`, `"UnlimitedBoost"`, `"SlowRecharge"`, `"RapidRecharge"`, or `"NoBoost"`.
+    - `rumble` - Rumble item rules. Either `"NoRumble"` (default), `"DefaultRumble"`, `"Slow"`, `"Civilized"`, `"DestructionDerby"`, `"SpringLoaded"`, `"SpikesOnly"`, `"SpikeRush"`, `"HauntedBallBeam"`, `"Tactical"`, or `"BatmanRumble"`.
+    - `boost_strength` - Boost strength multiplier. Either `"One"` (default), `"OneAndAHalf"`, `"Two"`, `"Five"`, or `"Ten"`.
+    - `gravity` - Strength of gravity. Either `"Default"`, `"Low"`, `"High"`, `"SuperHigh"`, or `"Reverse"`.
+    - `demolish` - Demolition conditions. Either `"Default"`, `"Disabled"`, `"FriendlyFire"`, `"OnContact"`, or `"OnContactFF"`.
+    - `respawn_time` - Demolition respawn time. Either `"ThreeSeconds"` (default), `"TwoSeconds"`, `"OneSecond"`, or `"DisableGoalReset"`.
+    - `max_time` - Max real-time duration of match including kickoff, replays, and more. If the score is tied upon time-out, the number of shots determine the winner. Either `"Default"` or `"ElevenMinutes"`.
+    - `game_event` - Additional game behaviour for custom modes. Either `"Default"`, `"Haunted"`, or `"Rugby"`.
+    - `audio` - Additional audio options for custom modes. Either `"Default"` or `"Haunted"`.
 
 Car fields:
 
-- `team` - The team of the player. Either `0` for blue or `1` for orange.
-- `type` - Determines what controls the car. Either `"rlbot"` (default), `"human"`, or `"psyonix"` (see `skill`), 
-- `skill` - Determines the skill level of a Psyonix bot. Either `"beginner"`, `"rookie"`, `"pro"`, and `"allstar"`.
-- `config` - A path to a [`bot.toml` config file](#bot-script-config-files). Unusued if `type` is not `"rlbot"` or `"psyonix"`. For Psyonix bots, the config file determines name and loadout.
+- `team` - The team of the player. Either `"Blue"`/`0` for blue or `"Orange"`/`1` for orange.
+- `type` - Determines what controls the car. Either `"RLBot"` (default), `"Human"`, or `"Psyonix"` (see `skill`), 
+- `skill` - Determines the skill level of a Psyonix bot. Either `"Beginner"`, `"Rookie"`, `"Pro"`, and `"Allstar"`.
+- `config` - A path to a [`bot.toml` config file](#bot-script-config-files). Unusued if `type` is not `"RLBot"` or `"Psyonix"`. For Psyonix bots, the config file determines name and loadout.
 
 Script fields:
 
@@ -198,7 +217,7 @@ Script fields:
 
     ```toml
     [rlbot]
-    launcher = "steam"
+    launcher = "Steam"
     auto_start_bots = true
 
     [match]
@@ -215,27 +234,27 @@ Script fields:
     [[cars]]
     team = 0
     config = "atba/atba.bot.toml"
-    type = "rlbot"
+    type = "RLBot"  # Unnecessary, since it is default
 
     [[cars]]
     team = 0
     config = "necto/bot.toml"
-    type = "rlbot"
 
 
     [[cars]]
     team = 1
-    type = "psyonix"
-    skill = "pro"
+    type = "Psyonix"
+    skill = "Pro"
 
     [[cars]]
     team = 1
-    type = "human"
+    type = "Human"
 
     [[scripts]]
     config = "zero-g.script.toml"
 
     [mutators]
+    # All mutators with default values
     match_length = "FiveMinutes"
     max_score = "Default"
     multi_ball = "One"
