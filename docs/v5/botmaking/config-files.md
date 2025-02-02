@@ -2,7 +2,7 @@
 
 RLBot uses the standard `.toml` format for all configuration files. To see how TOML works, check out the [TOML spec](https://toml.io/en/).
 
-There are four types of config files, commonly known as:
+The framework uses four types of config files, commonly known as:
 
 - `bot.toml` [GOTO](#bot-script-config-files)
 - `script.toml` [GOTO](#bot-script-config-files)
@@ -11,7 +11,7 @@ There are four types of config files, commonly known as:
 
 ## Bot & Script Config Files
 
-A bot/script config file define a bot/script and its attributes, closely resembling the `PlayerConfiguration`/`ScriptConfiguration` from the [flatbuffer schema](https://github.com/RLBot/flatbuffers-schema/blob/main/matchconfig.fbs).
+A bot/script config file defines a bot/script and its attributes, closely resembling the `PlayerConfiguration`/`ScriptConfiguration` from the [flatbuffer schema](https://github.com/RLBot/flatbuffers-schema/blob/main/matchconfig.fbs).
 The content of config files for bots and scripts are very similar, so the file extension indicates whether it is a bot or script:
 
 - **Bots:** Named `bot.toml` or ends with `.bot.toml`. Here are examples of valid names: `bot.toml`, `Necto.bot.toml`, `atba.bot.toml`
@@ -19,14 +19,14 @@ The content of config files for bots and scripts are very similar, so the file e
 
 It should also be noted that whatever prefixes the `.bot.toml`/`.script.toml` file name will not be used by anything in RLBot.
 
-The sections and fields of bot/script config files:
+**The sections and fields:**
 
 - `[settings]` - Used by both RLBot and the GUI
     - `agent_id` - The static, unique id that is associated with this bot. Preferred format is `"author/bot-name"`.
     - `name` - The name of the bot/script.
     - `loadout_file` - The path to the [loadout file](#loadout-config-files) for the bot.
     - `root_dir` - A path to the root directory of the bot, e.g. `"./bin/"`. The `run_command` will be run from the root directory.
-    - `run_command` - The command to run the bot/script on Windows.
+    - `run_command` - The command to run the bot/script on Windows. If empty, the bot must be started manually (This may be handy during development if a default `agent_id` is coded into the bot).
     - `run_command_linux` - The command to run the bot/script on Linux.
     - `logo_file` - The path to the logo file for the bot/script.
 - `[details]` - Used only by the GUI
@@ -36,15 +36,15 @@ The sections and fields of bot/script config files:
     - `developer` - The developer(s) of the bot/script.
     - `language` - The language the bot/script is written in.
     - `tags` - A list of tags that describe the bot/script. These will affect which categories in the GUI your bot/script appear in. Possible tags:
-        - `1v1`
-        - `teamplay`
+        - `1v1` - The bot plays traditional 1v1 soccer.
+        - `teamplay` - The bot considers team mates and rotates.
         - `goalie` - Only add this tag if your bot *only* plays as a goalie. Incompatible with teamplay tag!
-        - `hoops`
-        - `dropshot`
-        - `snow-day`
-        - `spike-rush`
-        - `heatseaker`
-        - `memebot`
+        - `hoops` - The bot understands the Hoops game mode.
+        - `dropshot` - The bot understands the Dropshot game mode.
+        - `snow-day` - The bot understands the Snow Day game mode.
+        - `spike-rush` - The bot understands the Spike-Rush game mode.
+        - `heatseaker` - The bot understands the Heatseeker game mode.
+        - `memebot` - The bot has an untraditional play style.
 
 ??? example "Example `bot.toml` that runs a Python bot in a virtual environment"
 
@@ -159,9 +159,9 @@ Loadout config files, e.g. `loadout.toml`, define a bot's default loadout. They 
 
 ## Match Config Files
 
-A match configu file, e.g. `match.toml`, define a match and its settings, closely resembling `MatchConfiguration ` from the [flatbuffer schema](https://github.com/RLBot/flatbuffers-schema/blob/main/matchconfig.fbs).
+A match config file, e.g. `match.toml`, define a match and its settings, closely resembling `MatchConfiguration ` from the [flatbuffer schema](https://github.com/RLBot/flatbuffers-schema/blob/main/matchconfig.fbs).
 
-Sections and fields:
+**Sections and fields:**
 
 - `[rlbot]`
     - `launcher` - Indicates how Rocket League should be launched if it is not already running. Either `"Steam"` (default), `"Epic"`, `"Custom"` (see `launcher_arg`), or `NoLaunch`.
@@ -202,14 +202,14 @@ Sections and fields:
     - `game_event` - Additional game behaviour for custom modes. Either `"Default"`, `"Haunted"`, or `"Rugby"`.
     - `audio` - Additional audio options for custom modes. Either `"Default"` or `"Haunted"`.
 
-Car fields:
+**Car fields:**
 
 - `team` - The team of the player. Either `"Blue"`/`0` for blue or `"Orange"`/`1` for orange.
 - `type` - Determines what controls the car. Either `"RLBot"` (default), `"Human"`, or `"Psyonix"` (see `skill`), 
 - `skill` - Determines the skill level of a Psyonix bot. Either `"Beginner"`, `"Rookie"`, `"Pro"`, and `"Allstar"`.
 - `config` - A path to a [`bot.toml` config file](#bot-script-config-files). Unusued if `type` is not `"RLBot"` or `"Psyonix"`. For Psyonix bots, the config file determines name and loadout.
 
-Script fields:
+**Script fields:**
 
 - `config` - A path to a [`script.toml` config file](#bot-script-config-files).
 
