@@ -46,6 +46,9 @@ It should also be noted that whatever prefixes the `.bot.toml`/`.script.toml` fi
         - `heatseaker` - The bot understands the Heatseeker game mode.
         - `memebot` - The bot has an untraditional play style.
 
+!!! note "Psyonix Bot Presets"
+    If a Psyonix bot is not given a name, it will be a random [standard Psyonix bot](https://rocketleague.fandom.com/wiki/Bot). If a Psyonix bot's name matches a standard Psyonix bot, it will use the standard loadout of that bot unless a loadout file is specified.
+
 ??? example "Example `bot.toml` that runs a Python bot in a virtual environment"
 
     ```toml
@@ -208,6 +211,8 @@ A match config file, e.g. `match.toml`, define a match and its settings, closely
 - `type` - Determines what controls the car. Either `"RLBot"` (default), `"Human"`, or `"Psyonix"` (see `skill`), 
 - `skill` - Determines the skill level of a Psyonix bot. Either `"Beginner"`, `"Rookie"`, `"Pro"`, and `"Allstar"`.
 - `config` - A path to a [`bot.toml` config file](#bot-script-config-files). Unusued if `type` is not `"RLBot"` or `"Psyonix"`. For Psyonix bots, the config file determines name and loadout.
+- `name` - Overrides the name in `config`.
+- `loadout_file` - Overrides the loadout in `config`.
 
 **Script fields:**
 
