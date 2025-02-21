@@ -195,7 +195,7 @@ A match config file, e.g. `match.toml`, define a match and its settings, closely
     - `ball_weight` - Ball weight and how much is curves. Either `"Default"`, `"Light"`, `"Heavy"`, `"SuperLight"`, `"CurveBall"`, `"BeachBallCurve"`, or `"MagnusFutBall"`.
     - `ball_size` - Ball size. Either `"Default"`, `"Small"`, `"Medium"`, `"Large"`, or `"Gigantic"`.
     - `ball_bounciness` - Ball bounciness. Either `"Default"`, `"Low"`, `"High"`, `"SuperHigh"`, or `"LowishBounciness"`.
-    - `boost_amount` - Boost meter behaviour. Either `"NormalBoost"`, `"UnlimitedBoost"`, `"SlowRecharge"`, `"RapidRecharge"`, or `"NoBoost"`.
+    - `boost_amount` - Boost amount/recharge. Either `"NormalBoost"`, `"UnlimitedBoost"`, `"SlowRecharge"`, `"RapidRecharge"`, or `"NoBoost"`.
     - `rumble` - Rumble item rules. Either `"NoRumble"` (default), `"DefaultRumble"`, `"Slow"`, `"Civilized"`, `"DestructionDerby"`, `"SpringLoaded"`, `"SpikesOnly"`, `"SpikeRush"`, `"HauntedBallBeam"`, `"Tactical"`, or `"BatmanRumble"`.
     - `boost_strength` - Boost strength multiplier. Either `"One"` (default), `"OneAndAHalf"`, `"Two"`, `"Five"`, or `"Ten"`.
     - `gravity` - Strength of gravity. Either `"Default"`, `"Low"`, `"High"`, `"SuperHigh"`, or `"Reverse"`.
@@ -210,13 +210,13 @@ A match config file, e.g. `match.toml`, define a match and its settings, closely
 - `team` - The team of the player. Either `"Blue"`/`0` for blue or `"Orange"`/`1` for orange.
 - `type` - Determines what controls the car. Either `"RLBot"` (default), `"Human"`, or `"Psyonix"` (see `skill`), 
 - `skill` - Determines the skill level of a Psyonix bot. Either `"Beginner"`, `"Rookie"`, `"Pro"`, and `"Allstar"`.
-- `config` - A path to a [`bot.toml` config file](#bot-script-config-files). Unusued if `type` is not `"RLBot"` or `"Psyonix"`. For Psyonix bots, the config file determines name and loadout.
+- `config_file` - A path to a [`bot.toml` config file](#bot-script-config-files). Unusued if `type` is not `"RLBot"` or `"Psyonix"`. For Psyonix bots, the config file determines name and loadout.
 - `name` - Overrides the name in `config`.
 - `loadout_file` - Overrides the loadout in `config`.
 
 **Script fields:**
 
-- `config` - A path to a [`script.toml` config file](#bot-script-config-files).
+- `config_file` - A path to a [`script.toml` config file](#bot-script-config-files).
 
 ??? example "Example `match.toml` with default values + some cars and scripts"
 
@@ -238,12 +238,12 @@ A match config file, e.g. `match.toml`, define a match and its settings, closely
 
     [[cars]]
     team = 0
-    config = "atba/atba.bot.toml"
+    config_file = "atba/atba.bot.toml"
     type = "RLBot"  # Unnecessary, since it is default
 
     [[cars]]
     team = 0
-    config = "necto/bot.toml"
+    config_file = "necto/bot.toml"
 
 
     [[cars]]
