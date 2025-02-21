@@ -1882,7 +1882,7 @@ The content of config files for bots and scripts are very similar, so the file e
 <li><code>ball_weight</code> - Ball weight and how much is curves. Either <code>"Default"</code>, <code>"Light"</code>, <code>"Heavy"</code>, <code>"SuperLight"</code>, <code>"CurveBall"</code>, <code>"BeachBallCurve"</code>, or <code>"MagnusFutBall"</code>.</li>
 <li><code>ball_size</code> - Ball size. Either <code>"Default"</code>, <code>"Small"</code>, <code>"Medium"</code>, <code>"Large"</code>, or <code>"Gigantic"</code>.</li>
 <li><code>ball_bounciness</code> - Ball bounciness. Either <code>"Default"</code>, <code>"Low"</code>, <code>"High"</code>, <code>"SuperHigh"</code>, or <code>"LowishBounciness"</code>.</li>
-<li><code>boost_amount</code> - Boost meter behaviour. Either <code>"NormalBoost"</code>, <code>"UnlimitedBoost"</code>, <code>"SlowRecharge"</code>, <code>"RapidRecharge"</code>, or <code>"NoBoost"</code>.</li>
+<li><code>boost_amount</code> - Boost amount/recharge. Either <code>"NormalBoost"</code>, <code>"UnlimitedBoost"</code>, <code>"SlowRecharge"</code>, <code>"RapidRecharge"</code>, or <code>"NoBoost"</code>.</li>
 <li><code>rumble</code> - Rumble item rules. Either <code>"NoRumble"</code> (default), <code>"DefaultRumble"</code>, <code>"Slow"</code>, <code>"Civilized"</code>, <code>"DestructionDerby"</code>, <code>"SpringLoaded"</code>, <code>"SpikesOnly"</code>, <code>"SpikeRush"</code>, <code>"HauntedBallBeam"</code>, <code>"Tactical"</code>, or <code>"BatmanRumble"</code>.</li>
 <li><code>boost_strength</code> - Boost strength multiplier. Either <code>"One"</code> (default), <code>"OneAndAHalf"</code>, <code>"Two"</code>, <code>"Five"</code>, or <code>"Ten"</code>.</li>
 <li><code>gravity</code> - Strength of gravity. Either <code>"Default"</code>, <code>"Low"</code>, <code>"High"</code>, <code>"SuperHigh"</code>, or <code>"Reverse"</code>.</li>
@@ -1899,13 +1899,13 @@ The content of config files for bots and scripts are very similar, so the file e
 <li><code>team</code> - The team of the player. Either <code>"Blue"</code>/<code>0</code> for blue or <code>"Orange"</code>/<code>1</code> for orange.</li>
 <li><code>type</code> - Determines what controls the car. Either <code>"RLBot"</code> (default), <code>"Human"</code>, or <code>"Psyonix"</code> (see <code>skill</code>), </li>
 <li><code>skill</code> - Determines the skill level of a Psyonix bot. Either <code>"Beginner"</code>, <code>"Rookie"</code>, <code>"Pro"</code>, and <code>"Allstar"</code>.</li>
-<li><code>config</code> - A path to a <a href="#bot-script-config-files"><code>bot.toml</code> config file</a>. Unusued if <code>type</code> is not <code>"RLBot"</code> or <code>"Psyonix"</code>. For Psyonix bots, the config file determines name and loadout.</li>
+<li><code>config_file</code> - A path to a <a href="#bot-script-config-files"><code>bot.toml</code> config file</a>. Unusued if <code>type</code> is not <code>"RLBot"</code> or <code>"Psyonix"</code>. For Psyonix bots, the config file determines name and loadout.</li>
 <li><code>name</code> - Overrides the name in <code>config</code>.</li>
 <li><code>loadout_file</code> - Overrides the loadout in <code>config</code>.</li>
 </ul>
 <p><strong>Script fields:</strong></p>
 <ul>
-<li><code>config</code> - A path to a <a href="#bot-script-config-files"><code>script.toml</code> config file</a>.</li>
+<li><code>config_file</code> - A path to a <a href="#bot-script-config-files"><code>script.toml</code> config file</a>.</li>
 </ul>
 <details class="example">
 <summary>Example <code>match.toml</code> with default values + some cars and scripts</summary>
@@ -1926,12 +1926,12 @@ The content of config files for bots and scripts are very similar, so the file e
 <a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a>
 <a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a><span class="k">[[cars]]</span>
 <a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a><span class="n">team</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span>
-<a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a><span class="n">config</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;atba/atba.bot.toml&quot;</span>
+<a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a><span class="n">config_file</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;atba/atba.bot.toml&quot;</span>
 <a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a><span class="n">type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;RLBot&quot;</span><span class="w">  </span><span class="c1"># Unnecessary, since it is default</span>
 <a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a>
 <a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a><span class="k">[[cars]]</span>
 <a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a><span class="n">team</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span>
-<a id="__codelineno-3-23" name="__codelineno-3-23" href="#__codelineno-3-23"></a><span class="n">config</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;necto/bot.toml&quot;</span>
+<a id="__codelineno-3-23" name="__codelineno-3-23" href="#__codelineno-3-23"></a><span class="n">config_file</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;necto/bot.toml&quot;</span>
 <a id="__codelineno-3-24" name="__codelineno-3-24" href="#__codelineno-3-24"></a>
 <a id="__codelineno-3-25" name="__codelineno-3-25" href="#__codelineno-3-25"></a>
 <a id="__codelineno-3-26" name="__codelineno-3-26" href="#__codelineno-3-26"></a><span class="k">[[cars]]</span>
