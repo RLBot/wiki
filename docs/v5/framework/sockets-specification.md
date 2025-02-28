@@ -15,7 +15,7 @@ Bold items indicate the messages that bots/scripts/etc. can recieved from RLBot.
     - Received by a session after it sends `ConnectionSettings`.
 03. [StartCommand](https://github.com/RLBot/flatbuffers-schema/blob/main/rlbot.fbs#L9-L12)
     - Starts a new match after reading the given config file.
-04. **[MatchConfig](https://github.com/RLBot/flatbuffers-schema/blob/main/matchconfig.fbs#L372-L414)**
+04. **[MatchConfiguration](https://github.com/RLBot/flatbuffers-schema/blob/main/matchconfig.fbs#L372-L414)**
     - Received by a session after it sends `ConnectionSettings`.
     - Can be sent by sessions to start a new match.
 05. [PlayerInput](https://github.com/RLBot/flatbuffers-schema/blob/main/gamedata.fbs#L30-L35)
@@ -53,3 +53,57 @@ Bold items indicate the messages that bots/scripts/etc. can recieved from RLBot.
     - Contains information about the cars that the client can control.
     - Received by a session after it sends `ConnectionSettings`.
     - There may be more than one car in case the bot is a hivemind.
+
+## Connecting to RLBotServer
+
+1. Read the environment variable `RLBOT_SERVER_IP` and default to `127.0.0.1`
+1. Read the environment variable `RLBOT_SERVER_PORT` and default to `23234`
+1. Connect to the given IP/port via TCP.
+
+## Message format
+
+This project uses flatbuffers as the data format,
+prefixed with a 2 32-bit unsigned integer.
+
+- Read the first 32-bit unsigned integer. This is the data type.
+- Read the second 32-bit unsigned integer. This is `n`, the length of the flatbuffer in bytes.
+- Read `n` bytes, and deserialize this into the correct flatbuffer according to the data type.
+
+Replace "read" with "write" to send a message.
+
+## Connection handshake
+
+*After connecting to RLBotServer via TCP*, bots and scripts must perform a handshake to get access to game data.
+If this is not performed, then various functionality will be limited, for example, all player inputs will be rejected by the server.
+
+1. Send a `ConnectionSettings`
+    - The environment variable `RLBOT_AGENT_ID` will be set by RLBotServer before launching your process.
+    This can be passed as `AgentId`, or a hardcoded default can be used if the environment variable was not present.
+    A hardcoded default is useful during development when the process may be getting started manually.
+    - For bots & scripts, `CloseBetweenMatches` should always be `true` with no alternate option.
+1. Recieve match information - In no guarenteed order, wait for all of the following to arrive:
+    - `MatchConfiguration`
+    - `FieldInfo`
+    - `ControllableTeamInfo` - sent for bots & scripts. If `AgentId` was invalid or blank, this will be empty.
+    If this was intentional, continue as normal.
+1. Parse `ControllableTeamInfo` for your `team`, `index`(s), and `spawnId`(s).
+  There will be multiple if this is a bot that was designated as a hivemind.
+    - If `team` is `0` or `1`: `index` will be the index of your bot in `GamePacket`
+    - If `team` is `2`: `index` will be the index of your script in `MatchConfiguration`
+1. `spawnId` can be used to find your bot/scripts's name in `MatchConfiguration`.
+    - **DO NOT USE `index` FOR BOTS**, they are not in the correct order in `MatchConfiguration`. Using `index` is ok for scripts but `spawnId` can be used for both.
+1. Perform heavy initialization.
+    - At this point, most information needed for bots to initialize most of their variables is known.
+    Have some kind of callback that lets developers do this now.
+    RLBotServer will load the map but won't start the match while bots are initializing.
+1. Send `InitComplete`.
+  This is a message with no content, and signifies to RLBotServer that the match can be started.
+1. Done, enter main control loop
+
+## Main control loop
+
+Requires the connection handshake to have been performed first. Depending on what was sent in `ConnectionSettings`, some of the following packets may not be sent.
+
+- Every tick, `BallPrediction` will always be sent before `GamePacket`.
+  - If `BallPrediction` is not sent, it's because it was disabled in `ConnectionSettings`
+- `MatchComm` will arrive in between ticks. The sending of these messages can be disabled in `ConnectionSettings`
