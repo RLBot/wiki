@@ -64,6 +64,7 @@ Bold items indicate the messages that bots/scripts/etc. can recieved from RLBot.
 
 This project uses flatbuffers as the data format,
 prefixed with a 2 32-bit unsigned integer.
+All messages should be big endian.
 
 - Read the first 32-bit unsigned integer. This is the data type.
 - Read the second 32-bit unsigned integer. This is `n`, the length of the flatbuffer in bytes.
