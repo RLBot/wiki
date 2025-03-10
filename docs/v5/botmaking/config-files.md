@@ -170,23 +170,30 @@ A match config file, e.g. `match.toml`, define a match and its settings, closely
     - `launcher` - Indicates how Rocket League should be launched if it is not already running. Either `"Steam"` (default), `"Epic"`, `"Custom"` (see `launcher_arg`), or `NoLaunch`.
     - `launcher_arg` - Additionaly configuration to the launching method:
         - `"legendary" (Custom)` - Start Rocket League using [Legendary](https://github.com/derrod/legendary)
-    - `auto_start_bots` - Boolean. Whether bots should be started using their run command.
+    - `auto_start_bots` - Boolean (default: true). Whether bots should be started using their run command.
 - `[match]`
-    - `game_mode` - The game mode. Either `"Soccer"`, `"Hoops"`, `"Dropshot"`, `"Hockey"`, `"Rumble"`, `"Heatseeker"`, `"Gridiron"`, or `"Knockout"`. This affects a few of the game rules although many game modes can also be recreated solely from mutators. See what mutators and game mode combinations make up the official modes [here](https://github.com/VirxEC/python-interface/tree/master/tests/gamemodes).
+    - `game_mode` - The game mode. Either `"Soccer"` (default), `"Hoops"`, `"Dropshot"`, `"Hockey"`, `"Rumble"`, `"Heatseeker"`, `"Gridiron"`, or `"Knockout"`. This affects ball prediction and a few of the game rules although many game modes can also be recreated solely from mutators. See what mutators and game mode combinations make up the official modes [here](https://github.com/VirxEC/python-interface/tree/master/tests/gamemodes).
     - `game_map_upk` - The map upk file to load, e.g. `"UtopiaStadium_P"`. On Steam version of Rocket League this can be used to load custom map files, but on Epic version it only works on the Psyonix maps. Available maps can be found [here](https://github.com/VirxEC/python-interface/blob/master/rlbot/utils/maps.py).
     - `cars` - A list of players in the match. See the car section below for fields of cars.
     - `scripts` - A list of scripts in the match. See the script section below for fields of scripts.
-    - `skip_replays` - Boolean. Whether to skip goal replays.
-    - `start_without_countdown` - Boolean. Whether to start without kickoff countdown.
-    - `existing_match_behavior` - How to handle any ongoing match. Either `"RestartIfDifferent"`, `"Restart"`, `"ContinueAndSpawn"`
-    - `enable_rendering` - Boolean. Whether debug rendering is displayed.
-    - `enable_state_setting` - Boolean. Whether bots and scripts are allowed to manipulate the game state, e.g. teleporting cars and ball.
-    - `auto_save_replay` - Boolean. Whether the match replay should be saved.
-    - `freeplay` - Boolean. Whether or not to use freeplay instead of an exhibition match. This allows the players to use training keybinds, Bakkesmod plugins, and other features that are only allowed in free play.
+    - `skip_replays` - Boolean (default: false). Whether to skip goal replays.
+    - `start_without_countdown` - Boolean (default: false). Whether to start without kickoff countdown.
+    - `existing_match_behavior` - How to handle any ongoing match (if no match is running, a new one is started). Either:
+        - `"Restart"` (default): Always start a new match.
+        - `"RestartIfDifferent"`: Starts a new match unless the match configuration is completely identical to the previous one.
+        - `"ContinueAndSpawn"`: Let the match continue and spawn/despawn bots to match the new match configuration. Specifically:
+            - For each player index, if the team or agent id is different in the new match config, that player's car is despawned. Other cars are completely unaffected, and new cars are spawned for the new players.
+            - All bot and script processes are restarted, even if they control a car that is not despawned. As a consequence, the restarted process receives the updated match config.
+            - The local human player is also spawned or set to spectator based on the new match config. Additional humans are not affected due to limitations.
+            - Mutators are not affected, but debug rendering and state setting options are updated.
+    - `enable_rendering` - Boolean (default: false). Whether debug rendering is displayed.
+    - `enable_state_setting` - Boolean (default: true). Whether bots and scripts are allowed to manipulate the game state, e.g. teleporting cars and ball.
+    - `auto_save_replay` - Boolean (default false). Whether the match replay should be saved even if match is stopped early (useful when match length is unlimited).
+    - `freeplay` - Boolean(default false). Whether or not to use freeplay instead of an exhibition match. This allows the players to use training keybinds, Bakkesmod plugins, and other features that are only allowed in free play.
 - `[mutators]`
     - `match_length` - Duration of the match. Either `"FiveMinutes"` (default), `"TenMinutes"`, `"TwentyMinutes"`, or `"Unlimited"`.
     - `max_score` - Max score of match. If this score is reached, the team immediately wins. Either `"Default"`, `"OneGoal"`, `"ThreeGoals"`, `"FiveGoals"`, `"SevenGoals"`, or `"Unlimited"`.
-    - `multi_ball` - The number of balls. Either `"One"`, `"Two"`, `"Four"`, or `"Six"`.
+    - `multi_ball` - The number of balls. Either `"One"` (default), `"Two"`, `"Four"`, or `"Six"`.
     - `overtime` - The overtime rules and tiebreaker. Either `"Unlimited"` (default), `"FiveMaxFirstScore"`, or `"FiveMaxRandomTeam"`.
     - `series_length` - The series length (no effect in practice). Either `"Unlimited"` (default), `"ThreeGames"`, `"FiveGames"`, or `"SevenGames"`.
     - `game_speed` - A game speed multiplier. Either `"Default"`, `"SloMo"`, or `"TimeWarp"`.
@@ -207,7 +214,7 @@ A match config file, e.g. `match.toml`, define a match and its settings, closely
 
 **Car fields:**
 
-- `team` - The team of the player. Either `"Blue"`/`0` for blue or `"Orange"`/`1` for orange.
+- `team` - The team of the player. Either `"Blue"`/`0` for blue or `"Orange"`/`1` for orange. Default 0.
 - `type` - Determines what controls the car. Either `"RLBot"` (default), `"Human"`, or `"Psyonix"` (see `skill`), 
 - `skill` - Determines the skill level of a Psyonix bot. Either `"Beginner"`, `"Rookie"`, `"Pro"`, and `"Allstar"`.
 - `config_file` - A path to a [`bot.toml` config file](#bot-script-config-files). Unusued if `type` is not `"RLBot"` or `"Psyonix"`. For Psyonix bots, the config file determines name and loadout.
