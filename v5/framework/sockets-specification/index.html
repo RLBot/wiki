@@ -1556,6 +1556,34 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#connecting-to-rlbotserver" class="md-nav__link">
+    Connecting to RLBotServer
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#message-format" class="md-nav__link">
+    Message format
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#connection-handshake" class="md-nav__link">
+    Connection handshake
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#main-control-loop" class="md-nav__link">
+    Main control loop
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1633,6 +1661,34 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#connecting-to-rlbotserver" class="md-nav__link">
+    Connecting to RLBotServer
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#message-format" class="md-nav__link">
+    Message format
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#connection-handshake" class="md-nav__link">
+    Connection handshake
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#main-control-loop" class="md-nav__link">
+    Main control loop
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1679,7 +1735,7 @@ If anything else happens, an error should be put out.</li>
 <li>Starts a new match after reading the given config file.</li>
 </ul>
 </li>
-<li><strong><a href="https://github.com/RLBot/flatbuffers-schema/blob/main/matchconfig.fbs#L372-L414">MatchConfig</a></strong><ul>
+<li><strong><a href="https://github.com/RLBot/flatbuffers-schema/blob/main/matchconfig.fbs#L372-L414">MatchConfiguration</a></strong><ul>
 <li>Received by a session after it sends <code>ConnectionSettings</code>.</li>
 <li>Can be sent by sessions to start a new match.</li>
 </ul>
@@ -1742,6 +1798,67 @@ game messages without delay.</li>
 </ul>
 </li>
 </ol>
+<h2 id="connecting-to-rlbotserver">Connecting to RLBotServer</h2>
+<ol>
+<li>Read the environment variable <code>RLBOT_SERVER_IP</code> and default to <code>127.0.0.1</code></li>
+<li>Read the environment variable <code>RLBOT_SERVER_PORT</code> and default to <code>23234</code></li>
+<li>Connect to the given IP/port via TCP.</li>
+</ol>
+<h2 id="message-format">Message format</h2>
+<p>This project uses flatbuffers as the data format,
+prefixed with a 2 32-bit unsigned integer.
+All messages should be big endian.</p>
+<ul>
+<li>Read the first 32-bit unsigned integer. This is the data type.</li>
+<li>Read the second 32-bit unsigned integer. This is <code>n</code>, the length of the flatbuffer in bytes.</li>
+<li>Read <code>n</code> bytes, and deserialize this into the correct flatbuffer according to the data type.</li>
+</ul>
+<p>Replace "read" with "write" to send a message.</p>
+<h2 id="connection-handshake">Connection handshake</h2>
+<p><em>After connecting to RLBotServer via TCP</em>, bots and scripts must perform a handshake to get access to game data.
+If this is not performed, then various functionality will be limited, for example, all player inputs will be rejected by the server.</p>
+<ol>
+<li>Send a <code>ConnectionSettings</code><ul>
+<li>The environment variable <code>RLBOT_AGENT_ID</code> will be set by RLBotServer before launching your process.
+This can be passed as <code>AgentId</code>, or a hardcoded default can be used if the environment variable was not present.
+A hardcoded default is useful during development when the process may be getting started manually.</li>
+<li>For bots &amp; scripts, <code>CloseBetweenMatches</code> should always be <code>true</code> with no alternate option.</li>
+</ul>
+</li>
+<li>Recieve match information - In no guarenteed order, wait for all of the following to arrive:<ul>
+<li><code>MatchConfiguration</code></li>
+<li><code>FieldInfo</code></li>
+<li><code>ControllableTeamInfo</code> - sent for bots &amp; scripts. If <code>AgentId</code> was invalid or blank, this will be empty.
+If this was intentional, continue as normal.</li>
+</ul>
+</li>
+<li>Parse <code>ControllableTeamInfo</code> for your <code>team</code>, <code>index</code>(s), and <code>spawnId</code>(s).
+  There will be multiple if this is a bot that was designated as a hivemind.<ul>
+<li>If <code>team</code> is <code>0</code> or <code>1</code>: <code>index</code> will be the index of your bot in <code>GamePacket</code></li>
+<li>If <code>team</code> is <code>2</code>: <code>index</code> will be the index of your script in <code>MatchConfiguration</code></li>
+</ul>
+</li>
+<li><code>spawnId</code> can be used to find your bot/scripts's name in <code>MatchConfiguration</code>.<ul>
+<li><strong>DO NOT USE <code>index</code> FOR BOTS</strong>, they are not in the correct order in <code>MatchConfiguration</code>. Using <code>index</code> is ok for scripts but <code>spawnId</code> can be used for both.</li>
+</ul>
+</li>
+<li>Perform heavy initialization.<ul>
+<li>At this point, most information needed for bots to initialize most of their variables is known.
+Have some kind of callback that lets developers do this now.
+RLBotServer will load the map but won't start the match while bots are initializing.</li>
+</ul>
+</li>
+<li>Send <code>InitComplete</code>.
+  This is a message with no content, and signifies to RLBotServer that the match can be started.</li>
+<li>Done, enter main control loop</li>
+</ol>
+<h2 id="main-control-loop">Main control loop</h2>
+<p>Requires the connection handshake to have been performed first. Depending on what was sent in <code>ConnectionSettings</code>, some of the following packets may not be sent.</p>
+<ul>
+<li>Every tick, <code>BallPrediction</code> will always be sent before <code>GamePacket</code>.</li>
+<li>If <code>BallPrediction</code> is not sent, it's because it was disabled in <code>ConnectionSettings</code></li>
+<li><code>MatchComm</code> will arrive in between ticks. The sending of these messages can be disabled in <code>ConnectionSettings</code></li>
+</ul>
 
 
 
