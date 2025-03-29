@@ -192,25 +192,36 @@ A match config file, e.g. `match.toml`, define a match and its settings, closely
     - `freeplay` - Boolean(default false). Whether or not to use freeplay instead of an exhibition match. This allows the players to use training keybinds, Bakkesmod plugins, and other features that are only allowed in free play.
 - `[mutators]`
     - `match_length` - Duration of the match. Either `"FiveMinutes"` (default), `"TenMinutes"`, `"TwentyMinutes"`, or `"Unlimited"`.
-    - `max_score` - Max score of match. If this score is reached, the team immediately wins. Either `"Default"`, `"OneGoal"`, `"ThreeGoals"`, `"FiveGoals"`, `"SevenGoals"`, or `"Unlimited"`.
+    - `max_score` - Max score of match. If this score is reached, the team immediately wins. Either `"Default"`, `"OneGoal"`, `"ThreeGoals"`, `"FiveGoals"`, `"SevenGoals"`, `"TenGoals"`, `"TwentyGoals"`, `"ThirtyGoals"`, `"FortyGoals"`, `"FiftyGoals"`, `"SixtyGoals"`, `"SeventyGoals"`, `"EightyGoals"`, `"NinetyGoals"`, `"HundredGoals"`, or `"Unlimited"`.
     - `multi_ball` - The number of balls. Either `"One"` (default), `"Two"`, `"Four"`, or `"Six"`.
     - `overtime` - The overtime rules and tiebreaker. Either `"Unlimited"` (default), `"FiveMaxFirstScore"`, or `"FiveMaxRandomTeam"`.
-    - `series_length` - The series length (no effect in practice). Either `"Unlimited"` (default), `"ThreeGames"`, `"FiveGames"`, or `"SevenGames"`.
+    - `series_length` - The series length. Either `"Unlimited"` (default), `"ThreeGames"`, `"FiveGames"`, or `"SevenGames"`.
     - `game_speed` - A game speed multiplier. Either `"Default"`, `"SloMo"`, or `"TimeWarp"`.
     - `ball_max_speed` - Ball max speed. Either `"Default"`, `"Slow"`, `"Fast"`, or `"SuperFast"`.
-    - `ball_type` - Ball type and shape. Either `"Default"`, `"Cube"`, `"Puck"`, `"Basketball"`, `"Beachball"`, `"Anniversary"`, `"Haunted"`, `"Ekin"`, or `"SpookyCube"`.
+    - `ball_type` - Ball type and shape. Either `"Default"`, `"Cube"`, `"Puck"`, `"Basketball"`, `"Beachball"`, `"Anniversary"`, `"Haunted"`, `"Ekin"`, `"SpookyCube"`, `"Egg"`, `"PlayerSeeking"`, `"Dropshot"`, or `"ScoreAbsorb"`.
     - `ball_weight` - Ball weight and how much is curves. Either `"Default"`, `"Light"`, `"Heavy"`, `"SuperLight"`, `"CurveBall"`, `"BeachBallCurve"`, or `"MagnusFutBall"`.
     - `ball_size` - Ball size. Either `"Default"`, `"Small"`, `"Medium"`, `"Large"`, or `"Gigantic"`.
     - `ball_bounciness` - Ball bounciness. Either `"Default"`, `"Low"`, `"High"`, `"SuperHigh"`, or `"LowishBounciness"`.
     - `boost_amount` - Boost amount/recharge. Either `"NormalBoost"`, `"UnlimitedBoost"`, `"SlowRecharge"`, `"RapidRecharge"`, or `"NoBoost"`.
-    - `rumble` - Rumble item rules. Either `"NoRumble"` (default), `"DefaultRumble"`, `"Slow"`, `"Civilized"`, `"DestructionDerby"`, `"SpringLoaded"`, `"SpikesOnly"`, `"SpikeRush"`, `"HauntedBallBeam"`, `"Tactical"`, or `"BatmanRumble"`.
+    - `rumble` - Rumble item rules. Either `"NoRumble"` (default), `"DefaultRumble"`, `"Slow"`, `"Civilized"`, `"DestructionDerby"`, `"SpringLoaded"`, `"SpikesOnly"`, `"SpikeRush"`, `"HauntedBallBeam"`, `"Tactical"`, `"BatmanRumble"`, `"GrapplingOnly"`, or `"HaymakerOnly"`.
     - `boost_strength` - Boost strength multiplier. Either `"One"` (default), `"OneAndAHalf"`, `"Two"`, `"Five"`, or `"Ten"`.
     - `gravity` - Strength of gravity. Either `"Default"`, `"Low"`, `"High"`, `"SuperHigh"`, or `"Reverse"`.
-    - `demolish` - Demolition conditions. Either `"Default"`, `"Disabled"`, `"FriendlyFire"`, `"OnContact"`, or `"OnContactFF"`.
+    - `demolish` - Demolition conditions. Either `"Default"`, `"Disabled"`, `"FriendlyFire"`, `"OnContact"`, `"OnContactFF"`, `"OnBallContact"`, or `"OnBallContactFF"`.
     - `respawn_time` - Demolition respawn time. Either `"ThreeSeconds"` (default), `"TwoSeconds"`, `"OneSecond"`, or `"DisableGoalReset"`.
     - `max_time` - Max real-time duration of match including kickoff, replays, and more. If the score is tied upon time-out, the number of shots determine the winner. Either `"Default"` or `"ElevenMinutes"`.
     - `game_event` - Additional game behaviour for custom modes. Either `"Default"`, `"Haunted"`, or `"Rugby"`.
     - `audio` - Additional audio options for custom modes. Either `"Default"` or `"Haunted"`.
+    - `ball_gravity` - Ball gravity. Either `"Default"`, `"Low"`, `"High"`, or `"SuperHigh"`.
+    - `territory` - Disallow players from touching the opponents side if the field. Usually combined with `the stale_ball` mutator. Either Either `"Default"` (Off) or `"Territory"`.
+    - `stale_ball` - Disallow the ball to stay on one half of the field. Usually combined with the `territory` mutator. Either `"Default"` (Off) or `"ThirtySeconds"`.
+    - `jump` - How many times you can jump and dodge/double jump. Either `"Default"`, `"Grounded"`, `"Two"`, `"Three"`, `"Four"`, `"Unlimited"`, or `"NoJumps"`.
+    - `dodge_timer` - How long you can wait before dodging or double jumping. Either `"Default"` (1.25 seconds), `"TwoSeconds"`, `"ThreeSeconds"`, or `"Unlimited"`.
+    - `possession_score` - Modifies how often possession gives points. Specifically, the team that touched the ball most recently gains a point every *X* seconds until the other team touches the ball. Either `"Default"` (Off), `"OneSecond"`, `"TwoSeconds"`, or `"ThreeSeconds"`.
+    - `demolish_score` - Modifies how many points demolishions score. Either `"Default"` (Zero), `"One"`, `"Two"`, or `"Three"`.
+    - `normal_goal_score` - Modifies how many points a normal goal score. Either `"Default"` (One), `"Zero"`, `"Two"`, `"Three"`, `"Five"`, or `"Ten"`
+    - `aerial_goal_score` - Modifies how many points aerial goals score. Either `"Default"` (One), `"Zero"`, `"Two"`, `"Three"`, `"Five"`, or `"Ten"`.
+    - `assist_goal_score` - Modifies how many points assists score. Either `"Default"` (Zero), `"One"`, `"Two"`, or `"Three"`.
+    - `input_restriction` - Restricts player inputs. Either `"Default"` or `"Backwards"`.
 
 **Car fields:**
 
@@ -286,4 +297,15 @@ A match config file, e.g. `match.toml`, define a match and its settings, closely
     max_time = "Default"
     game_event = "Default"
     audio = "Default"
+    ball_gravity = "Default";
+    territory = "Default";
+    stale_ball = "Default";
+    jump = "Default";
+    dodge_timer = "Default";
+    possession_score = "Default";
+    demolish_score = "Default";
+    normal_goal_score = "Default";
+    aerial_goal_score = "Default";
+    assist_goal_score = "Default";
+    input_restriction = "Default";
     ```
