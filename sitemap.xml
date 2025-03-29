@@ -191,6 +191,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://wiki.rlbot.org/v5/botmaking/hiveminds/</loc>
+         <lastmod>2025-03-29</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://wiki.rlbot.org/v5/botmaking/tick-rate/</loc>
          <lastmod>2025-03-29</lastmod>
          <changefreq>daily</changefreq>

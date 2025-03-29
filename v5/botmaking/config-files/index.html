@@ -14,7 +14,7 @@
         <link rel="prev" href="../../../troubleshooting/installation-errors/">
       
       
-        <link rel="next" href="../tick-rate/">
+        <link rel="next" href="../hiveminds/">
       
       
       <link rel="icon" href="../../../assets/rlbot-logo.svg">
@@ -1373,6 +1373,26 @@
   
   
     <li class="md-nav__item">
+      <a href="../hiveminds/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hiveminds
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../tick-rate/" class="md-nav__link">
         
   
@@ -1710,6 +1730,7 @@ The content of config files for bots and scripts are very similar, so the file e
 <li><code>root_dir</code> - A path to the root directory of the bot, e.g. <code>"./bin/"</code>. The <code>run_command</code> will be run from the root directory.</li>
 <li><code>run_command</code> - The command to run the bot/script on Windows. If empty, the bot must be started manually (This may be handy during development if a default <code>agent_id</code> is coded into the bot).</li>
 <li><code>run_command_linux</code> - The command to run the bot/script on Linux.</li>
+<li><code>hivemind</code> - Boolean. Whether all bot team mates with this agent id is controlled by the same process. See <a href="v5/botmaking/hiveminds">Hiveminds</a>.</li>
 <li><code>logo_file</code> - The path to the logo file for the bot/script.</li>
 </ul>
 </li>
@@ -1883,7 +1904,7 @@ The content of config files for bots and scripts are very similar, so the file e
 </li>
 <li><code>[mutators]</code><ul>
 <li><code>match_length</code> - Duration of the match. Either <code>"FiveMinutes"</code> (default), <code>"TenMinutes"</code>, <code>"TwentyMinutes"</code>, or <code>"Unlimited"</code>.</li>
-<li><code>max_score</code> - Max score of match. If this score is reached, the team immediately wins. Either <code>"Default"</code>, <code>"OneGoal"</code>, <code>"ThreeGoals"</code>, <code>"FiveGoals"</code>, <code>"SevenGoals"</code>, <code>"TenGoals"</code>, <code>"TwentyGoals"</code>, <code>"ThirtyGoals"</code>, <code>"FortyGoals"</code>, <code>"FiftyGoals"</code>, <code>"SixtyGoals"</code>, <code>"SeventyGoals"</code>, <code>"EightyGoals"</code>, <code>"NinetyGoals"</code>, <code>"HundredGoals"</code>, or <code>"Unlimited"</code>.</li>
+<li><code>max_score</code> - Max score of match. If this score is reached, the team immediately wins. Either <code>"Unlimited"</code> (default), <code>"OneGoal"</code>, <code>"ThreeGoals"</code>, <code>"FiveGoals"</code>, <code>"SevenGoals"</code>, <code>"TenGoals"</code>, <code>"TwentyGoals"</code>, <code>"ThirtyGoals"</code>, <code>"FortyGoals"</code>, <code>"FiftyGoals"</code>, <code>"SixtyGoals"</code>, <code>"SeventyGoals"</code>, <code>"EightyGoals"</code>, <code>"NinetyGoals"</code>, or <code>"HundredGoals"</code>.</li>
 <li><code>multi_ball</code> - The number of balls. Either <code>"One"</code> (default), <code>"Two"</code>, <code>"Four"</code>, or <code>"Six"</code>.</li>
 <li><code>overtime</code> - The overtime rules and tiebreaker. Either <code>"Unlimited"</code> (default), <code>"FiveMaxFirstScore"</code>, or <code>"FiveMaxRandomTeam"</code>.</li>
 <li><code>series_length</code> - The series length. Either <code>"Unlimited"</code> (default), <code>"ThreeGames"</code>, <code>"FiveGames"</code>, or <code>"SevenGames"</code>.</li>
@@ -1894,24 +1915,24 @@ The content of config files for bots and scripts are very similar, so the file e
 <li><code>ball_size</code> - Ball size. Either <code>"Default"</code>, <code>"Small"</code>, <code>"Medium"</code>, <code>"Large"</code>, or <code>"Gigantic"</code>.</li>
 <li><code>ball_bounciness</code> - Ball bounciness. Either <code>"Default"</code>, <code>"Low"</code>, <code>"High"</code>, <code>"SuperHigh"</code>, or <code>"LowishBounciness"</code>.</li>
 <li><code>boost_amount</code> - Boost amount/recharge. Either <code>"NormalBoost"</code>, <code>"UnlimitedBoost"</code>, <code>"SlowRecharge"</code>, <code>"RapidRecharge"</code>, or <code>"NoBoost"</code>.</li>
-<li><code>rumble</code> - Rumble item rules. Either <code>"NoRumble"</code> (default), <code>"DefaultRumble"</code>, <code>"Slow"</code>, <code>"Civilized"</code>, <code>"DestructionDerby"</code>, <code>"SpringLoaded"</code>, <code>"SpikesOnly"</code>, <code>"SpikeRush"</code>, <code>"HauntedBallBeam"</code>, <code>"Tactical"</code>, <code>"BatmanRumble"</code>, <code>"GrapplingOnly"</code>, or <code>"HaymakerOnly"</code>.</li>
+<li><code>rumble</code> - Rumble item rules. Either <code>"Off"</code> (default), <code>"DefaultRumble"</code>, <code>"Slow"</code>, <code>"Civilized"</code>, <code>"DestructionDerby"</code>, <code>"SpringLoaded"</code>, <code>"SpikesOnly"</code>, <code>"SpikeRush"</code>, <code>"HauntedBallBeam"</code>, <code>"Tactical"</code>, <code>"BatmanRumble"</code>, <code>"GrapplingOnly"</code>, or <code>"HaymakerOnly"</code>.</li>
 <li><code>boost_strength</code> - Boost strength multiplier. Either <code>"One"</code> (default), <code>"OneAndAHalf"</code>, <code>"Two"</code>, <code>"Five"</code>, or <code>"Ten"</code>.</li>
 <li><code>gravity</code> - Strength of gravity. Either <code>"Default"</code>, <code>"Low"</code>, <code>"High"</code>, <code>"SuperHigh"</code>, or <code>"Reverse"</code>.</li>
 <li><code>demolish</code> - Demolition conditions. Either <code>"Default"</code>, <code>"Disabled"</code>, <code>"FriendlyFire"</code>, <code>"OnContact"</code>, <code>"OnContactFF"</code>, <code>"OnBallContact"</code>, or <code>"OnBallContactFF"</code>.</li>
 <li><code>respawn_time</code> - Demolition respawn time. Either <code>"ThreeSeconds"</code> (default), <code>"TwoSeconds"</code>, <code>"OneSecond"</code>, or <code>"DisableGoalReset"</code>.</li>
-<li><code>max_time</code> - Max real-time duration of match including kickoff, replays, and more. If the score is tied upon time-out, the number of shots determine the winner. Either <code>"Default"</code> or <code>"ElevenMinutes"</code>.</li>
+<li><code>max_time</code> - Max real-time duration of match including kickoff, replays, and more. If the score is tied upon time-out, the number of shots determine the winner. Either <code>"Unlimited"</code> (default) or <code>"ElevenMinutes"</code>.</li>
 <li><code>game_event</code> - Additional game behaviour for custom modes. Either <code>"Default"</code>, <code>"Haunted"</code>, or <code>"Rugby"</code>.</li>
 <li><code>audio</code> - Additional audio options for custom modes. Either <code>"Default"</code> or <code>"Haunted"</code>.</li>
 <li><code>ball_gravity</code> - Ball gravity. Either <code>"Default"</code>, <code>"Low"</code>, <code>"High"</code>, or <code>"SuperHigh"</code>.</li>
-<li><code>territory</code> - Disallow players from touching the opponents side if the field. Usually combined with <code>the stale_ball</code> mutator. Either Either <code>"Default"</code> (Off) or <code>"Territory"</code>.</li>
-<li><code>stale_ball</code> - Disallow the ball to stay on one half of the field. Usually combined with the <code>territory</code> mutator. Either <code>"Default"</code> (Off) or <code>"ThirtySeconds"</code>.</li>
+<li><code>territory</code> - Disallow players from touching the opponents side if the field. Usually combined with <code>the stale_ball</code> mutator. Either Either <code>"Off"</code> (default) or <code>"Territory"</code>.</li>
+<li><code>stale_ball</code> - Disallow the ball to stay on one half of the field by teleporting it to the other half after the given amount of time. Usually combined with the <code>territory</code> mutator. Either <code>"Unlimited"</code> (default) or <code>"ThirtySeconds"</code>.</li>
 <li><code>jump</code> - How many times you can jump and dodge/double jump. Either <code>"Default"</code>, <code>"Grounded"</code>, <code>"Two"</code>, <code>"Three"</code>, <code>"Four"</code>, <code>"Unlimited"</code>, or <code>"NoJumps"</code>.</li>
-<li><code>dodge_timer</code> - How long you can wait before dodging or double jumping. Either <code>"Default"</code> (1.25 seconds), <code>"TwoSeconds"</code>, <code>"ThreeSeconds"</code>, or <code>"Unlimited"</code>.</li>
-<li><code>possession_score</code> - Modifies how often possession gives points. Specifically, the team that touched the ball most recently gains a point every <em>X</em> seconds until the other team touches the ball. Either <code>"Default"</code> (Off), <code>"OneSecond"</code>, <code>"TwoSeconds"</code>, or <code>"ThreeSeconds"</code>.</li>
-<li><code>demolish_score</code> - Modifies how many points demolishions score. Either <code>"Default"</code> (Zero), <code>"One"</code>, <code>"Two"</code>, or <code>"Three"</code>.</li>
-<li><code>normal_goal_score</code> - Modifies how many points a normal goal score. Either <code>"Default"</code> (One), <code>"Zero"</code>, <code>"Two"</code>, <code>"Three"</code>, <code>"Five"</code>, or <code>"Ten"</code></li>
-<li><code>aerial_goal_score</code> - Modifies how many points aerial goals score. Either <code>"Default"</code> (One), <code>"Zero"</code>, <code>"Two"</code>, <code>"Three"</code>, <code>"Five"</code>, or <code>"Ten"</code>.</li>
-<li><code>assist_goal_score</code> - Modifies how many points assists score. Either <code>"Default"</code> (Zero), <code>"One"</code>, <code>"Two"</code>, or <code>"Three"</code>.</li>
+<li><code>dodge_timer</code> - How long you can wait before dodging or double jumping. Either <code>"OnePointTwentyFiveSeconds"</code> (default), <code>"TwoSeconds"</code>, <code>"ThreeSeconds"</code>, or <code>"Unlimited"</code>.</li>
+<li><code>possession_score</code> - Modifies how often possession gives points. Specifically, the team that touched the ball most recently gains a point every <em>X</em> seconds until the other team touches the ball. Either <code>"Off"</code> (default), <code>"OneSecond"</code>, <code>"TwoSeconds"</code>, or <code>"ThreeSeconds"</code>.</li>
+<li><code>demolish_score</code> - Modifies how many points demolishions score. Either <code>"Zero"</code> (default), <code>"One"</code>, <code>"Two"</code>, or <code>"Three"</code>.</li>
+<li><code>normal_goal_score</code> - Modifies how many points a normal goal score. Either <code>"One"</code> (default), <code>"Zero"</code>, <code>"Two"</code>, <code>"Three"</code>, <code>"Five"</code>, or <code>"Ten"</code></li>
+<li><code>aerial_goal_score</code> - Modifies how many points aerial goals score. Either <code>"One"</code> (default), <code>"Zero"</code>, <code>"Two"</code>, <code>"Three"</code>, <code>"Five"</code>, or <code>"Ten"</code>.</li>
+<li><code>assist_goal_score</code> - Modifies how many points assists score. Either <code>"Zero"</code> (default), <code>"One"</code>, <code>"Two"</code>, or <code>"Three"</code>.</li>
 <li><code>input_restriction</code> - Restricts player inputs. Either <code>"Default"</code> or <code>"Backwards"</code>.</li>
 </ul>
 </li>
@@ -1971,7 +1992,7 @@ The content of config files for bots and scripts are very similar, so the file e
 <a id="__codelineno-3-38" name="__codelineno-3-38" href="#__codelineno-3-38"></a><span class="k">[mutators]</span>
 <a id="__codelineno-3-39" name="__codelineno-3-39" href="#__codelineno-3-39"></a><span class="c1"># All mutators with default values</span>
 <a id="__codelineno-3-40" name="__codelineno-3-40" href="#__codelineno-3-40"></a><span class="n">match_length</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;FiveMinutes&quot;</span>
-<a id="__codelineno-3-41" name="__codelineno-3-41" href="#__codelineno-3-41"></a><span class="n">max_score</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Default&quot;</span>
+<a id="__codelineno-3-41" name="__codelineno-3-41" href="#__codelineno-3-41"></a><span class="n">max_score</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Unlimited&quot;</span>
 <a id="__codelineno-3-42" name="__codelineno-3-42" href="#__codelineno-3-42"></a><span class="n">multi_ball</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;One&quot;</span>
 <a id="__codelineno-3-43" name="__codelineno-3-43" href="#__codelineno-3-43"></a><span class="n">overtime</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Unlimited&quot;</span>
 <a id="__codelineno-3-44" name="__codelineno-3-44" href="#__codelineno-3-44"></a><span class="n">game_speed</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Default&quot;</span>
@@ -1981,24 +2002,24 @@ The content of config files for bots and scripts are very similar, so the file e
 <a id="__codelineno-3-48" name="__codelineno-3-48" href="#__codelineno-3-48"></a><span class="n">ball_size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Default&quot;</span>
 <a id="__codelineno-3-49" name="__codelineno-3-49" href="#__codelineno-3-49"></a><span class="n">ball_bounciness</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Default&quot;</span>
 <a id="__codelineno-3-50" name="__codelineno-3-50" href="#__codelineno-3-50"></a><span class="n">boost_amount</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;NormalBoost&quot;</span>
-<a id="__codelineno-3-51" name="__codelineno-3-51" href="#__codelineno-3-51"></a><span class="n">rumble</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;NoRumble&quot;</span>
+<a id="__codelineno-3-51" name="__codelineno-3-51" href="#__codelineno-3-51"></a><span class="n">rumble</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Off&quot;</span>
 <a id="__codelineno-3-52" name="__codelineno-3-52" href="#__codelineno-3-52"></a><span class="n">boost_strength</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;One&quot;</span>
 <a id="__codelineno-3-53" name="__codelineno-3-53" href="#__codelineno-3-53"></a><span class="n">gravity</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Default&quot;</span>
 <a id="__codelineno-3-54" name="__codelineno-3-54" href="#__codelineno-3-54"></a><span class="n">demolish</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Default&quot;</span>
 <a id="__codelineno-3-55" name="__codelineno-3-55" href="#__codelineno-3-55"></a><span class="n">respawn_time</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;ThreeSeconds&quot;</span>
-<a id="__codelineno-3-56" name="__codelineno-3-56" href="#__codelineno-3-56"></a><span class="n">max_time</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Default&quot;</span>
+<a id="__codelineno-3-56" name="__codelineno-3-56" href="#__codelineno-3-56"></a><span class="n">max_time</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Unlimited&quot;</span>
 <a id="__codelineno-3-57" name="__codelineno-3-57" href="#__codelineno-3-57"></a><span class="n">game_event</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Default&quot;</span>
 <a id="__codelineno-3-58" name="__codelineno-3-58" href="#__codelineno-3-58"></a><span class="n">audio</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Default&quot;</span>
 <a id="__codelineno-3-59" name="__codelineno-3-59" href="#__codelineno-3-59"></a><span class="n">ball_gravity</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Default&quot;</span><span class="err">;</span>
-<a id="__codelineno-3-60" name="__codelineno-3-60" href="#__codelineno-3-60"></a><span class="n">territory</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Default&quot;</span><span class="err">;</span>
-<a id="__codelineno-3-61" name="__codelineno-3-61" href="#__codelineno-3-61"></a><span class="n">stale_ball</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Default&quot;</span><span class="err">;</span>
+<a id="__codelineno-3-60" name="__codelineno-3-60" href="#__codelineno-3-60"></a><span class="n">territory</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Off&quot;</span><span class="err">;</span>
+<a id="__codelineno-3-61" name="__codelineno-3-61" href="#__codelineno-3-61"></a><span class="n">stale_ball</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Unlimited&quot;</span><span class="err">;</span>
 <a id="__codelineno-3-62" name="__codelineno-3-62" href="#__codelineno-3-62"></a><span class="n">jump</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Default&quot;</span><span class="err">;</span>
-<a id="__codelineno-3-63" name="__codelineno-3-63" href="#__codelineno-3-63"></a><span class="n">dodge_timer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Default&quot;</span><span class="err">;</span>
-<a id="__codelineno-3-64" name="__codelineno-3-64" href="#__codelineno-3-64"></a><span class="n">possession_score</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Default&quot;</span><span class="err">;</span>
-<a id="__codelineno-3-65" name="__codelineno-3-65" href="#__codelineno-3-65"></a><span class="n">demolish_score</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Default&quot;</span><span class="err">;</span>
-<a id="__codelineno-3-66" name="__codelineno-3-66" href="#__codelineno-3-66"></a><span class="n">normal_goal_score</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Default&quot;</span><span class="err">;</span>
-<a id="__codelineno-3-67" name="__codelineno-3-67" href="#__codelineno-3-67"></a><span class="n">aerial_goal_score</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Default&quot;</span><span class="err">;</span>
-<a id="__codelineno-3-68" name="__codelineno-3-68" href="#__codelineno-3-68"></a><span class="n">assist_goal_score</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Default&quot;</span><span class="err">;</span>
+<a id="__codelineno-3-63" name="__codelineno-3-63" href="#__codelineno-3-63"></a><span class="n">dodge_timer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;OnePointTwentyFiveSeconds&quot;</span><span class="err">;</span>
+<a id="__codelineno-3-64" name="__codelineno-3-64" href="#__codelineno-3-64"></a><span class="n">possession_score</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Off&quot;</span><span class="err">;</span>
+<a id="__codelineno-3-65" name="__codelineno-3-65" href="#__codelineno-3-65"></a><span class="n">demolish_score</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Zero&quot;</span><span class="err">;</span>
+<a id="__codelineno-3-66" name="__codelineno-3-66" href="#__codelineno-3-66"></a><span class="n">normal_goal_score</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;One&quot;</span><span class="err">;</span>
+<a id="__codelineno-3-67" name="__codelineno-3-67" href="#__codelineno-3-67"></a><span class="n">aerial_goal_score</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;One&quot;</span><span class="err">;</span>
+<a id="__codelineno-3-68" name="__codelineno-3-68" href="#__codelineno-3-68"></a><span class="n">assist_goal_score</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Zero&quot;</span><span class="err">;</span>
 <a id="__codelineno-3-69" name="__codelineno-3-69" href="#__codelineno-3-69"></a><span class="n">input_restriction</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Default&quot;</span><span class="err">;</span>
 </code></pre></div>
 </details>
@@ -2040,13 +2061,13 @@ The content of config files for bots and scripts are very similar, so the file e
         
         
           
-          <a href="../tick-rate/" class="md-footer__link md-footer__link--next" aria-label="Next: Tick rate">
+          <a href="../hiveminds/" class="md-footer__link md-footer__link--next" aria-label="Next: Hiveminds">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Tick rate
+                Hiveminds
               </div>
             </div>
             <div class="md-footer__button md-icon">
