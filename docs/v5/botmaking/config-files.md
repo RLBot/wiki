@@ -28,6 +28,7 @@ It should also be noted that whatever prefixes the `.bot.toml`/`.script.toml` fi
     - `root_dir` - A path to the root directory of the bot, e.g. `"./bin/"`. The `run_command` will be run from the root directory.
     - `run_command` - The command to run the bot/script on Windows. If empty, the bot must be started manually (This may be handy during development if a default `agent_id` is coded into the bot).
     - `run_command_linux` - The command to run the bot/script on Linux.
+    - `hivemind` - Boolean. Whether all bot team mates with this agent id is controlled by the same process. See [Hiveminds](v5/botmaking/hiveminds).
     - `logo_file` - The path to the logo file for the bot/script.
 - `[details]` - Used only by the GUI
     - `description` - A description of the bot/script.
