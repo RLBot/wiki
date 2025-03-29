@@ -22,7 +22,7 @@
     
     
       
-        <title>RLBot architecture - RLBot Wiki</title>
+        <title>Architecture - RLBot Wiki</title>
       
     
     
@@ -79,7 +79,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#rlbot-architecture" class="md-skip">
+        <a href="#architecture" class="md-skip">
           Skip to content
         </a>
       
@@ -114,7 +114,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              RLBot architecture
+              Architecture
             
           </span>
         </div>
@@ -1457,7 +1457,7 @@
           
   
   <span class="md-ellipsis">
-    RLBot architecture
+    Architecture
   </span>
   
 
@@ -1468,7 +1468,7 @@
         
   
   <span class="md-ellipsis">
-    RLBot architecture
+    Architecture
   </span>
   
 
@@ -1656,8 +1656,27 @@
   
 
 
-<h1 id="rlbot-architecture">RLBot architecture</h1>
+<h1 id="architecture">Architecture</h1>
+<p>This is the basic overview of RLBot in use.</p>
+<p><img alt="" src="/img/architecture/v5_architecture_overview.svg" /></p>
+<!-- Can be edited and downloaded at https://docs.google.com/drawings/d/1IdhJbJXvvJvwMWfuOXo3woofvGVA8N1aVxgHf9o0mXU/edit?usp=sharing -->
+
+<p>Matches are typically started by RLBotGUI, CleoPetra, or some other match orchestrator.
+The match orchestrator may start up the RLBotServer, if needed.
+Once the RLBotServer receives a MatchConfiguration, it will start up Rocket League with the <code>-rlbot</code> flag (if needed) and then the bot and script processes.
+RLBotServer communicates with Rocket League through the official Psyonix API. Since the API is under NDA, a closed-source Bridge.dll hide the details of the API.
+On startup bots and scripts connect to the RLBotServer and are briefed about the match, their index, and more.
+Once the match is loaded, RLBotServer will send live game data to all connected clients, and optionally ball prediction and match comms.
+Each bot client control their car(s) by responding to each GamePacket with PlayerInput.
+To ease the implementation of bots, scripts, and match orchestrators, we provide interface libraries for various languages.</p>
+<p>All client connections use TCP sockets. See the <a href="/v5/framework/sockets-specification">socket protocol specification</a> for more details.</p>
+<div class="admonition info">
+<p class="admonition-title">Compiled clients</p>
+<p>A bot/script does not have to be compiled to interact with RLBot.
+However, bots distributed in the RLBotPack is typically compiled, so users can avoid installing various dependencies.</p>
+</div>
 <h2 id="core">Core</h2>
+<p>A detailed depiction of the architecture of the RLBotServer including the communication with a client is seen below.</p>
 <p><img alt="" src="/img/architecture/v5_diagram.png" /></p>
 <!-- The original drawio version of the above diagram can be found at `/img/achitecture/v5_diagram.drawio`-->
 
