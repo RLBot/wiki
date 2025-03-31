@@ -8,28 +8,28 @@
       
       
       
-        <link rel="canonical" href="https://wiki.rlbot.org/framework/psyonix-api-notes/">
+        <link rel="canonical" href="https://wiki.rlbot.org/v5/botmaking/matchcomms/">
       
       
-        <link rel="prev" href="../operating-system-support/">
+        <link rel="prev" href="../hiveminds/">
       
       
-        <link rel="next" href="../sockets-specification/">
+        <link rel="next" href="../tick-rate/">
       
       
-      <link rel="icon" href="../../assets/rlbot-logo.svg">
+      <link rel="icon" href="../../../assets/rlbot-logo.svg">
       <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.4">
     
     
       
-        <title>Psyonix api notes - RLBot Wiki</title>
+        <title>Match communication - RLBot Wiki</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.bd3936ea.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.bd3936ea.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.356b1318.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.356b1318.min.css">
       
       
 
@@ -48,9 +48,9 @@
       
     
     
-      <link rel="stylesheet" href="../../stylesheets/extra.css">
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
     
-    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -79,7 +79,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#details" class="md-skip">
+        <a href="#match-communication" class="md-skip">
           Skip to content
         </a>
       
@@ -95,9 +95,9 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="RLBot Wiki" class="md-header__button md-logo" aria-label="RLBot Wiki" data-md-component="logo">
+    <a href="../../.." title="RLBot Wiki" class="md-header__button md-logo" aria-label="RLBot Wiki" data-md-component="logo">
       
-  <img src="../../assets/rlbot-logo.svg" alt="logo">
+  <img src="../../../assets/rlbot-logo.svg" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -114,7 +114,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Psyonix api notes
+              Match communication
             
           </span>
         </div>
@@ -224,9 +224,9 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="RLBot Wiki" class="md-nav__button md-logo" aria-label="RLBot Wiki" data-md-component="logo">
+    <a href="../../.." title="RLBot Wiki" class="md-nav__button md-logo" aria-label="RLBot Wiki" data-md-component="logo">
       
-  <img src="../../assets/rlbot-logo.svg" alt="logo">
+  <img src="../../../assets/rlbot-logo.svg" alt="logo">
 
     </a>
     RLBot Wiki
@@ -252,7 +252,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../.." class="md-nav__link">
+      <a href="../../.." class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -309,7 +309,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../botmaking/ball-path-prediction/" class="md-nav__link">
+      <a href="../../../botmaking/ball-path-prediction/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -329,7 +329,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../botmaking/bot-customization/" class="md-nav__link">
+      <a href="../../../botmaking/bot-customization/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -349,7 +349,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../botmaking/config-file-documenation/" class="md-nav__link">
+      <a href="../../../botmaking/config-file-documenation/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -369,7 +369,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../botmaking/dropshot/" class="md-nav__link">
+      <a href="../../../botmaking/dropshot/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -389,7 +389,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../botmaking/hoops/" class="md-nav__link">
+      <a href="../../../botmaking/hoops/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -409,7 +409,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../botmaking/input-and-output-data/" class="md-nav__link">
+      <a href="../../../botmaking/input-and-output-data/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -429,7 +429,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../botmaking/jumping-physics/" class="md-nav__link">
+      <a href="../../../botmaking/jumping-physics/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -449,7 +449,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../botmaking/machine-learning-faq/" class="md-nav__link">
+      <a href="../../../botmaking/machine-learning-faq/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -469,7 +469,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../botmaking/manipulating-game-state/" class="md-nav__link">
+      <a href="../../../botmaking/manipulating-game-state/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -489,7 +489,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../botmaking/matchcomms/" class="md-nav__link">
+      <a href="../../../botmaking/matchcomms/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -509,7 +509,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../botmaking/quickchat/" class="md-nav__link">
+      <a href="../../../botmaking/quickchat/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -529,7 +529,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../botmaking/rendering/" class="md-nav__link">
+      <a href="../../../botmaking/rendering/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -549,7 +549,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../botmaking/scripts/" class="md-nav__link">
+      <a href="../../../botmaking/scripts/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -569,7 +569,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../botmaking/shooting-the-ball-towards-or-away-from-a-target/" class="md-nav__link">
+      <a href="../../../botmaking/shooting-the-ball-towards-or-away-from-a-target/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -589,7 +589,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../botmaking/team-match-communication-protocol/" class="md-nav__link">
+      <a href="../../../botmaking/team-match-communication-protocol/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -609,7 +609,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../botmaking/tick-rate/" class="md-nav__link">
+      <a href="../../../botmaking/tick-rate/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -629,7 +629,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../botmaking/useful-game-values/" class="md-nav__link">
+      <a href="../../../botmaking/useful-game-values/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -694,7 +694,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../community/air-show/" class="md-nav__link">
+      <a href="../../../community/air-show/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -714,7 +714,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../community/community-guidelines/" class="md-nav__link">
+      <a href="../../../community/community-guidelines/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -734,7 +734,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../community/rlbot-pack/" class="md-nav__link">
+      <a href="../../../community/rlbot-pack/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -754,7 +754,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../community/rocket-league-story-mode/" class="md-nav__link">
+      <a href="../../../community/rocket-league-story-mode/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -774,7 +774,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../community/tips-for-running-tournaments/" class="md-nav__link">
+      <a href="../../../community/tips-for-running-tournaments/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -799,20 +799,20 @@
       
   
   
-    
-  
   
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
         
           
           <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
@@ -826,7 +826,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             Framework
@@ -839,7 +839,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../architecture/" class="md-nav__link">
+      <a href="../../../framework/architecture/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -859,7 +859,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../console-commands/" class="md-nav__link">
+      <a href="../../../framework/console-commands/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -879,7 +879,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../operating-system-support/" class="md-nav__link">
+      <a href="../../../framework/operating-system-support/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -897,27 +897,9 @@
                 
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Psyonix api notes
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../../framework/psyonix-api-notes/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -926,72 +908,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#details" class="md-nav__link">
-    Details
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#what-you-can-expect-from-this-new-version-of-rlbot-v4" class="md-nav__link">
-    What you can expect from this new version of RLBot (v4)
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#what-you-can-look-forward-to-in-the-future" class="md-nav__link">
-    What you can look forward to in the future
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#regarding-bugs" class="md-nav__link">
-    Regarding Bugs
-  </a>
-  
-    <nav class="md-nav" aria-label="Regarding Bugs">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#rollback-instructions" class="md-nav__link">
-    Rollback Instructions
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#thanks" class="md-nav__link">
-    Thanks
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1003,7 +919,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../sockets-specification/" class="md-nav__link">
+      <a href="../../../framework/sockets-specification/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1023,7 +939,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../supported-programming-languages/" class="md-nav__link">
+      <a href="../../../framework/supported-programming-languages/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1043,7 +959,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../v5/" class="md-nav__link">
+      <a href="../../../framework/v5/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1108,7 +1024,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../miscellaneous/extracting-map-meshes/" class="md-nav__link">
+      <a href="../../../miscellaneous/extracting-map-meshes/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1128,7 +1044,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../miscellaneous/lan-setup/" class="md-nav__link">
+      <a href="../../../miscellaneous/lan-setup/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1148,7 +1064,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../miscellaneous/missing-pages/" class="md-nav__link">
+      <a href="../../../miscellaneous/missing-pages/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1168,7 +1084,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../miscellaneous/rlbot-specific-game-settings/" class="md-nav__link">
+      <a href="../../../miscellaneous/rlbot-specific-game-settings/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1188,7 +1104,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../miscellaneous/workshop-custom-maps/" class="md-nav__link">
+      <a href="../../../miscellaneous/workshop-custom-maps/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1253,7 +1169,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../troubleshooting/antivirus-notes/" class="md-nav__link">
+      <a href="../../../troubleshooting/antivirus-notes/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1273,7 +1189,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../troubleshooting/installation-errors/" class="md-nav__link">
+      <a href="../../../troubleshooting/installation-errors/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1298,20 +1214,20 @@
       
   
   
+    
+  
   
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
         
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
         
           
           <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
@@ -1325,7 +1241,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_7">
             <span class="md-nav__icon md-icon"></span>
             V5
@@ -1338,7 +1254,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../v5/" class="md-nav__link">
+      <a href="../../" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1356,20 +1272,20 @@
                 
   
   
+    
+  
   
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
         
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_2" checked>
         
           
           <label class="md-nav__link" for="__nav_7_2" id="__nav_7_2_label" tabindex="0">
@@ -1383,7 +1299,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_7_2">
             <span class="md-nav__icon md-icon"></span>
             Botmaking
@@ -1396,7 +1312,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../v5/botmaking/ball-path-prediction/" class="md-nav__link">
+      <a href="../ball-path-prediction/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1416,7 +1332,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../v5/botmaking/config-files/" class="md-nav__link">
+      <a href="../config-files/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1436,7 +1352,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../v5/botmaking/hiveminds/" class="md-nav__link">
+      <a href="../hiveminds/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1454,9 +1370,29 @@
                 
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../v5/botmaking/matchcomms/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Match communication
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -1465,6 +1401,47 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#message-structure" class="md-nav__link">
+    Message structure
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#language-specific-wikis" class="md-nav__link">
+    Language-specific wikis
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quick-chat" class="md-nav__link">
+    Quick chat
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1476,7 +1453,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../v5/botmaking/tick-rate/" class="md-nav__link">
+      <a href="../tick-rate/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1542,7 +1519,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../v5/community/rlbot-pack/" class="md-nav__link">
+      <a href="../../community/rlbot-pack/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1608,7 +1585,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../v5/framework/architecture/" class="md-nav__link">
+      <a href="../../framework/architecture/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1628,7 +1605,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../v5/framework/console-commands/" class="md-nav__link">
+      <a href="../../framework/console-commands/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1648,7 +1625,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../v5/framework/operating-system-support/" class="md-nav__link">
+      <a href="../../framework/operating-system-support/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1668,7 +1645,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../v5/framework/remote-rlbot/" class="md-nav__link">
+      <a href="../../framework/remote-rlbot/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1688,7 +1665,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../v5/framework/sockets-specification/" class="md-nav__link">
+      <a href="../../framework/sockets-specification/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1708,7 +1685,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../v5/framework/v5/" class="md-nav__link">
+      <a href="../../framework/v5/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1754,6 +1731,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -1762,49 +1741,22 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#details" class="md-nav__link">
-    Details
+  <a href="#message-structure" class="md-nav__link">
+    Message structure
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#what-you-can-expect-from-this-new-version-of-rlbot-v4" class="md-nav__link">
-    What you can expect from this new version of RLBot (v4)
+  <a href="#language-specific-wikis" class="md-nav__link">
+    Language-specific wikis
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#what-you-can-look-forward-to-in-the-future" class="md-nav__link">
-    What you can look forward to in the future
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#regarding-bugs" class="md-nav__link">
-    Regarding Bugs
-  </a>
-  
-    <nav class="md-nav" aria-label="Regarding Bugs">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#rollback-instructions" class="md-nav__link">
-    Rollback Instructions
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#thanks" class="md-nav__link">
-    Thanks
+  <a href="#quick-chat" class="md-nav__link">
+    Quick chat
   </a>
   
 </li>
@@ -1824,7 +1776,7 @@
                   
 
   
-    <a href="https://github.com/RLBot/wiki/edit/main/docs/framework/psyonix-api-notes.md" title="Edit this page" class="md-content__button md-icon">
+    <a href="https://github.com/RLBot/wiki/edit/main/docs/v5/botmaking/matchcomms.md" title="Edit this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z"/></svg>
     </a>
@@ -1832,59 +1784,94 @@
   
 
 
-  <h1>Psyonix api notes</h1>
-
-<p>Hello everyone! We're proud to announce that the Psyonix bot API has finally been integrated into RLBot! We hope you're just as excited as we are about this milestone! 🎉</p>
-<h2 id="details">Details</h2>
-<p>Check out this diagram to get some intuition for this migration. Everything on the left staying the same or as close to the same as possible, so your bots are expected to keep working with no changes required!</p>
-<p><img alt="" src="/img/psyonix-api-notes/details.png" /></p>
-<h2 id="what-you-can-expect-from-this-new-version-of-rlbot-v4">What you can expect from this new version of RLBot (v4)</h2>
-<p>We're aiming for a backwards compatibility with this first bot API release, so expect your bots to play almost exactly like they used to!</p>
+<h1 id="match-communication">Match communication</h1>
+<p>MatchComms enables communication between participants in a match.</p>
+<p>Use cases:</p>
 <ul>
-<li>The renderer now has occlusion, so 3D lines disappear behind objects correctly!</li>
-<li>You can still use state setting, except:<ul>
-<li>Can’t manipulate boost pads</li>
-<li>Can’t mess with the car’s jump state</li>
-<li>Can’t provide partial location / velocity, must fully specify</li>
+<li>Telling your teammate where you intend to go</li>
+<li>Setting parameters on bots in a training exercise</li>
+<li>Displaying messages to humans</li>
 </ul>
-</li>
-<li>The GameTickPacket will have all the same data except:<ul>
-<li>It will have non-interpolated values straight from the physics engine, same as RigidBodyTick!</li>
-<li>Latest ball touch will always be blank for now (fixed)</li>
-<li>Boost respawn timers don't work yet</li>
-</ul>
-</li>
-<li>Unfortunately, quick chat is not supported yet (1/2 fixed)</li>
-<li>We only support Soccer, exhibition mode at the moment. (More modes are supported)</li>
-<li>The game data will currently update in memory at 60Hz, ~~regardless of Rocket League's frame rate~~ (anecdotally it seems to be capped at the frame rate). We may be able to tune that later. (We now have 120hz)</li>
-<li>The Psyonix API itself and the code that interfaces with it directly are closed source at the moment.</li>
-</ul>
-<h2 id="what-you-can-look-forward-to-in-the-future">What you can look forward to in the future</h2>
+<h2 id="message-structure">Message structure</h2>
+<p><a href="https://github.com/RLBot/flatbuffers-schema/blob/main/comms.fbs#L3-L22">The <code>MatchComm</code> flatbuffer</a> defines the data in each message:</p>
 <ul>
-<li>No more breaking after updates! Since RLBot no longer relies on DLL injection, RLBot will continue to work after every Rocket League update.</li>
-<li>LAN support is a possibility in the future. With a virtual LAN (VLAN), this could mean being able to play against bots on different machines over the internet, with your friends!</li>
-<li>Support for Linux and macOS is planned! (C++ and C# bots won't work)</li>
-<li>Rumble support is planned. Bots will be able to take part in the mayhem! (Done)</li>
-<li>Unrelated to the API:<ul>
-<li>DomNomNom is working on a team communication system for bots. (Done)</li>
-<li>Chip is working on advanced pathfinding for bots.</li>
+<li><code>index</code> - The index of the player that sent this message. For scripts, this value is the index in the match configuration instead.</li>
+<li><code>team</code> - The team of the player that sent this message. <code>0</code> for blue, <code>1</code> for orange and <code>2</code> for scripts.</li>
+<li><code>team_only</code> - <code>true</code> if this message is team-only, <code>false</code> if everyone can see it. Messages marked as <code>team_only</code> will only be sent to processes with the same <code>team</code>.</li>
+<li><code>display</code> - The message that will be displayed on the screen in quick chat. This is intended for communication with humans. Use the <code>content</code> field for communication with bots and scripts.</li>
+<li><code>content</code> - The contents of the message. Use the <code>display</code> field for messages in quick chat.</li>
 </ul>
-</li>
-</ul>
-<h2 id="regarding-bugs">Regarding Bugs</h2>
-<p>This is a lot buggier than a normal release--RLBot broke due to a Rocket League patch and we chose to move forward with the official API rather than fix our old injection technique. Sorry for the bugs / missing features!</p>
-<p>Please test out your bots and report any bugs to #issues-and-bugs or the GitHub repository's Issues page: https://github.com/RLBot/RLBot/issues. We appreciate all the help we can get!</p>
-<p>List of Busted Bots</p>
+<h2 id="language-specific-wikis">Language-specific wikis</h2>
 <ul>
-<li>NV Derevo, on some computers</li>
+<li><a href="https://github.com/RLBot/python-interface/wiki/Match-Comm">Python</a></li>
 </ul>
-<h3 id="rollback-instructions">Rollback Instructions</h3>
-<p>If it's a serious problem for you, you can roll back your Rocket League and use our old 1.14.12 version. Note that while you're on the old Rocket League, you will be unable to play online!</p>
-<p>You can do it by clicking steam://nav/console and then entering <code>download_depot 252950 252951 6062228629972172324</code>. Then read https://www.reddit.com/r/Steam/comments/611h5e/guide_how_to_download_older_versions_of_a_game_on/ starting with step 7.</p>
-<p><em>And then</em>, once you're done with that, you'll need to pin your rlbot version to 1.14.12. If you're using the old GUI, you can accomplish that by changing this line https://github.com/RLBot/RLBotPythonExample/blob/master/requirements.txt#L3 to <code>rlbot==1.14.12</code>.</p>
-<p>If you're using the new colorful RLBotGUI, you'll need to go find rlbot-requirements.txt in the vicinity of <code>C:\Users\yourname\AppData\Local\RLBotGUI\rlbot-requirements.txt</code> and do the change there.</p>
-<h2 id="thanks">Thanks</h2>
-<p>Thank you to everyone for sticking with the community! Of course, a massive thank you to Psyonix for supporting us and giving us the API! We can't wait to see RLBot evolve further!</p>
+<h2 id="quick-chat">Quick chat</h2>
+<p>In RLBot v4, bots could send various preset messages using quick chat. This has been replaced by the <code>display</code> field in v5's MatchComms.</p>
+<p>The following v4 quick chats map to these messages in v5:</p>
+<ul>
+<li><code>Information_IGotIt = "I got it!"</code></li>
+<li><code>Information_NeedBoost = "Need Boost!"</code></li>
+<li><code>Information_TakeTheShot = "Take the shot!"</code></li>
+<li><code>Information_Defending = "Defending..."</code></li>
+<li><code>Information_GoForIt = "Go for it!"</code></li>
+<li><code>Information_Centering = "Centering!"</code></li>
+<li><code>Information_AllYours = "All yours."</code></li>
+<li><code>Information_InPosition = "In position."</code></li>
+<li><code>Information_Incoming = "Incoming!"</code></li>
+<li><code>Compliments_NiceShot = "Nice shot!"</code></li>
+<li><code>Compliments_GreatPass = "Great pass!"</code></li>
+<li><code>Compliments_Thanks = "Thanks!"</code></li>
+<li><code>Compliments_WhatASave = "What a save!"</code></li>
+<li><code>Compliments_NiceOne = "Nice one!"</code></li>
+<li><code>Compliments_WhatAPlay = "What a play!"</code></li>
+<li><code>Compliments_GreatClear = "Great clear!"</code></li>
+<li><code>Compliments_NiceBlock = "Nice block!"</code></li>
+<li><code>Reactions_OMG = "OMG!"</code></li>
+<li><code>Reactions_Noooo = "Noooo!"</code></li>
+<li><code>Reactions_Wow = "Wow!"</code></li>
+<li><code>Reactions_CloseOne = "Close one!"</code></li>
+<li><code>Reactions_NoWay = "No way!"</code></li>
+<li><code>Reactions_HolyCow = "Holy cow!"</code></li>
+<li><code>Reactions_Whew = "Whew."</code></li>
+<li><code>Reactions_Siiiick = "Siiiick!"</code></li>
+<li><code>Reactions_Calculated = "Calculated."</code></li>
+<li><code>Reactions_Savage = "Savage!"</code></li>
+<li><code>Reactions_Okay = "Okay."</code></li>
+<li><code>Apologies_Cursing = "$#@%!"</code></li>
+<li><code>Apologies_NoProblem = "No problem."</code></li>
+<li><code>Apologies_Whoops = "Whoops..."</code></li>
+<li><code>Apologies_Sorry = "Sorry!"</code></li>
+<li><code>Apologies_MyBad = "My bad..."</code></li>
+<li><code>Apologies_Oops = "Oops!"</code></li>
+<li><code>Apologies_MyFault = "My fault."</code></li>
+<li><code>PostGame_Gg = "gg"</code></li>
+<li><code>PostGame_WellPlayed = "Well played."</code></li>
+<li><code>PostGame_ThatWasFun = "That was fun!"</code></li>
+<li><code>PostGame_Rematch = "Rematch!"</code></li>
+<li><code>PostGame_OneMoreGame = "One. More. Game."</code></li>
+<li><code>PostGame_WhatAGame = "What a game!"</code></li>
+<li><code>PostGame_NiceMoves = "Nice moves."</code></li>
+<li><code>PostGame_EverybodyDance = "Everybody dance!"</code></li>
+<li><code>Custom_Toxic_WasteCPU = "Waste of CPU cycles"</code></li>
+<li><code>Custom_Toxic_GitGut = "git gud"</code></li>
+<li><code>Custom_Toxic_DeAlloc = "De-Allocate Yourself"</code></li>
+<li><code>Custom_Toxic_404NoSkill = "404: Your skill not found"</code></li>
+<li><code>Custom_Toxic_CatchVirus = "Get a virus"</code></li>
+<li><code>Custom_Useful_Passing = "Passing!"</code></li>
+<li><code>Custom_Useful_Faking = "Faking"</code></li>
+<li><code>Custom_Useful_Demoing = "Demoing!"</code></li>
+<li><code>Custom_Useful_Bumping = "BOOPING"</code></li>
+<li><code>Custom_Compliments_TinyChances = "The chances of that was 47525 to 1"</code></li>
+<li><code>Custom_Compliments_SkillLevel = "Who upped your skill level?"</code></li>
+<li><code>Custom_Compliments_proud = "Your programmer should be proud"</code></li>
+<li><code>Custom_Compliments_GC = "You're the GC of Bots"</code></li>
+<li><code>Custom_Compliments_Pro = "Are you &lt;Insert Pro&gt;Bot?"</code></li>
+<li><code>Custom_Excuses_Lag = "Lag"</code></li>
+<li><code>Custom_Excuses_GhostInputs = "Ghost inputs"</code></li>
+<li><code>Custom_Excuses_Rigged = "RIGGED"</code></li>
+<li><code>Custom_Toxic_MafiaPlays = "Mafia plays!"</code></li>
+<li><code>Custom_Exclamation_Yeet = "Yeet!"</code></li>
+</ul>
 
 
 
@@ -1906,7 +1893,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../operating-system-support/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Operating system support">
+          <a href="../hiveminds/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Hiveminds">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
@@ -1916,20 +1903,20 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                Operating system support
+                Hiveminds
               </div>
             </div>
           </a>
         
         
           
-          <a href="../sockets-specification/" class="md-footer__link md-footer__link--next" aria-label="Next: Sockets specification">
+          <a href="../tick-rate/" class="md-footer__link md-footer__link--next" aria-label="Next: Tick rate">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Sockets specification
+                Tick rate
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -2022,10 +2009,10 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.expand", "navigation.footer", "content.action.edit"], "search": "../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.expand", "navigation.footer", "content.action.edit"], "search": "../../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.94c44541.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.94c44541.min.js"></script>
       
     
   </body>
