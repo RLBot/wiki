@@ -22,4 +22,4 @@ A `PredictionSlice` contains the following fields:
 
 ## Language-specific examples
 
-- [Python](https://github.com/VirxEC/python-interface/wiki/Ball-Path-Prediction)
+- [Python](https://github.com/RLBot/python-interface/wiki/Ball-Path-Prediction)

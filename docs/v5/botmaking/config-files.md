@@ -173,8 +173,8 @@ A match config file, e.g. `match.toml`, define a match and its settings, closely
         - `"legendary" (Custom)` - Start Rocket League using [Legendary](https://github.com/derrod/legendary)
     - `auto_start_bots` - Boolean (default: true). Whether bots should be started using their run command.
 - `[match]`
-    - `game_mode` - The game mode. Either `"Soccer"` (default), `"Hoops"`, `"Dropshot"`, `"Hockey"`, `"Rumble"`, `"Heatseeker"`, `"Gridiron"`, or `"Knockout"`. This affects ball prediction and a few of the game rules although many game modes can also be recreated solely from mutators. See what mutators and game mode combinations make up the official modes [here](https://github.com/VirxEC/python-interface/tree/master/tests/gamemodes).
-    - `game_map_upk` - The map upk file to load, e.g. `"UtopiaStadium_P"`. On Steam version of Rocket League this can be used to load custom map files, but on Epic version it only works on the Psyonix maps. Available maps can be found [here](https://github.com/VirxEC/python-interface/blob/master/rlbot/utils/maps.py).
+    - `game_mode` - The game mode. Either `"Soccer"` (default), `"Hoops"`, `"Dropshot"`, `"Hockey"`, `"Rumble"`, `"Heatseeker"`, `"Gridiron"`, or `"Knockout"`. This affects ball prediction and a few of the game rules although many game modes can also be recreated solely from mutators. See what mutators and game mode combinations make up the official modes [here](https://github.com/RLBot/python-interface/tree/master/tests/gamemodes).
+    - `game_map_upk` - The map upk file to load, e.g. `"UtopiaStadium_P"`. On Steam version of Rocket League this can be used to load custom map files, but on Epic version it only works on the Psyonix maps. Available maps can be found [here](https://github.com/RLBot/python-interface/blob/master/rlbot/utils/maps.py).
     - `cars` - A list of players in the match. See the car section below for fields of cars.
     - `scripts` - A list of scripts in the match. See the script section below for fields of scripts.
     - `skip_replays` - Boolean (default: false). Whether to skip goal replays.
