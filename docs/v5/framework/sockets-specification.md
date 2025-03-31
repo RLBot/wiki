@@ -15,7 +15,7 @@ Bold items indicate the messages that bots/scripts/etc. can recieved from RLBot.
     - Received by a session after it sends `ConnectionSettings`.
 03. [StartCommand](https://github.com/RLBot/flatbuffers-schema/blob/main/rlbot.fbs#L9-L12)
     - Starts a new match after reading the given config file.
-04. **[MatchConfiguration](https://github.com/RLBot/flatbuffers-schema/blob/main/matchconfig.fbs#L372-L414)**
+04. **[MatchConfiguration](https://github.com/RLBot/flatbuffers-schema/blob/main/matchconfig.fbs#L490-L532)**
     - Received by a session after it sends `ConnectionSettings`.
     - Can be sent by sessions to start a new match.
 05. [PlayerInput](https://github.com/RLBot/flatbuffers-schema/blob/main/gamedata.fbs#L30-L35)
@@ -23,10 +23,10 @@ Bold items indicate the messages that bots/scripts/etc. can recieved from RLBot.
 06. [DesiredGameState](https://github.com/RLBot/flatbuffers-schema/blob/main/gamestatemanip.fbs#L76-L89)
     - Sent by sessions to change the game state.
     - Ignored if state setting was disabled in the match settings.
-07. [RenderGroup](https://github.com/RLBot/flatbuffers-schema/blob/main/rendering.fbs#L162-L171)
+07. [RenderGroup](https://github.com/RLBot/flatbuffers-schema/blob/main/rendering.fbs#L168-L177)
     - Sent by sessions to render lines & text in the game.
     - Ignored if render setting was disabled in the match settings.
-08. [RemoveRenderGroup](https://github.com/RLBot/flatbuffers-schema/blob/main/rendering.fbs#L175-L179)
+08. [RemoveRenderGroup](https://github.com/RLBot/flatbuffers-schema/blob/main/rendering.fbs#L181-L185)
     - Sent by sessions to remove a render group.
     - Ignored if render setting was disabled in the match settings.
 09. **[MatchComm](https://github.com/RLBot/flatbuffers-schema/blob/main/comms.fbs#L3-L22)**

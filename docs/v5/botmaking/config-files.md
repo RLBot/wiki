@@ -44,7 +44,7 @@ It should also be noted that whatever prefixes the `.bot.toml`/`.script.toml` fi
         - `dropshot` - The bot understands the Dropshot game mode.
         - `snow-day` - The bot understands the Snow Day game mode.
         - `spike-rush` - The bot understands the Spike-Rush game mode.
-        - `heatseaker` - The bot understands the Heatseeker game mode.
+        - `heatseeker` - The bot understands the Heatseeker game mode.
         - `memebot` - The bot has an untraditional play style.
 
 !!! note "Psyonix Bot Presets"
