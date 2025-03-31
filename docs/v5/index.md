@@ -18,5 +18,5 @@ This wiki primarily houses resources for bot development, but you can also find 
 
 ## Language-specific wikis
 
-- [Python](https://github.com/VirxEC/python-interface/wiki)
+- [Python](https://github.com/RLBot/python-interface/wiki)
 - [RLGym](https://rlgym.org/)

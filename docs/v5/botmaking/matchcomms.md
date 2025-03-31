@@ -20,7 +20,7 @@ Use cases:
 
 ## Language-specific wikis
 
-- [Python](https://github.com/VirxEC/python-interface/wiki/Match-Comm)
+- [Python](https://github.com/RLBot/python-interface/wiki/Match-Comm)
 
 ## Quick chat
 
