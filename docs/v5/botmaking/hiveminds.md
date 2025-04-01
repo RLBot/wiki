@@ -18,7 +18,10 @@ Hiveminds are now an official part of RLBot in v5. To tell v5 that your bot is a
     fun_fact = "This is a test bot"
     source_link = "https://github.com/RLBot/core"
     developer = "RLBot community"
+    tags = []
     ```
+
+See [Config Files](/v5/botmaking/config-files/#bot-script-config-files) for details on the `bot.toml` file.
 
 ## What is a hivemind?
 

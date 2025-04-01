@@ -24,11 +24,11 @@ It should also be noted that whatever prefixes the `.bot.toml`/`.script.toml` fi
 - `[settings]` - Used by both RLBot and the GUI
     - `agent_id` - The static, unique id that is associated with this bot. Preferred format is `"author/bot-name"`.
     - `name` - The name of the bot/script.
-    - `loadout_file` - The path to the [loadout file](#loadout-config-files) for the bot.
+    - `loadout_file` - The path to the [loadout file](#loadout-config-files) for the bot. *Ignored for scripts.*
     - `root_dir` - A path to the root directory of the bot, e.g. `"./bin/"`. The `run_command` will be run from the root directory.
     - `run_command` - The command to run the bot/script on Windows. If empty, the bot must be started manually (This may be handy during development if a default `agent_id` is coded into the bot).
     - `run_command_linux` - The command to run the bot/script on Linux.
-    - `hivemind` - Boolean. Whether all bot team mates with this agent id is controlled by the same process. See [Hiveminds](v5/botmaking/hiveminds).
+    - `hivemind` - Boolean. Whether all bot team mates with this agent id is controlled by the same process. See [Hiveminds](v5/botmaking/hiveminds). *Ignored for scripts.*
     - `logo_file` - The path to the logo file for the bot/script.
 - `[details]` - Used only by the GUI
     - `description` - A description of the bot/script.
