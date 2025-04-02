@@ -34,9 +34,16 @@ This will position the render underneath the car, with the render moving relativ
         This is the recommended way to draw a large number of points in a continuous line, as it is more efficient than sending multiple `Line3D` messages. While this method was available in RLBot v4, it was implemented by sending a series of `Line3D` messages which defeated the purpose.
 
 - [String2D](https://github.com/RLBot/flatbuffers-schema/blob/main/rendering.fbs#L76-L96) - Draws a string in 2D space (screen space).
-- [String3D](https://github.com/RLBot/flatbuffers-schema/blob/main/rendering.fbs#L98-L115) - Draws a string in 3D space. This will be projected onto the screen based on the camera's orientation.
+- [String3D](https://github.com/RLBot/flatbuffers-schema/blob/main/rendering.fbs#L98-L115) - Draws a billboard string in 3D space.
 - [Rect2D](https://github.com/RLBot/flatbuffers-schema/blob/main/rendering.fbs#L117-L134) - Draws a rectangle in 2D space (screen space).
-- [Rect3D](https://github.com/RLBot/flatbuffers-schema/blob/main/rendering.fbs#L136-L151) - Draws a rectangle in 3D space. This will be projected onto the screen based on the camera's orientation.
+- [Rect3D](https://github.com/RLBot/flatbuffers-schema/blob/main/rendering.fbs#L136-L151) - Draws a billboard rectangle in 3D space.
+
+### Coordinates and sizes
+
+- All 2D rendering uses screen space coordinates in the 0..1 range, such that `x=0` is left side of the screen and `x=1` is the right side of the screen, `y=0` is top, and `y=1` is bottom.
+- It is not possible to change the width of lines.
+- 3D strings, rectangles, and lines do not change size as they get further away from the camera.
+- The default font is monospaced and characters are 10x20 pixels for both 2D and 3D rendering. As a consequence, it is not possible to position text nicely in 2D without assuming a certain resolution.
 
 ## Rendering a large amount
 
