@@ -1392,6 +1392,46 @@
   
   
     <li class="md-nav__item">
+      <a href="../../botmaking/rendering/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Rendering
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../botmaking/scripts/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Scripts
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../botmaking/tick-rate/" class="md-nav__link">
         
   
@@ -1814,84 +1854,88 @@
 
 <h1 id="rlbot-sockets-specification">RLBot Sockets Specification</h1>
 <h2 id="data-types">Data Types</h2>
-<p>Bold items indicate the messages that bots/scripts/etc. can recieved from RLBot.</p>
+<ul>
+<li><em>Sendable</em> - A type of message that can be sent to RLBotServer.</li>
+<li><em>Receivable</em> - A type of message that can be received from RLBotServer.</li>
+</ul>
+<p>The below types are marked with the above labels.</p>
 <ol>
-<li><strong>None</strong><ul>
+<li>None - <em>Sendable</em> &amp; <em>Receivable</em><ul>
 <li>Aka the disconnect request. This can be sent to indicate that you want to disconnect,
 and this message will be sent back as confirmation of the disconnect.
 Ideally your bot only disconnects after this message is sent.
 If anything else happens, an error should be put out.</li>
 </ul>
 </li>
-<li><strong><a href="https://github.com/RLBot/flatbuffers-schema/blob/main/gamedata.fbs#L291-L307">GamePacket</a></strong><ul>
+<li><a href="https://github.com/RLBot/flatbuffers-schema/blob/main/gamedata.fbs#L291-L307">GamePacket</a> - <em>Receivable</em><ul>
 <li>Received by sessions at a high rate according to <a href="/v5/botmaking/tick-rate.md">tick rate</a></li>
 </ul>
 </li>
-<li><strong><a href="https://github.com/RLBot/flatbuffers-schema/blob/main/gamedata.fbs#L338-L348">FieldInfo</a></strong><ul>
+<li><a href="https://github.com/RLBot/flatbuffers-schema/blob/main/gamedata.fbs#L338-L348">FieldInfo</a> - <em>Receivable</em><ul>
 <li>Received by a session after it sends <code>ConnectionSettings</code>.</li>
 </ul>
 </li>
-<li><a href="https://github.com/RLBot/flatbuffers-schema/blob/main/rlbot.fbs#L9-L12">StartCommand</a><ul>
+<li><a href="https://github.com/RLBot/flatbuffers-schema/blob/main/rlbot.fbs#L9-L12">StartCommand</a> - <em>Sendable</em><ul>
 <li>Starts a new match after reading the given config file.</li>
 </ul>
 </li>
-<li><strong><a href="https://github.com/RLBot/flatbuffers-schema/blob/main/matchconfig.fbs#L490-L532">MatchConfiguration</a></strong><ul>
+<li><a href="https://github.com/RLBot/flatbuffers-schema/blob/main/matchconfig.fbs#L490-L532">MatchConfiguration</a> - <em>Sendable</em> &amp; <em>Receivable</em><ul>
 <li>Received by a session after it sends <code>ConnectionSettings</code>.</li>
 <li>Can be sent by sessions to start a new match.</li>
 </ul>
 </li>
-<li><a href="https://github.com/RLBot/flatbuffers-schema/blob/main/gamedata.fbs#L30-L35">PlayerInput</a><ul>
+<li><a href="https://github.com/RLBot/flatbuffers-schema/blob/main/gamedata.fbs#L30-L35">PlayerInput</a> - <em>Sendable</em><ul>
 <li>Sent by sessions to control their cars.</li>
 </ul>
 </li>
-<li><a href="https://github.com/RLBot/flatbuffers-schema/blob/main/gamestatemanip.fbs#L76-L89">DesiredGameState</a><ul>
+<li><a href="https://github.com/RLBot/flatbuffers-schema/blob/main/gamestatemanip.fbs#L76-L89">DesiredGameState</a> - <em>Sendable</em><ul>
 <li>Sent by sessions to change the game state.</li>
 <li>Ignored if state setting was disabled in the match settings.</li>
 </ul>
 </li>
-<li><a href="https://github.com/RLBot/flatbuffers-schema/blob/main/rendering.fbs#L168-L177">RenderGroup</a><ul>
+<li><a href="https://github.com/RLBot/flatbuffers-schema/blob/main/rendering.fbs#L168-L177">RenderGroup</a> - <em>Sendable</em><ul>
 <li>Sent by sessions to render lines &amp; text in the game.</li>
 <li>Ignored if render setting was disabled in the match settings.</li>
 </ul>
 </li>
-<li><a href="https://github.com/RLBot/flatbuffers-schema/blob/main/rendering.fbs#L181-L185">RemoveRenderGroup</a><ul>
+<li><a href="https://github.com/RLBot/flatbuffers-schema/blob/main/rendering.fbs#L181-L185">RemoveRenderGroup</a> - <em>Sendable</em><ul>
 <li>Sent by sessions to remove a render group.</li>
 <li>Ignored if render setting was disabled in the match settings.</li>
 </ul>
 </li>
-<li><strong><a href="https://github.com/RLBot/flatbuffers-schema/blob/main/comms.fbs#L3-L22">MatchComm</a></strong><ul>
+<li><a href="https://github.com/RLBot/flatbuffers-schema/blob/main/comms.fbs#L3-L22">MatchComm</a> - <em>Sendable</em> &amp; <em>Receivable</em><ul>
 <li>A copy is received by sessions when another session sends the message.</li>
 <li>Messages may not be received if the message was filtered due to <code>team_only</code> being requested in the message.</li>
 <li>Only received if enabled in <code>ConnectionSettings</code>.</li>
 </ul>
 </li>
-<li><strong><a href="https://github.com/RLBot/flatbuffers-schema/blob/main/gamedata.fbs#L361-L367">BallPrediction</a></strong><ul>
+<li><a href="https://github.com/RLBot/flatbuffers-schema/blob/main/gamedata.fbs#L361-L367">BallPrediction</a> - <em>Receivable</em><ul>
 <li>Received by sessions right before every <code>GamePacket</code> if enabled in <code>ConnectionSettings</code>.</li>
 </ul>
 </li>
-<li><a href="https://github.com/RLBot/flatbuffers-schema/blob/main/rlbot.fbs#L20-L33">ConnectionSettings</a><ul>
+<li><a href="https://github.com/RLBot/flatbuffers-schema/blob/main/rlbot.fbs#L20-L33">ConnectionSettings</a> - <em>Sendable</em><ul>
 <li>Sessions send this immediately after connecting.</li>
 <li>Tells the server what kind of data it wants to receive.</li>
 </ul>
 </li>
-<li><a href="https://github.com/RLBot/flatbuffers-schema/blob/main/rlbot.fbs#L14-L18">StopCommand</a><ul>
+<li><a href="https://github.com/RLBot/flatbuffers-schema/blob/main/rlbot.fbs#L14-L18">StopCommand</a> - <em>Sendable</em><ul>
 <li>Ends the current match, and optionally tells <code>RLBotServer.exe</code> to shut itself down.</li>
 </ul>
 </li>
-<li><a href="https://github.com/RLBot/flatbuffers-schema/blob/main/rlbot.fbs#L35-L44">SetLoadout</a><ul>
+<li><a href="https://github.com/RLBot/flatbuffers-schema/blob/main/rlbot.fbs#L35-L44">SetLoadout</a> - <em>Sendable</em><ul>
 <li>Sent by sessions to change the loadout of their cars.</li>
 <li>Will always work if a loadout was not specified in match settings and when sent before <code>InitComplete</code>.</li>
 <li>Ignored if state setting was disabled in the match settings, and a loadout was set in match settings.</li>
 </ul>
 </li>
-<li>InitComplete<ul>
+<li>InitComplete - <em>Sendable</em><ul>
 <li>Indicates that the session has finished all initialization and is ready to start receiving
 game messages without delay.</li>
 <li>The match will not start until all sessions have sent this message.</li>
 <li>There is no data associated with this message.</li>
 </ul>
 </li>
-<li><strong><a href="https://github.com/RLBot/flatbuffers-schema/blob/main/rlbot.fbs#L56-L64">ControllableTeamInfo</a></strong><ul>
+<li><a href="https://github.com/RLBot/flatbuffers-schema/blob/main/rlbot.fbs#L56-L64">ControllableTeamInfo</a> - <em>Receivable</em><ul>
 <li>Contains information about the cars that the client can control.</li>
 <li>Received by a session after it sends <code>ConnectionSettings</code>.</li>
 <li>There may be more than one car in case the bot is a hivemind.</li>
@@ -1925,7 +1969,7 @@ A hardcoded default is useful during development when the process may be getting
 <li>For bots &amp; scripts, <code>CloseBetweenMatches</code> should always be <code>true</code> with no alternate option.</li>
 </ul>
 </li>
-<li>Recieve match information - In no guarenteed order, wait for all of the following to arrive:<ul>
+<li>Receive match information - In no guaranteed order, wait for all of the following to arrive:<ul>
 <li><code>MatchConfiguration</code></li>
 <li><code>FieldInfo</code></li>
 <li><code>ControllableTeamInfo</code> - sent for bots &amp; scripts. If <code>AgentId</code> was invalid or blank, this will be empty.

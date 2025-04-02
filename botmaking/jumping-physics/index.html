@@ -1493,6 +1493,46 @@
   
   
     <li class="md-nav__item">
+      <a href="../../v5/botmaking/rendering/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Rendering
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../v5/botmaking/scripts/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Scripts
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../v5/botmaking/tick-rate/" class="md-nav__link">
         
   
@@ -1878,7 +1918,7 @@
 <p>Believe it or not, throttle still has an effect on your car even while airborne. Forward throttle while airborne exerts a force of <code>66.667 uu/s^2</code> in your car's relative forward direction. Reverse throttle's effect is halved with a force of <code>33.334 uu/s^2</code> in the relative rear direction.</p>
 <h2 id="implementing-a-jump-simulation">Implementing A Jump Simulation</h2>
 <p>The following code snippet provides an implementation of a jump simulation naively assuming the bot is perfectly flat on the ground with no initial velocity, gravity is at default settings and the bot executes a frame-perfect jump sequence.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">naive_double_jump_simulation</span><span class="p">(</span><span class="n">time_allowed</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">:</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">def</span> <span class="nf">naive_double_jump_simulation</span><span class="p">(</span><span class="n">time_allowed</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">:</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    <span class="n">gravity</span> <span class="o">=</span> <span class="o">-</span><span class="mi">650</span>
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>    <span class="n">jump_impulse</span> <span class="o">=</span> <span class="mi">292</span>
 <a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>    <span class="n">time_increment</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="mi">120</span>

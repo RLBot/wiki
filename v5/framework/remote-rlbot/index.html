@@ -1392,6 +1392,46 @@
   
   
     <li class="md-nav__item">
+      <a href="../../botmaking/rendering/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Rendering
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../botmaking/scripts/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Scripts
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../botmaking/tick-rate/" class="md-nav__link">
         
   
@@ -1710,9 +1750,9 @@
 <p>RLBot can't automatically start bots or scripts on remote machines. You will need to start them manually, using custom software.
 For this process to work as intended, you should still have <code>auto_start_bots</code> set to <code>true</code> in RLBot because you the bots will be started automatically, just not by RLBot itself. For each player and script in the match, ensure <code>run_command = ""</code>. This will ensure RLBot still waits for all processes to connect. You can also use <code>run_command</code> to run your custom software, which you can then use to start your bots or scripts on the remote machine.</p>
 </div>
-<p>RLBot, by default, listens for TCP connections on <code>0.0.0.0</code> (all interfaces) on port <code>23233</code>. This port can be changed by launching RLBot and specifying a different port for the first argument. For example, to have RLBot listen on port <code>12345</code> instead, you would run <code>RLBotServer.exe 12345</code>.</p>
-<p>This means that extenal processes can connect to RLBot from other machines on the same network by specifying the IP address of the machine running RLBot and the port number RLBot is listening on.</p>
-<p>Bots and scripts using RLBot-standard compliant interfaces will read the environment variables <code>RLBOT_SERVER_IP</code> and <code>RLBOT_SERVER_PORT</code>, which default to <code>127.0.0.1</code> and <code>23233</code> respectively. You can override these environment variables to point to a different machine running RLBot. They will also expect the environment variable <code>RLBOT_AGENT_ID</code> to be set, which can be found by reading the <code>agent_id</code> field in <code>[settings]</code> header of the corresponding config toml file.</p>
+<p>RLBot, by default, listens for TCP connections on <code>0.0.0.0</code> (all interfaces) on port <code>23234</code>. This port can be changed by launching RLBot and specifying a different port for the first argument. For example, to have RLBot listen on port <code>12345</code> instead, you would run <code>RLBotServer.exe 12345</code>.</p>
+<p>This means that external processes can connect to RLBot from other machines on the same network by specifying the IP address of the machine running RLBot and the port number RLBot is listening on.</p>
+<p>Bots and scripts using RLBot-standard compliant interfaces will read the environment variables <code>RLBOT_SERVER_IP</code> and <code>RLBOT_SERVER_PORT</code>, which default to <code>127.0.0.1</code> and <code>23234</code> respectively. You can override these environment variables to point to a different machine running RLBot. They will also expect the environment variable <code>RLBOT_AGENT_ID</code> to be set, which can be found by reading the <code>agent_id</code> field in <code>[settings]</code> header of the corresponding config toml file.</p>
 
 
 

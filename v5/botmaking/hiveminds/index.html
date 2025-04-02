@@ -1361,6 +1361,17 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Hiveminds
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -1370,6 +1381,46 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-a-hivemind" class="md-nav__link">
+    What is a hivemind?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#types-of-hiveminds" class="md-nav__link">
+    Types of hiveminds
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#language-specific-examples" class="md-nav__link">
+    Language-specific examples
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1387,6 +1438,46 @@
   
   <span class="md-ellipsis">
     Match communication
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rendering/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Rendering
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../scripts/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Scripts
   </span>
   
 
@@ -1683,6 +1774,35 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-a-hivemind" class="md-nav__link">
+    What is a hivemind?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#types-of-hiveminds" class="md-nav__link">
+    Types of hiveminds
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#language-specific-examples" class="md-nav__link">
+    Language-specific examples
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1705,8 +1825,52 @@
 
 
 <h1 id="hiveminds">Hiveminds</h1>
-<p>Example: https://github.com/RLBot/python-interface/tree/master/tests/hivemind</p>
-<p>TODO</p>
+<p>Hiveminds are now an official part of RLBot in v5. To tell v5 that your bot is a hivemind, set <code>hivemind = true</code> under the <code>[settings]</code> header in your <code>bot.toml</code> file.</p>
+<details class="example">
+<summary>Example <code>bot.toml</code> for a hivemind</summary>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">[settings]</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Hives&quot;</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">loadout_file</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;loadout.toml&quot;</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="n">run_command</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;python bot.py&quot;</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="n">run_command_linux</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;./venv/bin/python bot.py&quot;</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="n">agent_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;rlbot-community/hives&quot;</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="c1"># must set to true if you want the bot to be ran as a hivemind</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="n">hivemind</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="k">[details]</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="n">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Made possible by RLBot&quot;</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="n">fun_fact</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;This is a test bot&quot;</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="n">source_link</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;https://github.com/RLBot/core&quot;</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="n">developer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;RLBot community&quot;</span>
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="n">tags</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[]</span>
+</code></pre></div>
+</details>
+<p>See <a href="/v5/botmaking/config-files/#bot-script-config-files">Config Files</a> for details on the <code>bot.toml</code> file.</p>
+<h2 id="what-is-a-hivemind">What is a hivemind?</h2>
+<p>By default, RLBot launches 1 process per bot. This is fine for most bots, but it can be inefficient for bots that are designed to work together. Hiveminds fix this by assigning all bots of the same type to the same process, <em>if they're on the same team</em>. This means that the same bot on different teams will still be controlled different processes.</p>
+<p>Basically, a hivemind is 1 process that controls multiple bots!</p>
+<div class="admonition info">
+<p class="admonition-title">How RLBot groups bots into hiveminds</p>
+<p>RLBot specifically uses <code>agent_id</code>s to group bots together, which is why it's important that your bot's <code>agent_id</code> is unique!</p>
+</div>
+<h2 id="types-of-hiveminds">Types of hiveminds</h2>
+<p>There are 2 common ways to implement a hivemind:</p>
+<ol>
+<li><strong>Single-threaded hivemind</strong>: The hivemind runs on a single thread, and each bot is controlled sequentially. This is the simplest way to implement a hivemind.</li>
+<li>
+<p><strong>Multithreaded hivemind</strong>: The hivemind runs on multiple threads, and each bot is controlled concurrently. This is more complex, but can be more efficient.</p>
+<details class="warning">
+<summary>Multithreaded hiveminds are not supported in Python</summary>
+<p>Due to current limitations of the Python language, Python can't do multithreading. If you're curious why, learn more about the <a href="https://realpython.com/python-gil/">Global Interpreter Lock</a>!</p>
+</details>
+</li>
+</ol>
+<h2 id="language-specific-examples">Language-specific examples</h2>
+<ul>
+<li><a href="https://github.com/RLBot/python-interface/tree/master/tests/hivemind">Python</a></li>
+<li><a href="https://github.com/RLBot/rust-interface/tree/master/rlbot/examples/atba_hivemind">Rust</a></li>
+<li><a href="https://github.com/RLBot/cpp-interface/tree/master/examples/ATBA">C++</a></li>
+</ul>
 
 
 

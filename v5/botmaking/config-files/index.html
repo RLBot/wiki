@@ -1453,6 +1453,46 @@
   
   
     <li class="md-nav__item">
+      <a href="../rendering/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Rendering
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../scripts/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Scripts
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../tick-rate/" class="md-nav__link">
         
   
@@ -1806,11 +1846,11 @@ The content of config files for bots and scripts are very similar, so the file e
 <li><code>[settings]</code> - Used by both RLBot and the GUI<ul>
 <li><code>agent_id</code> - The static, unique id that is associated with this bot. Preferred format is <code>"author/bot-name"</code>.</li>
 <li><code>name</code> - The name of the bot/script.</li>
-<li><code>loadout_file</code> - The path to the <a href="#loadout-config-files">loadout file</a> for the bot.</li>
+<li><code>loadout_file</code> - The path to the <a href="#loadout-config-files">loadout file</a> for the bot. <em>Ignored for scripts.</em></li>
 <li><code>root_dir</code> - A path to the root directory of the bot, e.g. <code>"./bin/"</code>. The <code>run_command</code> will be run from the root directory.</li>
 <li><code>run_command</code> - The command to run the bot/script on Windows. If empty, the bot must be started manually (This may be handy during development if a default <code>agent_id</code> is coded into the bot).</li>
 <li><code>run_command_linux</code> - The command to run the bot/script on Linux.</li>
-<li><code>hivemind</code> - Boolean. Whether all bot team mates with this agent id is controlled by the same process. See <a href="v5/botmaking/hiveminds">Hiveminds</a>.</li>
+<li><code>hivemind</code> - Boolean. Whether all bot team mates with this agent id is controlled by the same process. See <a href="v5/botmaking/hiveminds">Hiveminds</a>. <em>Ignored for scripts.</em></li>
 <li><code>logo_file</code> - The path to the logo file for the bot/script.</li>
 </ul>
 </li>
@@ -1950,7 +1990,7 @@ The content of config files for bots and scripts are very similar, so the file e
 <ul>
 <li><code>[rlbot]</code><ul>
 <li><code>launcher</code> - Indicates how Rocket League should be launched if it is not already running. Either <code>"Steam"</code> (default), <code>"Epic"</code>, <code>"Custom"</code> (see <code>launcher_arg</code>), or <code>NoLaunch</code>.</li>
-<li><code>launcher_arg</code> - Additionaly configuration to the launching method:<ul>
+<li><code>launcher_arg</code> - Additional configuration to the launching method:<ul>
 <li><code>"legendary" (Custom)</code> - Start Rocket League using <a href="https://github.com/derrod/legendary">Legendary</a></li>
 </ul>
 </li>
@@ -2001,7 +2041,7 @@ The content of config files for bots and scripts are very similar, so the file e
 <li><code>demolish</code> - Demolition conditions. Either <code>"Default"</code>, <code>"Disabled"</code>, <code>"FriendlyFire"</code>, <code>"OnContact"</code>, <code>"OnContactFF"</code>, <code>"OnBallContact"</code>, or <code>"OnBallContactFF"</code>.</li>
 <li><code>respawn_time</code> - Demolition respawn time. Either <code>"ThreeSeconds"</code> (default), <code>"TwoSeconds"</code>, <code>"OneSecond"</code>, or <code>"DisableGoalReset"</code>.</li>
 <li><code>max_time</code> - Max real-time duration of match including kickoff, replays, and more. If the score is tied upon time-out, the number of shots determine the winner. Either <code>"Unlimited"</code> (default) or <code>"ElevenMinutes"</code>.</li>
-<li><code>game_event</code> - Additional game behaviour for custom modes. Either <code>"Default"</code>, <code>"Haunted"</code>, or <code>"Rugby"</code>.</li>
+<li><code>game_event</code> - Additional game behavior for custom modes. Either <code>"Default"</code>, <code>"Haunted"</code>, or <code>"Rugby"</code>.</li>
 <li><code>audio</code> - Additional audio options for custom modes. Either <code>"Default"</code> or <code>"Haunted"</code>.</li>
 <li><code>ball_gravity</code> - Ball gravity. Either <code>"Default"</code>, <code>"Low"</code>, <code>"High"</code>, or <code>"SuperHigh"</code>.</li>
 <li><code>territory</code> - Disallow players from touching the opponents side if the field. Usually combined with <code>the stale_ball</code> mutator. Either Either <code>"Off"</code> (default) or <code>"Territory"</code>.</li>
@@ -2009,7 +2049,7 @@ The content of config files for bots and scripts are very similar, so the file e
 <li><code>jump</code> - How many times you can jump and dodge/double jump. Either <code>"Default"</code>, <code>"Grounded"</code>, <code>"Two"</code>, <code>"Three"</code>, <code>"Four"</code>, <code>"Unlimited"</code>, or <code>"NoJumps"</code>.</li>
 <li><code>dodge_timer</code> - How long you can wait before dodging or double jumping. Either <code>"OnePointTwentyFiveSeconds"</code> (default), <code>"TwoSeconds"</code>, <code>"ThreeSeconds"</code>, or <code>"Unlimited"</code>.</li>
 <li><code>possession_score</code> - Modifies how often possession gives points. Specifically, the team that touched the ball most recently gains a point every <em>X</em> seconds until the other team touches the ball. Either <code>"Off"</code> (default), <code>"OneSecond"</code>, <code>"TwoSeconds"</code>, or <code>"ThreeSeconds"</code>.</li>
-<li><code>demolish_score</code> - Modifies how many points demolishions score. Either <code>"Zero"</code> (default), <code>"One"</code>, <code>"Two"</code>, or <code>"Three"</code>.</li>
+<li><code>demolish_score</code> - Modifies how many points demolitions score. Either <code>"Zero"</code> (default), <code>"One"</code>, <code>"Two"</code>, or <code>"Three"</code>.</li>
 <li><code>normal_goal_score</code> - Modifies how many points a normal goal score. Either <code>"One"</code> (default), <code>"Zero"</code>, <code>"Two"</code>, <code>"Three"</code>, <code>"Five"</code>, or <code>"Ten"</code></li>
 <li><code>aerial_goal_score</code> - Modifies how many points aerial goals score. Either <code>"One"</code> (default), <code>"Zero"</code>, <code>"Two"</code>, <code>"Three"</code>, <code>"Five"</code>, or <code>"Ten"</code>.</li>
 <li><code>assist_goal_score</code> - Modifies how many points assists score. Either <code>"Zero"</code> (default), <code>"One"</code>, <code>"Two"</code>, or <code>"Three"</code>.</li>
@@ -2022,7 +2062,7 @@ The content of config files for bots and scripts are very similar, so the file e
 <li><code>team</code> - The team of the player. Either <code>"Blue"</code>/<code>0</code> for blue or <code>"Orange"</code>/<code>1</code> for orange. Default 0.</li>
 <li><code>type</code> - Determines what controls the car. Either <code>"RLBot"</code> (default), <code>"Human"</code>, or <code>"Psyonix"</code> (see <code>skill</code>), </li>
 <li><code>skill</code> - Determines the skill level of a Psyonix bot. Either <code>"Beginner"</code>, <code>"Rookie"</code>, <code>"Pro"</code>, and <code>"Allstar"</code>.</li>
-<li><code>config_file</code> - A path to a <a href="#bot-script-config-files"><code>bot.toml</code> config file</a>. Unusued if <code>type</code> is not <code>"RLBot"</code> or <code>"Psyonix"</code>. For Psyonix bots, the config file determines name and loadout.</li>
+<li><code>config_file</code> - A path to a <a href="#bot-script-config-files"><code>bot.toml</code> config file</a>. Unused if <code>type</code> is not <code>"RLBot"</code> or <code>"Psyonix"</code>. For Psyonix bots, the config file determines name and loadout.</li>
 <li><code>name</code> - Overrides the name in <code>config</code>.</li>
 <li><code>loadout_file</code> - Overrides the loadout in <code>config</code>.</li>
 </ul>
