@@ -2,7 +2,7 @@
 
 ## Data Types
 
-Bold items indicate the messages that bots/scripts/etc. can recieved from RLBot.
+Bold + italicized items indicate the messages that bots/scripts/etc. can recieved from RLBot.
 
 00. **None**
     - Aka the disconnect request. This can be sent to indicate that you want to disconnect,
@@ -82,7 +82,7 @@ If this is not performed, then various functionality will be limited, for exampl
     This can be passed as `AgentId`, or a hardcoded default can be used if the environment variable was not present.
     A hardcoded default is useful during development when the process may be getting started manually.
     - For bots & scripts, `CloseBetweenMatches` should always be `true` with no alternate option.
-1. Recieve match information - In no guarenteed order, wait for all of the following to arrive:
+1. Receive match information - In no guaranteed order, wait for all of the following to arrive:
     - `MatchConfiguration`
     - `FieldInfo`
     - `ControllableTeamInfo` - sent for bots & scripts. If `AgentId` was invalid or blank, this will be empty.

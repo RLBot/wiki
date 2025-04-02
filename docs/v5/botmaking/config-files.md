@@ -169,7 +169,7 @@ A match config file, e.g. `match.toml`, define a match and its settings, closely
 
 - `[rlbot]`
     - `launcher` - Indicates how Rocket League should be launched if it is not already running. Either `"Steam"` (default), `"Epic"`, `"Custom"` (see `launcher_arg`), or `NoLaunch`.
-    - `launcher_arg` - Additionaly configuration to the launching method:
+    - `launcher_arg` - Additional configuration to the launching method:
         - `"legendary" (Custom)` - Start Rocket League using [Legendary](https://github.com/derrod/legendary)
     - `auto_start_bots` - Boolean (default: true). Whether bots should be started using their run command.
 - `[match]`
@@ -210,7 +210,7 @@ A match config file, e.g. `match.toml`, define a match and its settings, closely
     - `demolish` - Demolition conditions. Either `"Default"`, `"Disabled"`, `"FriendlyFire"`, `"OnContact"`, `"OnContactFF"`, `"OnBallContact"`, or `"OnBallContactFF"`.
     - `respawn_time` - Demolition respawn time. Either `"ThreeSeconds"` (default), `"TwoSeconds"`, `"OneSecond"`, or `"DisableGoalReset"`.
     - `max_time` - Max real-time duration of match including kickoff, replays, and more. If the score is tied upon time-out, the number of shots determine the winner. Either `"Unlimited"` (default) or `"ElevenMinutes"`.
-    - `game_event` - Additional game behaviour for custom modes. Either `"Default"`, `"Haunted"`, or `"Rugby"`.
+    - `game_event` - Additional game behavior for custom modes. Either `"Default"`, `"Haunted"`, or `"Rugby"`.
     - `audio` - Additional audio options for custom modes. Either `"Default"` or `"Haunted"`.
     - `ball_gravity` - Ball gravity. Either `"Default"`, `"Low"`, `"High"`, or `"SuperHigh"`.
     - `territory` - Disallow players from touching the opponents side if the field. Usually combined with `the stale_ball` mutator. Either Either `"Off"` (default) or `"Territory"`.
@@ -218,7 +218,7 @@ A match config file, e.g. `match.toml`, define a match and its settings, closely
     - `jump` - How many times you can jump and dodge/double jump. Either `"Default"`, `"Grounded"`, `"Two"`, `"Three"`, `"Four"`, `"Unlimited"`, or `"NoJumps"`.
     - `dodge_timer` - How long you can wait before dodging or double jumping. Either `"OnePointTwentyFiveSeconds"` (default), `"TwoSeconds"`, `"ThreeSeconds"`, or `"Unlimited"`.
     - `possession_score` - Modifies how often possession gives points. Specifically, the team that touched the ball most recently gains a point every *X* seconds until the other team touches the ball. Either `"Off"` (default), `"OneSecond"`, `"TwoSeconds"`, or `"ThreeSeconds"`.
-    - `demolish_score` - Modifies how many points demolishions score. Either `"Zero"` (default), `"One"`, `"Two"`, or `"Three"`.
+    - `demolish_score` - Modifies how many points demolitions score. Either `"Zero"` (default), `"One"`, `"Two"`, or `"Three"`.
     - `normal_goal_score` - Modifies how many points a normal goal score. Either `"One"` (default), `"Zero"`, `"Two"`, `"Three"`, `"Five"`, or `"Ten"`
     - `aerial_goal_score` - Modifies how many points aerial goals score. Either `"One"` (default), `"Zero"`, `"Two"`, `"Three"`, `"Five"`, or `"Ten"`.
     - `assist_goal_score` - Modifies how many points assists score. Either `"Zero"` (default), `"One"`, `"Two"`, or `"Three"`.
@@ -229,7 +229,7 @@ A match config file, e.g. `match.toml`, define a match and its settings, closely
 - `team` - The team of the player. Either `"Blue"`/`0` for blue or `"Orange"`/`1` for orange. Default 0.
 - `type` - Determines what controls the car. Either `"RLBot"` (default), `"Human"`, or `"Psyonix"` (see `skill`), 
 - `skill` - Determines the skill level of a Psyonix bot. Either `"Beginner"`, `"Rookie"`, `"Pro"`, and `"Allstar"`.
-- `config_file` - A path to a [`bot.toml` config file](#bot-script-config-files). Unusued if `type` is not `"RLBot"` or `"Psyonix"`. For Psyonix bots, the config file determines name and loadout.
+- `config_file` - A path to a [`bot.toml` config file](#bot-script-config-files). Unused if `type` is not `"RLBot"` or `"Psyonix"`. For Psyonix bots, the config file determines name and loadout.
 - `name` - Overrides the name in `config`.
 - `loadout_file` - Overrides the loadout in `config`.
 
