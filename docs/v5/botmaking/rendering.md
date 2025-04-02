@@ -21,7 +21,7 @@ A [render anchor](https://github.com/RLBot/flatbuffers-schema/blob/main/renderin
 
 ### Combining world and relative components
 
-By combining a world component and a relative component, you can e.x. attach a render to a car with the relative component, but also specify a world component to offset that render by `z=-50` from the car's position.
+By combining a world component and a relative component, you can, for example, attach a render to a car with the relative component, but also specify a world component to offset that render by `z=-50` from the car's position.
 
 This will position the render underneath the car, with the render moving relative to the position but not the orientation of the car.
 
