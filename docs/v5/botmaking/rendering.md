@@ -47,7 +47,7 @@ There are a few ways to get around this.
 
 1. **Reduce the amount of things you are rendering.**
     This is the most straightforward way to reduce the amount of bytes sent.
-    If you're rendering all 720 ball prediction slices, try only rendering 1 of 4 slices or so.
+    For instance, instead of rendering all 720 ball prediction slices, try rendering every 4th slice.
 2. **Use `PolyLine3D`.**
     This method more efficiently sends a large amount of points to be drawn in a continuous line.
 3. **Avoid drawing every frame.**
