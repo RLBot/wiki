@@ -27,10 +27,10 @@ See [Config Files](/v5/botmaking/config-files/#bot-script-config-files) for deta
 
 By default, RLBot launches 1 process per bot. This is fine for most bots, but it can be inefficient for bots that are designed to work together. Hiveminds fix this by assigning all bots of the same type to the same process, _if they're on the same team_. This means that the same bot on different teams will still be controlled different processes.
 
+Basically, a hivemind is 1 process that controls multiple bots!
+
 !!! info "How RLBot groups bots into hiveminds"
     RLBot specifically uses `agent_id`s to group bots together, which is why it's important that your bot's `agent_id` is unique!
-
-Basically, a hivemind is 1 process that controls multiple bots!
 
 ## Types of hiveminds
 

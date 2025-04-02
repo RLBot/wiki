@@ -17,7 +17,7 @@ Just like how bots are defined by a `bot.toml`, scripts are defined by a `script
     fun_fact = "This is a test script"
     source_link = "https://github.com/RLBot/RLBot"
     developer = "RLBot community"
-    language = "C#"
+    language = "Python"
     tags = []
     ```
 
