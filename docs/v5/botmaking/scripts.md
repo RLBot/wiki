@@ -1,6 +1,6 @@
 # Scripts
 
-Sometimes it can be useful to have access to game values, debug rendering or state setting while not being a bot playing within the match. RLBot has an easy solution for that - scripts!
+Sometimes it can be useful to have access to game values, debug rendering, or state setting while not being a bot playing within the match. RLBot has an easy solution for that - scripts!
 
 Scripts are very similar to normal bots, but instead of having a `bot.toml` they have a `script.toml` file.
 
