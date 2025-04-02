@@ -49,7 +49,7 @@ There are a few ways to get around this.
     This is the most straightforward way to reduce the amount of bytes sent.
     For instance, instead of rendering all 720 ball prediction slices, try rendering every 4th slice.
 2. **Use `PolyLine3D`.**
-    This method more efficiently sends a large amount of points to be drawn in a continuous line.
+    This method is more efficient than many Line3Ds if you are drawing a continuous line.
 3. **Avoid drawing every frame.**
     If you only need to draw something once, don't draw it every frame.
     When calling `start_rendering`, you can pass in a `group_id` string.
