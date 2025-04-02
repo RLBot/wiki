@@ -2,54 +2,57 @@
 
 ## Data Types
 
-Bold + italicized items indicate the messages that bots/scripts/etc. can received from RLBot.
+- *Sendable* - A type of message that can be sent to RLBotServer.
+- *Receivable* - A type of message that can be received from RLBotServer.
 
-00. ***None***
+The below types are marked with the above labels.
+
+00. None - *Sendable* & *Receivable*
     - Aka the disconnect request. This can be sent to indicate that you want to disconnect,
     and this message will be sent back as confirmation of the disconnect.
     Ideally your bot only disconnects after this message is sent.
     If anything else happens, an error should be put out.
-01. ***[GamePacket](https://github.com/RLBot/flatbuffers-schema/blob/main/gamedata.fbs#L291-L307)***
+01. [GamePacket](https://github.com/RLBot/flatbuffers-schema/blob/main/gamedata.fbs#L291-L307) - *Receivable*
     - Received by sessions at a high rate according to [tick rate](/v5/botmaking/tick-rate.md)
-02. ***[FieldInfo](https://github.com/RLBot/flatbuffers-schema/blob/main/gamedata.fbs#L338-L348)***
+02. [FieldInfo](https://github.com/RLBot/flatbuffers-schema/blob/main/gamedata.fbs#L338-L348) - *Receivable*
     - Received by a session after it sends `ConnectionSettings`.
-03. [StartCommand](https://github.com/RLBot/flatbuffers-schema/blob/main/rlbot.fbs#L9-L12)
+03. [StartCommand](https://github.com/RLBot/flatbuffers-schema/blob/main/rlbot.fbs#L9-L12) - *Sendable*
     - Starts a new match after reading the given config file.
-04. ***[MatchConfiguration](https://github.com/RLBot/flatbuffers-schema/blob/main/matchconfig.fbs#L490-L532)***
+04. [MatchConfiguration](https://github.com/RLBot/flatbuffers-schema/blob/main/matchconfig.fbs#L490-L532) - *Sendable* & *Receivable*
     - Received by a session after it sends `ConnectionSettings`.
     - Can be sent by sessions to start a new match.
-05. [PlayerInput](https://github.com/RLBot/flatbuffers-schema/blob/main/gamedata.fbs#L30-L35)
+05. [PlayerInput](https://github.com/RLBot/flatbuffers-schema/blob/main/gamedata.fbs#L30-L35) - *Sendable*
     - Sent by sessions to control their cars.
-06. [DesiredGameState](https://github.com/RLBot/flatbuffers-schema/blob/main/gamestatemanip.fbs#L76-L89)
+06. [DesiredGameState](https://github.com/RLBot/flatbuffers-schema/blob/main/gamestatemanip.fbs#L76-L89) - *Sendable*
     - Sent by sessions to change the game state.
     - Ignored if state setting was disabled in the match settings.
-07. [RenderGroup](https://github.com/RLBot/flatbuffers-schema/blob/main/rendering.fbs#L168-L177)
+07. [RenderGroup](https://github.com/RLBot/flatbuffers-schema/blob/main/rendering.fbs#L168-L177) - *Sendable*
     - Sent by sessions to render lines & text in the game.
     - Ignored if render setting was disabled in the match settings.
-08. [RemoveRenderGroup](https://github.com/RLBot/flatbuffers-schema/blob/main/rendering.fbs#L181-L185)
+08. [RemoveRenderGroup](https://github.com/RLBot/flatbuffers-schema/blob/main/rendering.fbs#L181-L185) - *Sendable*
     - Sent by sessions to remove a render group.
     - Ignored if render setting was disabled in the match settings.
-09. ***[MatchComm](https://github.com/RLBot/flatbuffers-schema/blob/main/comms.fbs#L3-L22)***
+09. [MatchComm](https://github.com/RLBot/flatbuffers-schema/blob/main/comms.fbs#L3-L22) - *Sendable* & *Receivable*
     - A copy is received by sessions when another session sends the message.
     - Messages may not be received if the message was filtered due to `team_only` being requested in the message.
     - Only received if enabled in `ConnectionSettings`.
-10. ***[BallPrediction](https://github.com/RLBot/flatbuffers-schema/blob/main/gamedata.fbs#L361-L367)***
+10. [BallPrediction](https://github.com/RLBot/flatbuffers-schema/blob/main/gamedata.fbs#L361-L367) - *Receivable*
     - Received by sessions right before every `GamePacket` if enabled in `ConnectionSettings`.
-11. [ConnectionSettings](https://github.com/RLBot/flatbuffers-schema/blob/main/rlbot.fbs#L20-L33)
+11. [ConnectionSettings](https://github.com/RLBot/flatbuffers-schema/blob/main/rlbot.fbs#L20-L33) - *Sendable*
     - Sessions send this immediately after connecting.
     - Tells the server what kind of data it wants to receive.
-12. [StopCommand](https://github.com/RLBot/flatbuffers-schema/blob/main/rlbot.fbs#L14-L18)
+12. [StopCommand](https://github.com/RLBot/flatbuffers-schema/blob/main/rlbot.fbs#L14-L18) - *Sendable*
     - Ends the current match, and optionally tells `RLBotServer.exe` to shut itself down.
-13. [SetLoadout](https://github.com/RLBot/flatbuffers-schema/blob/main/rlbot.fbs#L35-L44)
+13. [SetLoadout](https://github.com/RLBot/flatbuffers-schema/blob/main/rlbot.fbs#L35-L44) - *Sendable*
     - Sent by sessions to change the loadout of their cars.
     - Will always work if a loadout was not specified in match settings and when sent before `InitComplete`.
     - Ignored if state setting was disabled in the match settings, and a loadout was set in match settings.
-14. InitComplete
+14. InitComplete - *Sendable*
     - Indicates that the session has finished all initialization and is ready to start receiving
     game messages without delay.
     - The match will not start until all sessions have sent this message.
     - There is no data associated with this message.
-15. ***[ControllableTeamInfo](https://github.com/RLBot/flatbuffers-schema/blob/main/rlbot.fbs#L56-L64)***
+15. [ControllableTeamInfo](https://github.com/RLBot/flatbuffers-schema/blob/main/rlbot.fbs#L56-L64) - *Receivable*
     - Contains information about the cars that the client can control.
     - Received by a session after it sends `ConnectionSettings`.
     - There may be more than one car in case the bot is a hivemind.
