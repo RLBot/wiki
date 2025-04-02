@@ -10,7 +10,7 @@ RLBot v5 doesn't have any keybinds to toggle rendering mid-match. Mid-match rend
 
 ## Render anchors
 
-A [render anchors](https://github.com/RLBot/flatbuffers-schema/blob/main/rendering.fbs#L51-L61) is a point in space consisting of either or both of a world component and optionally a relative component:
+A [render anchor](https://github.com/RLBot/flatbuffers-schema/blob/main/rendering.fbs#L51-L61) is a point in space consisting of either or both of a world component and optionally a relative component:
 
 - The world component is a fixed point in global coordinates.
 - The relative component is given by a car or ball and includes a local offset that takes the position and orientation of the object into account. The render *will stay attached to the object they are associated with* and do not have to be updated each tick.
