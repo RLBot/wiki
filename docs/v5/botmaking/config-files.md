@@ -171,8 +171,8 @@ A match config file, e.g. `match.toml`, define a match and its settings, closely
     - `launcher` - Indicates how Rocket League should be launched if it is not already running. Either `"Steam"` (default), `"Epic"`, `"Custom"` (see `launcher_arg`), or `NoLaunch`.
     - `launcher_arg` - Additional configuration to the launching method:
         - `"legendary" (Custom)` - Start Rocket League using [Legendary](https://github.com/derrod/legendary)
-    - `auto_start_bots` - Boolean (default: true). Whether bots and scripts should be started using their run command. It is also possible to disable auto-starting for individual bots and scripts. See `[cars]::auto_start` and `[scripts]::auto_start`.
-    - `wait_for_bots` - Boolean (default: true). Whether RLBot should wait for bots and scripts to be connected and ready before starting the match.
+    - `auto_start_agents` - Boolean (default: true). Whether bots and scripts should be started using their run command. It is also possible to disable auto-starting for individual bots and scripts. See `[cars]::auto_start` and `[scripts]::auto_start`.
+    - `wait_for_agents` - Boolean (default: true). Whether RLBot should wait for bots and scripts to be connected and ready before starting the match.
 - `[match]`
     - `game_mode` - The game mode. Either `"Soccer"` (default), `"Hoops"`, `"Dropshot"`, `"Hockey"`, `"Rumble"`, `"Heatseeker"`, `"Gridiron"`, or `"Knockout"`. This affects ball prediction and a few of the game rules although many game modes can also be recreated solely from mutators. See what mutators and game mode combinations make up the official modes [here](https://github.com/RLBot/python-interface/tree/master/tests/gamemodes).
     - `game_map_upk` - The map upk file to load, e.g. `"UtopiaStadium_P"`. On Steam version of Rocket League this can be used to load custom map files, but on Epic version it only works on the Psyonix maps. Available maps can be found [here](https://github.com/RLBot/python-interface/blob/master/rlbot/utils/maps.py).
@@ -233,20 +233,20 @@ A match config file, e.g. `match.toml`, define a match and its settings, closely
 - `config_file` - A path to a [`bot.toml` config file](#bot-script-config-files). Unused if `type` is not `"RLBot"` or `"Psyonix"`. For Psyonix bots, the config file determines name and loadout.
 - `name` - Overrides the name in `config`.
 - `loadout_file` - Overrides the loadout in `config`.
-- `auto_start` - Boolean (default true). Whether the bot should be started using its run command. If false, the run command will be considered empty. See also `auto_start_bots` to disable auto-start for all bots and scripts.
+- `auto_start` - Boolean (default true). Whether the bot should be started using its run command. If false, the run command will be considered empty. See also `auto_start_agents` to disable auto-start for all bots and scripts.
 
 **Script fields:**
 
 - `config_file` - A path to a [`script.toml` config file](#bot-script-config-files).
-- `auto_start` - Boolean (default true). Whether the script should be started using its run command. If false, the running will be considered empty. See also `auto_start_bots` to disable auto-start for all bots and scripts.
+- `auto_start` - Boolean (default true). Whether the script should be started using its run command. If false, the running will be considered empty. See also `auto_start_agents` to disable auto-start for all bots and scripts.
 
 ??? example "Example `match.toml` with default values + some cars and scripts"
 
     ```toml
     [rlbot]
     launcher = "Steam"
-    auto_start_bots = true
-    wait_for_bots = true
+    auto_start_agents = true
+    wait_for_agents = true
 
     [match]
     game_mode = "Soccer"
