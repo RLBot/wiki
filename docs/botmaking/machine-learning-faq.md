@@ -6,7 +6,7 @@ ______________________________________________________________________
 
 Q: I'm new to RLBot, how do I get started with ML?
 
-A: We strongly recommend you begin by writing a hard-coded bot to get the hang of RLBot, and coding for Rocket League. Once you feel confident, join the [RLGym discord](https://discord.gg/t7xcJnvgfa), check out the official [RLGym website](https://rlgym.github.io/) which has useful docs and guides, and look at the dedicated #machine-learning channel in the [RLBot discord](https://discord.gg/S2Y2Kdr) for helpful resources
+A: We strongly recommend you begin by writing a hard-coded bot to get the hang of RLBot, and coding for Rocket League. Once you feel confident, join the [RLGym discord](https://discord.gg/t7xcJnvgfa), check out the official [RLGym website](https://rlgym.github.io/) which has useful docs and guides, and look at the dedicated #machine-learning channel in the [RLBot discord](https://discord.gg/S2Y2Kdr) for helpful resources.
 
 ______________________________________________________________________
 
