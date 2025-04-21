@@ -2,15 +2,19 @@
 
 *TMCP* stands for the *Team Match Communication Protocol*. It is an attempt at standardizing inter-bot communication over the match communications system, or "match comms" for short. See [MatchComms](/matchcomms) for more information on how to use it.
 
-Specifically, TMCP puts a protocol on the binary `content` of MatchComm messages using JSON as the format. TMCP messages should only be sent to the team.
+Specifically, TMCP puts a protocol on the `content` byte string of MatchComm messages using JSON.
+
+The Python-specific wiki has [an example](https://github.com/RLBot/python-interface/wiki/Match-Comm#a-realistic-example) for encoding Python objects to JSON and then bytes and back without erroring on inavalid JSON from other bots.
 
 ## Sending packets
 
 Bots should avoid spamming packets.
 They should aim for a maximum of 10 packets per second.
 
-**Only send a packet when something has changed.**
+Only send a packet **when something has changed.**
 If you want to refine a time estimate sent in a previous message, only do so if the time difference is > 0.1 seconds.
+
+TMCP messages should only be sent to your team.
 
 ## Receiving packets
 
