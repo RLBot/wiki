@@ -29,7 +29,7 @@ It should also be noted that whatever prefixes the `.bot.toml`/`.script.toml` fi
     - `run_command` - The command to run the bot/script on Windows. If empty, the bot must be started manually (This may be handy during development if a default `agent_id` is coded into the bot).
     - `run_command_linux` - The command to run the bot/script on Linux.
     - `hivemind` - Boolean. Whether all bot team mates with this agent id is controlled by the same process. See [Hiveminds](v5/botmaking/hiveminds). *Ignored for scripts.*
-    - `logo_file` - The path to the logo file for the bot/script.
+    - `logo_file` - The path to the logo file for the bot/script. A logo is a 400x300 png file.
 - `[details]` - Used only by the GUI
     - `description` - A description of the bot/script.
     - `fun_fact` - A fun fact about the bot/script.
