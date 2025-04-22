@@ -1530,6 +1530,26 @@
 
               
             
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../v5/botmaking/tmcp/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TMCP
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1918,7 +1938,7 @@ Locations and owning team can be found in the agent's FieldInfo as GoalInfo obje
 <p>You may notice that tiles' locations are at z=0, but floor level is z=3.2. This is because the tiles have a thickness.</p>
 <h4 id="within-arena-script">Within arena script</h4>
 <p>Here's a small script to check if a point is within the arena:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">def</span> <span class="nf">is_within_arena</span><span class="p">(</span><span class="n">point</span><span class="p">):</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">is_within_arena</span><span class="p">(</span><span class="n">point</span><span class="p">):</span>
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>    <span class="n">HEIGHT</span> <span class="o">=</span> <span class="mi">1986</span>
 <a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>    <span class="n">TO_WALL</span> <span class="o">=</span> <span class="mi">4555</span>
 <a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>    <span class="n">TO_CORNER</span> <span class="o">=</span> <span class="mi">5260</span>  <span class="c1"># 4555 / math.sin(60)</span>

@@ -1507,6 +1507,26 @@
 
               
             
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../v5/botmaking/tmcp/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TMCP
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1921,12 +1941,12 @@ If you want to refine a time estimate sent in a previous message, only do so if 
 <h1 id="tmcp-implementations">TMCP Implementations</h1>
 <h2 id="virxerlu">VirxERLU</h2>
 <p>If you use VirxERLU, your bot automatically sends out TMCP packets. To process incoming ones, add this to your bot in <code>main.py</code>:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="k">def</span> <span class="nf">handle_tmcp_packet</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">packet</span><span class="p">):</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">handle_tmcp_packet</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">packet</span><span class="p">):</span>
 <a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>    <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">handle_tmcp_packet</span><span class="p">(</span><span class="n">packet</span><span class="p">)</span>
 <a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>    <span class="c1"># process the packet here</span>
 </code></pre></div>
 <p>However, you will have to implement your own 'minimum time to ball' function. This is the default:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="k">def</span> <span class="nf">get_minimum_game_time_to_ball</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">get_minimum_game_time_to_ball</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>    <span class="k">return</span> <span class="o">-</span><span class="mi">1</span>
 </code></pre></div>
 <p>It should return -1 if you can't find a shot and the game time of the shot if you could. It should be noted that all shots (except for short_shot) have a property called <code>intercept_time</code> which is the game time that they will intercept the ball at.</p>
@@ -1936,13 +1956,13 @@ If you want to refine a time estimate sent in a previous message, only do so if 
 <div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>pip install tmcp
 </code></pre></div>
 <p>Then you can use it like this:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="kn">from</span> <span class="nn">tmcp</span> <span class="kn">import</span> <span class="n">TMCPHandler</span><span class="p">,</span> <span class="n">TMCPMessage</span><span class="p">,</span> <span class="n">ActionType</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">tmcp</span><span class="w"> </span><span class="kn">import</span> <span class="n">TMCPHandler</span><span class="p">,</span> <span class="n">TMCPMessage</span><span class="p">,</span> <span class="n">ActionType</span>
 <a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>
-<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="k">class</span> <span class="nc">MyBot</span><span class="p">(</span><span class="n">BaseAgent</span><span class="p">):</span>
-<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>    <span class="k">def</span> <span class="nf">initialize_agent</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="k">class</span><span class="w"> </span><span class="nc">MyBot</span><span class="p">(</span><span class="n">BaseAgent</span><span class="p">):</span>
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">initialize_agent</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">tmcp_handler</span> <span class="o">=</span> <span class="n">TMCPHandler</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
 <a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>
-<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>    <span class="k">def</span> <span class="nf">get_output</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">packet</span><span class="p">:</span> <span class="n">GameTickPacket</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">SimpleControllerState</span><span class="p">:</span>
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">get_output</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">packet</span><span class="p">:</span> <span class="n">GameTickPacket</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">SimpleControllerState</span><span class="p">:</span>
 <a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>        <span class="c1"># Receive and parse all new matchcomms messages into TMCPMessage objects.</span>
 <a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a>        <span class="n">new_messages</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">TMCPMessage</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">tmcp_handler</span><span class="o">.</span><span class="n">recv</span><span class="p">()</span>
 <a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a>        <span class="c1"># Handle TMCPMessages.</span>
@@ -1966,13 +1986,13 @@ If you want to refine a time estimate sent in a previous message, only do so if 
 </code></pre></div>
 <h2 id="under-the-hood">Under the hood</h2>
 <p>The following example shows how you could send and receive match comms without a handler. This is shown to give you a better idea of what's going on under the hood. We do still recommend that you use an existing handler instead because it will be up to date and do a lot of error checking for you.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="kn">from</span> <span class="nn">queue</span> <span class="kn">import</span> <span class="n">Empty</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">queue</span><span class="w"> </span><span class="kn">import</span> <span class="n">Empty</span>
 <a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>
-<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="k">class</span> <span class="nc">MyBot</span><span class="p">(</span><span class="n">BaseAgent</span><span class="p">):</span>
-<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>    <span class="k">def</span> <span class="nf">initialize_agent</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="k">class</span><span class="w"> </span><span class="nc">MyBot</span><span class="p">(</span><span class="n">BaseAgent</span><span class="p">):</span>
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">initialize_agent</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">ally_actions</span> <span class="o">=</span> <span class="p">{}</span>
 <a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>
-<a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a>    <span class="k">def</span> <span class="nf">receive_coms</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">receive_coms</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a>        <span class="c1"># Process up to 50 messages per tick.</span>
 <a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a>        <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">50</span><span class="p">):</span>
 <a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a>            <span class="k">try</span><span class="p">:</span>
@@ -1994,7 +2014,7 @@ If you want to refine a time estimate sent in a previous message, only do so if 
 <a id="__codelineno-11-26" name="__codelineno-11-26" href="#__codelineno-11-26"></a>            <span class="c1"># Let&#39;s save it in a dictionary for reference later.</span>
 <a id="__codelineno-11-27" name="__codelineno-11-27" href="#__codelineno-11-27"></a>            <span class="bp">self</span><span class="o">.</span><span class="n">ally_actions</span><span class="p">[</span><span class="n">msg</span><span class="p">[</span><span class="s2">&quot;index&quot;</span><span class="p">]]</span> <span class="o">=</span> <span class="n">msg</span>
 <a id="__codelineno-11-28" name="__codelineno-11-28" href="#__codelineno-11-28"></a>
-<a id="__codelineno-11-29" name="__codelineno-11-29" href="#__codelineno-11-29"></a>    <span class="k">def</span> <span class="nf">send_coms</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<a id="__codelineno-11-29" name="__codelineno-11-29" href="#__codelineno-11-29"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">send_coms</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <a id="__codelineno-11-30" name="__codelineno-11-30" href="#__codelineno-11-30"></a>        <span class="c1"># Let&#39;s assume that our bot is attacking the ball and aiming for prediction slice 100.</span>
 <a id="__codelineno-11-31" name="__codelineno-11-31" href="#__codelineno-11-31"></a>        <span class="n">outgoing_msg</span> <span class="o">=</span> <span class="p">{</span>
 <a id="__codelineno-11-32" name="__codelineno-11-32" href="#__codelineno-11-32"></a>            <span class="s2">&quot;tmcp_version&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
@@ -2010,7 +2030,7 @@ If you want to refine a time estimate sent in a previous message, only do so if 
 <a id="__codelineno-11-42" name="__codelineno-11-42" href="#__codelineno-11-42"></a>        <span class="p">}</span>
 <a id="__codelineno-11-43" name="__codelineno-11-43" href="#__codelineno-11-43"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">matchcomms</span><span class="o">.</span><span class="n">outgoing_broadcast</span><span class="o">.</span><span class="n">put_nowait</span><span class="p">(</span><span class="n">outgoing_msg</span><span class="p">)</span>
 <a id="__codelineno-11-44" name="__codelineno-11-44" href="#__codelineno-11-44"></a>
-<a id="__codelineno-11-45" name="__codelineno-11-45" href="#__codelineno-11-45"></a>    <span class="k">def</span> <span class="nf">get_output</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">packet</span><span class="p">:</span> <span class="n">GameTickPacket</span><span class="p">):</span>
+<a id="__codelineno-11-45" name="__codelineno-11-45" href="#__codelineno-11-45"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">get_output</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">packet</span><span class="p">:</span> <span class="n">GameTickPacket</span><span class="p">):</span>
 <a id="__codelineno-11-46" name="__codelineno-11-46" href="#__codelineno-11-46"></a>        <span class="c1"># Get the latest information from matchcomms.</span>
 <a id="__codelineno-11-47" name="__codelineno-11-47" href="#__codelineno-11-47"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">receive_coms</span><span class="p">()</span>
 <a id="__codelineno-11-48" name="__codelineno-11-48" href="#__codelineno-11-48"></a>

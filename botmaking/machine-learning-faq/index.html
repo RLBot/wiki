@@ -1449,6 +1449,26 @@
 
               
             
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../v5/botmaking/tmcp/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TMCP
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1737,39 +1757,28 @@
 
   <h1>Machine learning faq</h1>
 
-<p>A: There are a lot of helpful resources pinned to the ml-discussion channel of the <a href="https://discord.gg/S2Y2Kdr">RLBot discord</a>.</p>
+<p>A: There are a lot of helpful resources pinned to the #ml-discussion channel of the <a href="https://discord.gg/S2Y2Kdr">RLBot discord</a>. You should also join the <a href="https://discord.gg/t7xcJnvgfa">RLGym discord</a>, which is more specifically for ML.</p>
 <hr />
 <p>Q: I'm new to RLBot, how do I get started with ML?</p>
-<p>A: We strongly recommend you begin by writing a hard-coded bot to get the hang of RLBot, and coding for Rocket League. Once you feel confident, check out the dedicated #machine-learning channel in the RLBot discord for helpful resources!</p>
+<p>A: We strongly recommend you begin by writing a hard-coded bot to get the hang of RLBot, and coding for Rocket League. Once you feel confident, join the <a href="https://discord.gg/t7xcJnvgfa">RLGym discord</a>, check out the official <a href="https://rlgym.github.io/">RLGym website</a> which has useful docs and guides, and look at the dedicated #machine-learning channel in the <a href="https://discord.gg/S2Y2Kdr">RLBot discord</a> for helpful resources.</p>
 <hr />
 <p>Q: What can I use ML for in Rocket League?</p>
-<p>A: Lots of things! Optimizing mechanics (wave-dashing, aerials, power-sliding, etc), analyzing replays (predicting shot percentages, car positions, etc), and even playing the game.</p>
+<p>A: Lots of things! Most people simply use it to make bots for playing the game, but that isn't all. Optimizing specific mechanics rather than the entire game (wave-dashing, aerials, power-sliding, etc) and analyzing replays (predicting shot percentages, car positions, etc) are some other things people have done.</p>
 <hr />
 <p>Q: How could I use the replays available at <a href="https://calculated.gg/">calculated.gg</a>?</p>
 <p>A: Tools like <a href="https://github.com/oxrock/TrainingDataExtractor">Training Data Extractor</a> and <a href="https://github.com/SaltieRL/carball">carball</a> exist to format replay data into an RLBot tick packet, and approximate player inputs between frames. These enable users to easily handle data available in replays for whatever purpose they might have.</p>
 <hr />
 <p>Q: Is it possible to get controls from replays so I can train a model to copy humans?:</p>
-<p>A: Training controls directly from replays has not been very successful.</p>
-<p>The reason for this may be that not all conditions the bot will encounter are present in replays, leading to a model being unable to handle certain conditions that were not present in the replays it was trained with.</p>
-<p>The most successful attempt is documented <a href="https://github.com/Rolv-Arild/replay-pretraining">here</a>.</p>
+<p>A: Training controls directly from replays has been used to some success, most notably with <a href="https://wandb.ai/rolv-arild/ripple/reports/Ripple--VmlldzozNDE5NzE4">Ripple</a>. There exist tools to find inputs from replay files, such as <a href="https://github.com/ZealanL/RLCarInputSolver">RLCarInputSolver</a>, and even public replay repositories (such as the one Ripple used, <a href="https://www.kaggle.com/datasets/rolvarild/high-level-rocket-league-replay-dataset">here</a>) with tens of thousands of hours of data!</p>
 <hr />
-<p>Q: Can I make a clone of Rocket League for training and then transfer it to the real game?</p>
-<p>A: It would be quite the project to clone Rocket League, but there is no reason that would not work with a little elbow grease!</p>
-<p>The user @Roboserg#9216 has been working on a Rocket League clone for some time, and has made very promising progress. His work is open source, and can be found <a href="https://github.com/roboserg/RoboLeague">here</a>.</p>
+<p>Q: Can I use a clone of Rocket League for training and then transfer it to the real game?</p>
+<p>A: This is how most people train now! <a href="https://github.com/ZealanL/RocketSim">Rocketsim</a> is used for training by basically everyone, but you don't really have to think about it, as rocketsim is used by default by current libraries.</p>
 <hr />
 <p>Q: Can I use Supervised Learning to train a bot that mimics other bots?</p>
 <p>A: Yes you can! The ML bots <a href="https://github.com/SaltieRL/Saltie/tree/master/agents/levi">Levi</a> and <a href="https://github.com/DanielDowns/ArtificialIntelligence/tree/master/RocketLeagueBots/TensorBot">Tensorbot</a> were trained this way.</p>
 <hr />
-<p>Q: Can I use Reinforcement Learning to make a bot?</p>
-<p>A: This is the holy grail for many ML enthusiasts in the RLBot community.</p>
-<p>With the recent release of the Python library and Bakkesmod plugin <a href="https://rlgym.github.io/">RLGym</a>, Reinforcement Learning can now be used to train models directly in the game.
-Some promising results have already been achieved, like <a href="https://www.youtube.com/watch?v=0PZ89WIr3xw">Rhobot</a> and <a href="https://imgur.com/a/DQSUAWA">Element</a>.
-These models take quite a lot of compute power and time to train, but they are achievable with consumer-grade hardware. The largest RLGym project is currently a distributed learning bot <a href="https://github.com/Rolv-Arild/Necto/">Necto/Nexto</a>.</p>
-<p>Reinforcement Learning can also be used to train specific mechanics, like <a href="https://www.twitch.tv/videos/488777173">Eagle</a> and <a href="https://imgur.com/a/kleC2Jc">ElementAerial</a></p>
-<hr />
 <p>Q: Can I use this or that method to speed up Reinforcement Learning?</p>
-<p>A: You can just try it out, if it works for other problems, then it might also work for Rocket League.
-Don't hesitate to ask in the discord if you want a second opinion.</p>
+<p>A: Try it out! If it works for other problems, then it might also work for Rocket League. Don't hesitate to ask in the discord if you want a second opinion or want to know if it's been tried before.</p>
 
 
 
