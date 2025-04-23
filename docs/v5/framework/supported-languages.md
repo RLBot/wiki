@@ -17,7 +17,7 @@ The following list of language interfaces are supported by core developers of th
 
 ## Adding Support for a New Language
 
-As mention, the new language must support sockets and [flatbuffers](https://flatbuffers.dev/).
+The new language must support sockets and [flatbuffers](https://flatbuffers.dev/).
 
 The protocol is described in the [Socket Specification](/v5/framework/sockets-specification).
 
