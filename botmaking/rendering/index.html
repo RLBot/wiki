@@ -1386,6 +1386,26 @@
   
   
     <li class="md-nav__item">
+      <a href="../../v5/botmaking/bot-loadouts/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Bot Loadouts and Logos
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../v5/botmaking/config-files/" class="md-nav__link">
         
   
@@ -1406,11 +1426,51 @@
   
   
     <li class="md-nav__item">
+      <a href="../../v5/botmaking/game-data/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Game Data
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../v5/botmaking/hiveminds/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     Hiveminds
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../v5/botmaking/manipulating-game-state/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Manipulating Game States
   </span>
   
 
@@ -1586,6 +1646,26 @@
 
               
             
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../v5/community/story-mode/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Story Mode
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1738,6 +1818,26 @@
   
   
     <li class="md-nav__item">
+      <a href="../../v5/framework/supported-languages/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Supported Languages
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../v5/framework/v5/" class="md-nav__link">
         
   
@@ -1839,8 +1939,8 @@
 <p>When installing the RLBotGUI, rendering will be disabled by default. You can turn it on by clicking 'Extra' and ticking 'Enable Rendering' in the GUI. However, rendering can also be enabled or disabled any time using the <code>page up</code> and <code>page down</code> keys, respectively. So if your rendering isn't appearing, make sure to press <code>page up</code> before panicking.</p>
 <h3 id="the-basics">The basics</h3>
 <p>The renderer object is built into the BaseAgent class, so you don't need to import anything other than the BaseAgent. Each time you want to render something, you start with <code>self.renderer.begin_rendering()</code> and end with <code>self.renderer.end_rendering()</code>. The rendering code goes in between the <code>begin_rendering()</code> and <code>end_rendering()</code>. Let's take a look at an example:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">RenderingTutorial</span><span class="p">(</span><span class="n">BaseAgent</span><span class="p">):</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">get_output</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">packet</span><span class="p">:</span> <span class="n">GameTickPacket</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">SimpleControllerState</span><span class="p">:</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">class</span> <span class="nc">RenderingTutorial</span><span class="p">(</span><span class="n">BaseAgent</span><span class="p">):</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    <span class="k">def</span> <span class="nf">get_output</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">packet</span><span class="p">:</span> <span class="n">GameTickPacket</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">SimpleControllerState</span><span class="p">:</span>
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>        <span class="n">controller</span> <span class="o">=</span> <span class="n">SimpleControllerState</span><span class="p">()</span>
 <a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
 <a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">renderer</span><span class="o">.</span><span class="n">begin_rendering</span><span class="p">()</span>

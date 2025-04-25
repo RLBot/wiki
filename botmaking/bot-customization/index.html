@@ -1434,6 +1434,26 @@
   
   
     <li class="md-nav__item">
+      <a href="../../v5/botmaking/bot-loadouts/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Bot Loadouts and Logos
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../v5/botmaking/config-files/" class="md-nav__link">
         
   
@@ -1454,11 +1474,51 @@
   
   
     <li class="md-nav__item">
+      <a href="../../v5/botmaking/game-data/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Game Data
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../v5/botmaking/hiveminds/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     Hiveminds
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../v5/botmaking/manipulating-game-state/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Manipulating Game States
   </span>
   
 
@@ -1634,6 +1694,26 @@
 
               
             
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../v5/community/story-mode/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Story Mode
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1771,6 +1851,26 @@
   
   <span class="md-ellipsis">
     RLBot Sockets Specification
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../v5/framework/supported-languages/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Supported Languages
   </span>
   
 
@@ -2026,15 +2126,15 @@ You can also click the bottom left buttons to preview your loadout in-game insta
 <p><strong>This is completely optional!</strong></p>
 <p>Recently we added the ability to generate your bot's loadout with a python script. This lets you choose different loadouts based on player index, randomize parts of your loadout, etc. The script is executed at the beginning of every match.</p>
 <p>To use this feature, put a line like <code>loadout_generator = loadout_generator_example.py</code> in your bot cfg file, in the [Locations] section. Then create a python file like this:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">random</span>
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kn">import</span> <span class="nn">random</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
 <a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>
-<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="kn">from</span><span class="w"> </span><span class="nn">rlbot.agents.base_loadout_generator</span><span class="w"> </span><span class="kn">import</span> <span class="n">BaseLoadoutGenerator</span>
-<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="kn">from</span><span class="w"> </span><span class="nn">rlbot.matchconfig.loadout_config</span><span class="w"> </span><span class="kn">import</span> <span class="n">LoadoutConfig</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="kn">from</span> <span class="nn">rlbot.agents.base_loadout_generator</span> <span class="kn">import</span> <span class="n">BaseLoadoutGenerator</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="kn">from</span> <span class="nn">rlbot.matchconfig.loadout_config</span> <span class="kn">import</span> <span class="n">LoadoutConfig</span>
 <a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>
 <a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>
-<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="k">class</span><span class="w"> </span><span class="nc">SampleLoadoutGenerator</span><span class="p">(</span><span class="n">BaseLoadoutGenerator</span><span class="p">):</span>
-<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">generate_loadout</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">player_index</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">team</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">LoadoutConfig</span><span class="p">:</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="k">class</span> <span class="nc">SampleLoadoutGenerator</span><span class="p">(</span><span class="n">BaseLoadoutGenerator</span><span class="p">):</span>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>    <span class="k">def</span> <span class="nf">generate_loadout</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">player_index</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">team</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">LoadoutConfig</span><span class="p">:</span>
 <a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>
 <a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>        <span class="c1"># You could start with a loadout based on a cfg file in the same directory as this generator</span>
 <a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>        <span class="n">loadout</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">load_cfg_file</span><span class="p">(</span><span class="n">Path</span><span class="p">(</span><span class="s1">&#39;appearance.cfg&#39;</span><span class="p">),</span> <span class="n">team</span><span class="p">)</span>
