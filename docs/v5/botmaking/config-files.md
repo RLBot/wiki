@@ -171,6 +171,7 @@ A match config file, e.g. `match.toml`, define a match and its settings, closely
     - `launcher` - Indicates how Rocket League should be launched if it is not already running. Either `"Steam"` (default), `"Epic"`, `"Custom"` (see `launcher_arg`), or `NoLaunch`.
     - `launcher_arg` - Additional configuration to the launching method:
         - `"legendary" (Custom)` - Start Rocket League using [Legendary](https://github.com/derrod/legendary)
+        - `"heroic" (Custom)` - Start Rocket League using [Heroic](https://heroicgameslauncher.com/)
     - `auto_start_agents` - Boolean (default: true). Whether bots and scripts should be started using their run command. It is also possible to disable auto-starting for individual bots and scripts. See `[cars]::auto_start` and `[scripts]::auto_start`.
     - `wait_for_agents` - Boolean (default: true). Whether RLBot should wait for bots and scripts to be connected and ready before starting the match.
 - `[match]`
