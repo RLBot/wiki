@@ -157,7 +157,7 @@ More information on car bodies [in this spreadsheet](https://onedrive.live.com/v
     - on the ground: 991.666 uu/s^2
     - in the air: 1058.333 uu/s^2
 - Acceleration in the ground:
-    - due to throttle: depends on velocity - https://samuelpmish.github.io/notes/RocketLeague/ground_control/#throttle
+    - due to throttle: depends on velocity - See [smish notes](https://www.smish.dev/rocket_league/ground_control/#throttle).
     - due to braking (any amount): -3500.0 uu/s^2
     - due to slowing during zero-throttle coasting: -525.0 uu/s^2
 - Acceleration in the air due to throttle: ~66.667 uu/s^2   (yes, throttling accelerates the car in the air)
