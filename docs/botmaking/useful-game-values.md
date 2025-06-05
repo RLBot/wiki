@@ -46,9 +46,7 @@ Big boost pads:
 - 6 in total.
 - Gives 100 boost.
 - Takes 10 seconds to refresh.
-- The pads with a z-component of 73.0 are the big pads. Mirror these coordinates to get all 6:
-    - Midfield: (3584, 0)
-    - Corner: (3072, 4096)
+- Positioned at: (±3584, 0, 73) and (±3072, ±4096, 73)
 
 A car picks up a boost pad if the car's center of mass (not hitbox) enters the pad's hitbox. This interaction is different when cars are standing still (see the [Rocket Science video on boost pad hitboxes](https://www.youtube.com/watch?v=xgfa-qZyInw))
 
