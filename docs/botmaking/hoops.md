@@ -8,7 +8,7 @@ game_mode = Hoops
 game_map = Hoops_DunkHouse
 ```
 
-## Arena Walls
+## Arena
 
 ![](/img/hoops/hoops-dimensions.png)
 
