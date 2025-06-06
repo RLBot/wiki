@@ -10,21 +10,23 @@ game_map = Hoops_DunkHouse
 
 ## Arena Walls
 
+![](/img/hoops/hoops-dimensions.png)
+
 Hoops is usually played on the map Dunk House or The Block. The dimensions for the arena are:
 
-- Floor z: =0
-- Side wall x: 2966.67
-- Back wall y: 3586
-- Ceiling z: =1820
+- Floor z: 0
+- Side wall x: ±2966.67
+- Back wall y: ±3581
+- Ceiling z: 1820
 - The diagonal walls intersect the x and y axes at: ±5782
-- Wall ramp radius: 86
+- Wall bottom ramp radius: 172
 
-## Goals
+### Goals
 
 In Hoops, the goals are two rings. The rings are semi-circles placed (0, ±2969, 364) with radius 655 and they are connected to the wall with straight lines (except a small curve near the walls). The pipe that makes up the ring has a diameter of approximately 42.
 
 
-## Boost Pads
+### Boost Pads
 
 There are 20 boost pads on a Hoops arena, 6 of them are big.
 
