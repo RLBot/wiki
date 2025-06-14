@@ -114,7 +114,7 @@ At kickoff the ball is launched straight up into the air with a velocity of 1000
 
 You always spawn with 100 boost.
 
-Kickoff spawn locations are similar to soccer spawn locations, but not identical. In dropshot spawn locations are:
+Kickoff spawn locations are similar to soccar spawn locations, but not identical. In dropshot spawn locations are:
 
 | Kickoff         | Blue                              | Orange                            |
 |-----------------|-----------------------------------|-----------------------------------|

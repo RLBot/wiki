@@ -37,7 +37,7 @@ It should also be noted that whatever prefixes the `.bot.toml`/`.script.toml` fi
     - `developer` - The developer(s) of the bot/script.
     - `language` - The language the bot/script is written in.
     - `tags` - A list of tags that describe the bot/script. These will affect which categories in the GUI your bot/script appear in. Possible tags:
-        - `1v1` - The bot plays traditional 1v1 soccer.
+        - `1v1` - The bot plays traditional 1v1 soccar.
         - `teamplay` - The bot considers team mates and rotates.
         - `goalie` - Only add this tag if your bot *only* plays as a goalie. Incompatible with teamplay tag!
         - `hoops` - The bot understands the Hoops game mode.
@@ -175,7 +175,7 @@ A match config file, e.g. `match.toml`, define a match and its settings, closely
     - `auto_start_agents` - Boolean (default: true). Whether bots and scripts should be started using their run command. It is also possible to disable auto-starting for individual bots and scripts. See `[cars]::auto_start` and `[scripts]::auto_start`.
     - `wait_for_agents` - Boolean (default: true). Whether RLBot should wait for bots and scripts to be connected and ready before starting the match.
 - `[match]`
-    - `game_mode` - The game mode. Either `"Soccer"` (default), `"Hoops"`, `"Dropshot"`, `"Hockey"`, `"Rumble"`, `"Heatseeker"`, `"Gridiron"`, or `"Knockout"`. This affects ball prediction and a few of the game rules although many game modes can also be recreated solely from mutators. See what mutators and game mode combinations make up the official modes [here](https://github.com/RLBot/python-interface/tree/master/tests/gamemodes).
+    - `game_mode` - The game mode. Either `"Soccar"` (default), `"Hoops"`, `"Dropshot"`, `"Snowday"`, `"Rumble"`, `"Heatseeker"`, `"Gridiron"`, or `"Knockout"`. This affects ball prediction and a few of the game rules although many game modes can also be recreated solely from mutators. See what mutators and game mode combinations make up the official modes [here](https://github.com/RLBot/python-interface/tree/master/tests/gamemodes).
     - `game_map_upk` - The map upk file to load, e.g. `"UtopiaStadium_P"`. On Steam version of Rocket League this can be used to load custom map files, but on Epic version it only works on the Psyonix maps. Available maps can be found [here](https://github.com/RLBot/python-interface/blob/master/rlbot/utils/maps.py).
     - `cars` - A list of players in the match. See the car section below for fields of cars.
     - `scripts` - A list of scripts in the match. See the script section below for fields of scripts.
@@ -250,7 +250,7 @@ A match config file, e.g. `match.toml`, define a match and its settings, closely
     wait_for_agents = true
 
     [match]
-    game_mode = "Soccer"
+    game_mode = "Soccar"
     game_map_upk = "Stadium_P"
     skip_replays = false
     start_without_countdown = false
