@@ -61,7 +61,7 @@ Note: Some of these coordinates have been rounded.
 
 ## Ball
 
-The radius of the ball is 98.38. When the kickout countdown hits zero, the ball is given a Z velocity of 1000. But other than that, the physics of the ball is similar to soccer.
+The radius of the ball is 98.38. When the kickout countdown hits zero, the ball is given a Z velocity of 1000. But other than that, the physics of the ball is similar to soccar.
 
 ## Spawning
 

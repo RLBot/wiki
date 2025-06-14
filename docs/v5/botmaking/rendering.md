@@ -10,7 +10,7 @@ RLBot v5 doesn't have any keybinds to toggle rendering mid-match. Mid-match rend
 
 ## Render anchors
 
-A [render anchor](https://github.com/RLBot/flatbuffers-schema/blob/main/rendering.fbs#L51-L61) is a point in space consisting of either or both of a world component and optionally a relative component:
+A [RenderAnchor](https://github.com/RLBot/flatbuffers-schema/blob/main/schema/rendering.fbs#L48-L59) is a point in space consisting of either or both of a world component and optionally a relative component:
 
 - The world component is a fixed point in global coordinates.
 - The relative component is given by a car or ball and includes a local offset that takes the position and orientation of the object into account. The render *will stay attached to the object they are associated with* and do not have to be updated each tick.
@@ -27,16 +27,16 @@ This will position the render underneath the car, with the render moving relativ
 
 ## Render types
 
-- [Line3D](https://github.com/RLBot/flatbuffers-schema/blob/main/rendering.fbs#L63-L68) - Draws a line between 2 points in 3D space.
-- [PolyLine3D](https://github.com/RLBot/flatbuffers-schema/blob/main/rendering.fbs#L70-L74) - Draws a continuous line through a series of 3D points. World coordinates only.
+- [Line3D](https://github.com/RLBot/flatbuffers-schema/blob/main/schema/rendering.fbs#L61-L66) - Draws a line between 2 points in 3D space.
+- [PolyLine3D](https://github.com/RLBot/flatbuffers-schema/blob/main/schema/rendering.fbs#L68-L72) - Draws a continuous line through a series of 3D points. World coordinates only.
 
-    ??? info "PolyLine3D is more efficient than Line3D for a series of lines"
+    ??? tip "PolyLine3D is more efficient than Line3D for a series of lines"
         This is the recommended way to draw a large number of points in a continuous line, as it is more efficient than sending multiple `Line3D` messages. While this method was available in RLBot v4, it was implemented by sending a series of `Line3D` messages which defeated the purpose.
 
-- [String2D](https://github.com/RLBot/flatbuffers-schema/blob/main/rendering.fbs#L76-L96) - Draws a string in 2D space (screen space).
-- [String3D](https://github.com/RLBot/flatbuffers-schema/blob/main/rendering.fbs#L98-L115) - Draws a billboard string in 3D space.
-- [Rect2D](https://github.com/RLBot/flatbuffers-schema/blob/main/rendering.fbs#L117-L134) - Draws a rectangle in 2D space (screen space).
-- [Rect3D](https://github.com/RLBot/flatbuffers-schema/blob/main/rendering.fbs#L136-L151) - Draws a billboard rectangle in 3D space.
+- [String2D](https://github.com/RLBot/flatbuffers-schema/blob/main/schema/rendering.fbs#L74-L101) - Draws a string in 2D space (screen space).
+- [String3D](https://github.com/RLBot/flatbuffers-schema/blob/main/schema/rendering.fbs#L103-L126) - Draws a billboard string in 3D space.
+- [Rect2D](https://github.com/RLBot/flatbuffers-schema/blob/main/schema/rendering.fbs#L128-L151) - Draws a rectangle in 2D space (screen space).
+- [Rect3D](https://github.com/RLBot/flatbuffers-schema/blob/main/schema/rendering.fbs#L153-L173) - Draws a billboard rectangle in 3D space.
 
 ### Coordinates and sizes
 

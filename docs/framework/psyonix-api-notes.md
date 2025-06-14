@@ -20,7 +20,7 @@ We're aiming for a backwards compatibility with this first bot API release, so e
     - Latest ball touch will always be blank for now (fixed)
     - Boost respawn timers don't work yet
 - Unfortunately, quick chat is not supported yet (1/2 fixed)
-- We only support Soccer, exhibition mode at the moment. (More modes are supported)
+- We only support Soccar, exhibition mode at the moment. (More modes are supported)
 - The game data will currently update in memory at 60Hz, ~~regardless of Rocket League's frame rate~~ (anecdotally it seems to be capped at the frame rate). We may be able to tune that later. (We now have 120hz)
 - The Psyonix API itself and the code that interfaces with it directly are closed source at the moment.
 

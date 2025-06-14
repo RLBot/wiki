@@ -7,12 +7,12 @@ RLBot v5's ball prediction is 6 seconds' worth of ball path data, each advancing
 
 ## Message structure
 
-[The `BallPrediction` flatbuffer](https://github.com/RLBot/flatbuffers-schema/blob/main/gamedata.fbs#L361-L367) defines the data in each message. The message is a list of 720 `PredictionSlice`s, with each slice advancing 1/120 of a second into the future past the previous slice.
+[The `BallPrediction` flatbuffer](https://github.com/RLBot/flatbuffers-schema/blob/main/schema/gamedata.fbs#L417-L423) defines the data in each message. The message is a list of 720 `PredictionSlice`s, with each slice advancing 1/120 of a second into the future past the previous slice.
 
 A `PredictionSlice` contains the following fields:
 
-- `game_seconds` - The moment in game time that this prediction corresponds to. This corresponds to 'seconds_elapsed' in [`MatchInfo`](https://github.com/RLBot/flatbuffers-schema/blob/main/gamedata.fbs#L254-L279).
-- `physics` - The [`Physics`](https://github.com/RLBot/flatbuffers-schema/blob/main/gamedata.fbs#L116-L122) information for the ball at this slice. This contains:
+- `game_seconds` - The moment in game time that this prediction corresponds to. This corresponds to 'seconds_elapsed' in [`MatchInfo`](https://github.com/RLBot/flatbuffers-schema/blob/main/schema/gamedata.fbs#L294-L327).
+- `physics` - The [`Physics`](https://github.com/RLBot/flatbuffers-schema/blob/main/schema/gamedata.fbs#L123-L129) information for the ball at this slice. This contains:
     - `location`
     - `velocity`
     - `angular_velocity`

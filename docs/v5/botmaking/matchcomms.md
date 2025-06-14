@@ -10,7 +10,7 @@ Use cases:
 
 ## Message structure
 
-[The `MatchComm` flatbuffer](https://github.com/RLBot/flatbuffers-schema/blob/main/comms.fbs#L3-L22) defines the data in each message:
+[The `MatchComm` flatbuffer](https://github.com/RLBot/flatbuffers-schema/blob/main/schema/comms.fbs) defines the data in each message:
 
 - `index` - The index of the player that sent this message. For scripts, this value is the index in the match configuration instead.
 - `team` - The team of the player that sent this message. `0` for blue, `1` for orange and `2` for scripts.
