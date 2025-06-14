@@ -11,7 +11,7 @@ The framework uses four types of config files, commonly known as:
 
 ## Bot & Script Config Files
 
-A bot/script config file defines a bot/script and its attributes, closely resembling the `PlayerConfiguration`/`ScriptConfiguration` from the [flatbuffer schema](https://github.com/RLBot/flatbuffers-schema/blob/main/matchconfig.fbs).
+A bot/script config file defines a bot/script and its attributes, closely resembling the `PlayerConfiguration`/`ScriptConfiguration` from the [flatbuffer schema](https://github.com/RLBot/flatbuffers-schema/blob/main/schema/matchconfig.fbs).
 The content of config files for bots and scripts are very similar, so the file extension indicates whether it is a bot or script:
 
 - **Bots:** Named `bot.toml` or ends with `.bot.toml`. Here are examples of valid names: `bot.toml`, `Necto.bot.toml`, `atba.bot.toml`
@@ -47,7 +47,7 @@ It should also be noted that whatever prefixes the `.bot.toml`/`.script.toml` fi
         - `heatseeker` - The bot understands the Heatseeker game mode.
         - `memebot` - The bot has an untraditional play style.
 
-!!! note "Psyonix Bot Presets"
+!!! tip "Psyonix Bot Presets"
     If a Psyonix bot is not given a name, it will be a random [standard Psyonix bot](https://rocketleague.fandom.com/wiki/Bot). If a Psyonix bot's name matches a standard Psyonix bot, it will use the standard loadout of that bot unless a loadout file is specified.
 
 ??? example "Example `bot.toml` that runs a Python bot in a virtual environment"
