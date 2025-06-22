@@ -163,7 +163,7 @@ Loadout config files, e.g. `loadout.toml`, define a bot's default loadout. They 
 
 ## Match Config Files
 
-A match config file, e.g. `match.toml`, define a match and its settings, closely resembling `MatchConfiguration ` from the [flatbuffer schema](https://github.com/RLBot/flatbuffers-schema/blob/main/matchconfig.fbs).
+A match config file, e.g. `match.toml`, define a match and its settings, closely resembling `MatchConfiguration ` from the [flatbuffer schema](https://github.com/RLBot/flatbuffers-schema/blob/main/schema/matchconfig.fbs).
 
 **Sections and fields:**
 
