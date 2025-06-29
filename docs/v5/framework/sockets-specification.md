@@ -22,10 +22,10 @@ Packet types are named from the POV of the sender.
 ## Packet format
 
 This project uses [FlatBuffers](https://flatbuffers.dev/) as the data format,
-prefixed with a 32-bit unsigned integer.
+prefixed with a 16-bit unsigned integer.
 All packets should be big endian.
 
-- Read the first 32 bits as an unsigned integer. This is `n`, the length of the flatbuffer in bytes.
+- Read the first 16 bits as an unsigned integer. This is `n`, the length of the flatbuffer in bytes.
 - Read `n` bytes, and deserialize this into the correct flatbuffer according to the data type.
 
 Replace "read" with "write" to send a packet.
