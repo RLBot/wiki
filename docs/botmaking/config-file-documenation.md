@@ -70,7 +70,7 @@ NOTE:  None of these take an effect currently
 ### Match Configuration
 
 - num_participants: The total number of cars that will be spawned into the match.
-- game_mode: 'Soccer', 'Hoops', 'Dropshot', 'Hockey', 'Rumble'
+- game_mode: 'Soccar', 'Hoops', 'Dropshot', 'Snowday', 'Rumble'
 - game_map, e.g. "Mannfield". [All possible values](https://github.com/RLBot/RLBot/blob/master/src/main/python/rlbot/parsing/match_settings_config_parser.py#L40-L78)
 - skip_replays: If True, replays are automatically skipped after a goal. However, also prevents match replays from being saved.
 - start_without_countdown: If True, skips kickoff countdown

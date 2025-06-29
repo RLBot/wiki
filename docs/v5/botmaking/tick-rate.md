@@ -11,6 +11,6 @@ There are several factors that influence tick rate:
 
 In other words, the tick rate is `min(rocketLeagueFPS, 120)`.
 
-If you ever see a performance monitor pop up in-game on the left-hand side and it says anything other than `rlbot: 100%`
+If you ever see a performance monitor pop up in-game on the left-hand side and it says anything other than `RLBot: 100%`
 then RLBot is missing ticks due to a low or inconsistent frame rate.
 If any individual bot shows less than 100%, then only that bot is missing ticks because its logic is running too slowly.

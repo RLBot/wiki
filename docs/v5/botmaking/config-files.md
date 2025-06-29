@@ -11,7 +11,7 @@ The framework uses four types of config files, commonly known as:
 
 ## Bot & Script Config Files
 
-A bot/script config file defines a bot/script and its attributes, closely resembling the `PlayerConfiguration`/`ScriptConfiguration` from the [flatbuffer schema](https://github.com/RLBot/flatbuffers-schema/blob/main/matchconfig.fbs).
+A bot/script config file defines a bot/script and its attributes, closely resembling the `PlayerConfiguration`/`ScriptConfiguration` from the [flatbuffer schema](https://github.com/RLBot/flatbuffers-schema/blob/main/schema/matchconfig.fbs).
 The content of config files for bots and scripts are very similar, so the file extension indicates whether it is a bot or script:
 
 - **Bots:** Named `bot.toml` or ends with `.bot.toml`. Here are examples of valid names: `bot.toml`, `Necto.bot.toml`, `atba.bot.toml`
@@ -37,7 +37,7 @@ It should also be noted that whatever prefixes the `.bot.toml`/`.script.toml` fi
     - `developer` - The developer(s) of the bot/script.
     - `language` - The language the bot/script is written in.
     - `tags` - A list of tags that describe the bot/script. These will affect which categories in the GUI your bot/script appear in. Possible tags:
-        - `1v1` - The bot plays traditional 1v1 soccer.
+        - `1v1` - The bot plays traditional 1v1 soccar.
         - `teamplay` - The bot considers team mates and rotates.
         - `goalie` - Only add this tag if your bot *only* plays as a goalie. Incompatible with teamplay tag!
         - `hoops` - The bot understands the Hoops game mode.
@@ -47,7 +47,7 @@ It should also be noted that whatever prefixes the `.bot.toml`/`.script.toml` fi
         - `heatseeker` - The bot understands the Heatseeker game mode.
         - `memebot` - The bot has an untraditional play style.
 
-!!! note "Psyonix Bot Presets"
+!!! tip "Psyonix Bot Presets"
     If a Psyonix bot is not given a name, it will be a random [standard Psyonix bot](https://rocketleague.fandom.com/wiki/Bot). If a Psyonix bot's name matches a standard Psyonix bot, it will use the standard loadout of that bot unless a loadout file is specified.
 
 ??? example "Example `bot.toml` that runs a Python bot in a virtual environment"
@@ -163,7 +163,7 @@ Loadout config files, e.g. `loadout.toml`, define a bot's default loadout. They 
 
 ## Match Config Files
 
-A match config file, e.g. `match.toml`, define a match and its settings, closely resembling `MatchConfiguration ` from the [flatbuffer schema](https://github.com/RLBot/flatbuffers-schema/blob/main/matchconfig.fbs).
+A match config file, e.g. `match.toml`, define a match and its settings, closely resembling `MatchConfiguration ` from the [flatbuffer schema](https://github.com/RLBot/flatbuffers-schema/blob/main/schema/matchconfig.fbs).
 
 **Sections and fields:**
 
@@ -175,7 +175,7 @@ A match config file, e.g. `match.toml`, define a match and its settings, closely
     - `auto_start_agents` - Boolean (default: true). Whether bots and scripts should be started using their run command. It is also possible to disable auto-starting for individual bots and scripts. See `[cars]::auto_start` and `[scripts]::auto_start`.
     - `wait_for_agents` - Boolean (default: true). Whether RLBot should wait for bots and scripts to be connected and ready before starting the match.
 - `[match]`
-    - `game_mode` - The game mode. Either `"Soccer"` (default), `"Hoops"`, `"Dropshot"`, `"Hockey"`, `"Rumble"`, `"Heatseeker"`, `"Gridiron"`, or `"Knockout"`. This affects ball prediction and a few of the game rules although many game modes can also be recreated solely from mutators. See what mutators and game mode combinations make up the official modes [here](https://github.com/RLBot/python-interface/tree/master/tests/gamemodes).
+    - `game_mode` - The game mode. Either `"Soccar"` (default), `"Hoops"`, `"Dropshot"`, `"Snowday"`, `"Rumble"`, `"Heatseeker"`, `"Gridiron"`, or `"Knockout"`. This affects ball prediction and a few of the game rules although many game modes can also be recreated solely from mutators. See what mutators and game mode combinations make up the official modes [here](https://github.com/RLBot/python-interface/tree/master/tests/gamemodes).
     - `game_map_upk` - The map upk file to load, e.g. `"UtopiaStadium_P"`. On Steam version of Rocket League this can be used to load custom map files, but on Epic version it only works on the Psyonix maps. Available maps can be found [here](https://github.com/RLBot/python-interface/blob/master/rlbot/utils/maps.py).
     - `cars` - A list of players in the match. See the car section below for fields of cars.
     - `scripts` - A list of scripts in the match. See the script section below for fields of scripts.
@@ -250,7 +250,7 @@ A match config file, e.g. `match.toml`, define a match and its settings, closely
     wait_for_agents = true
 
     [match]
-    game_mode = "Soccer"
+    game_mode = "Soccar"
     game_map_upk = "Stadium_P"
     skip_replays = false
     start_without_countdown = false

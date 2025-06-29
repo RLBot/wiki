@@ -1,6 +1,6 @@
 # Overview
 
-!!! note "RLBot v5 is in beta!"
+!!! info "RLBot v5 is in beta!"
     Breaking changes may occur as we finalize the framework. Learn more about v5 in the [RLBot v5 Overview](/v5/framework/v5) and start converting your bot today!
 
 Welcome to the RLBot v5 wiki!
