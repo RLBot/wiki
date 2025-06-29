@@ -10,7 +10,7 @@ Packet types are named from the POV of the sender.
 - [CorePacket](https://github.com/RLBot/flatbuffers-schema/blob/main/schema/corepacket.fbs) - Wraps `CoreMessage`, a union of all valid message types that can be sent _by_ RLBotServer, _to_ interfaces.
 
 ??? question "What is an interface? What is core?"
-    - "Interface" refers to the layer of abstraction that sits in between the RLBotServer API and the bot/script someone wants to make. While not strictly required, it a good interface makes working with RLBot fun & easy - even without knowing anything about TCP, FlatBuffers, or the RLBotServer API.
+    - "Interface" refers to the layer of abstraction that sits in between the RLBotServer API and the bot/script someone wants to make. While not strictly required, a good interface makes working with RLBot fun & easy - even without knowing anything about TCP, FlatBuffers, or the RLBotServer API.
     - "Core" refers to RLBotServer itself, which is considered the shared "core" of RLBot that implements various functions related to starting and running matches that are accessable via the RLBotServer API.
 
 ## Connecting to RLBotServer
