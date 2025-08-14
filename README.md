@@ -1,4 +1,8 @@
-# RLBot central wiki
+# RLBot Central Wiki
+
+The RLBot Wiki is available at <https://wiki.rlbot.org/>.
+
+The RLBot Wiki primarily houses resources for bot development, but you can also find guides for users, framework documentation, and community insights.
 
 ## Setup
 
@@ -10,10 +14,8 @@ source venv/bin/activate # Activate virtual env
 pip install -r requirements.txt # Install mkdocs
 ```
 
-Refer to `mkdocs --help` for serving locally, building and deploying
+Refer to `mkdocs --help` for serving locally, building and manual deployment with [MkDocs](https://www.mkdocs.org/).
 
-## Todo
+## Deployment
 
-- \[X\] Move all\* pages from RLBot/RLBot wiki (\*see docs/missing-pages.md)
-- \[ \] Move language specific wikis
-- \[X\] Sort pages into categories
+The `main` branch is automatically deployed. See Github actions.

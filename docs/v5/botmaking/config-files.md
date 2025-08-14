@@ -175,7 +175,7 @@ A match config file, e.g. `match.toml`, define a match and its settings, closely
     - `auto_start_agents` - Boolean (default: true). Whether bots and scripts should be started using their run command. It is also possible to disable auto-starting for individual bots and scripts. See `[cars]::auto_start` and `[scripts]::auto_start`.
     - `wait_for_agents` - Boolean (default: true). Whether RLBot should wait for bots and scripts to be connected and ready before starting the match.
 - `[match]`
-    - `game_mode` - The game mode. Either `"Soccar"` (default), `"Hoops"`, `"Dropshot"`, `"Snowday"`, `"Rumble"`, `"Heatseeker"`, `"Gridiron"`, or `"Knockout"`. This affects ball prediction and a few of the game rules although many game modes can also be recreated solely from mutators. See what mutators and game mode combinations make up the official modes [here](https://github.com/RLBot/python-interface/tree/master/tests/gamemodes).
+    - `game_mode` - The game mode. Either `"Soccar"`/`"Soccer"` (default), `"Hoops"`, `"Dropshot"`, `"Hockey"`, `"Rumble"`, `"Heatseeker"`, `"Gridiron"`, or `"Knockout"`. This affects ball prediction and a few of the game rules although many game modes can also be recreated solely from mutators. See what mutators and game mode combinations make up the official modes [here](https://github.com/RLBot/python-interface/tree/master/tests/gamemodes).
     - `game_map_upk` - The map upk file to load, e.g. `"UtopiaStadium_P"`. On Steam version of Rocket League this can be used to load custom map files, but on Epic version it only works on the Psyonix maps. Available maps can be found [here](https://github.com/RLBot/python-interface/blob/master/rlbot/utils/maps.py).
     - `cars` - A list of players in the match. See the car section below for fields of cars.
     - `scripts` - A list of scripts in the match. See the script section below for fields of scripts.
@@ -201,15 +201,15 @@ A match config file, e.g. `match.toml`, define a match and its settings, closely
     - `series_length` - The series length. Either `"Unlimited"` (default), `"ThreeGames"`, `"FiveGames"`, or `"SevenGames"`.
     - `game_speed` - A game speed multiplier. Either `"Default"`, `"SloMo"`, or `"TimeWarp"`.
     - `ball_max_speed` - Ball max speed. Either `"Default"`, `"Slow"`, `"Fast"`, or `"SuperFast"`.
-    - `ball_type` - Ball type and shape. Either `"Default"`, `"Cube"`, `"Puck"`, `"Basketball"`, `"Beachball"`, `"Anniversary"`, `"Haunted"`, `"Ekin"`, `"SpookyCube"`, `"Egg"`, `"PlayerSeeking"`, `"Dropshot"`, or `"ScoreAbsorb"`.
-    - `ball_weight` - Ball weight and how much is curves. Either `"Default"`, `"Light"`, `"Heavy"`, `"SuperLight"`, `"CurveBall"`, `"BeachBallCurve"`, or `"MagnusFutBall"`.
+    - `ball_type` - Ball type and shape. Either `"Default"`, `"Cube"`, `"Puck"`, `"Basketball"`, `"Beachball"`, `"Anniversary"`, `"Haunted"`, `"Ekin"`, `"SpookyCube"`, `"Egg"`, `"PlayerSeeking"`, `"Dropshot"`, `"ScoreAbsorb"`, `"Shoe"`, or `"PizzaPuck"`.
+    - `ball_weight` - Ball weight and how much is curves. Either `"Default"`, `"Light"`, `"Heavy"`, `"SuperLight"`, `"CurveBall"`, `"BeachBallCurve"`, `"MagnusFutBall"`, or `"MagnusFutballLess"`.
     - `ball_size` - Ball size. Either `"Default"`, `"Small"`, `"Medium"`, `"Large"`, or `"Gigantic"`.
     - `ball_bounciness` - Ball bounciness. Either `"Default"`, `"Low"`, `"High"`, `"SuperHigh"`, or `"LowishBounciness"`.
     - `boost_amount` - Boost amount/recharge. Either `"NormalBoost"`, `"UnlimitedBoost"`, `"SlowRecharge"`, `"RapidRecharge"`, or `"NoBoost"`.
-    - `rumble` - Rumble item rules. Either `"Off"` (default), `"DefaultRumble"`, `"Slow"`, `"Civilized"`, `"DestructionDerby"`, `"SpringLoaded"`, `"SpikesOnly"`, `"SpikeRush"`, `"HauntedBallBeam"`, `"Tactical"`, `"BatmanRumble"`, `"GrapplingOnly"`, or `"HaymakerOnly"`.
+    - `rumble` - Rumble item rules. Either `"Off"` (default), `"DefaultRumble"`, `"Slow"`, `"Civilized"`, `"DestructionDerby"`, `"SpringLoaded"`, `"SpikesOnly"`, `"SpikeRush"`, `"HauntedBallBeam"`, `"Tactical"`, `"BatmanRumble"`, `"GrapplingOnly"`, `"HaymakerOnly"`, `"SpikeRushForce"`, or `"RPS"`.
     - `boost_strength` - Boost strength multiplier. Either `"One"` (default), `"OneAndAHalf"`, `"Two"`, `"Five"`, or `"Ten"`.
     - `gravity` - Strength of gravity. Either `"Default"`, `"Low"`, `"High"`, `"SuperHigh"`, or `"Reverse"`.
-    - `demolish` - Demolition conditions. Either `"Default"`, `"Disabled"`, `"FriendlyFire"`, `"OnContact"`, `"OnContactFF"`, `"OnBallContact"`, or `"OnBallContactFF"`.
+    - `demolish` - Demolition conditions. Either `"Default"`, `"Disabled"`, `"FriendlyFire"`, `"OnContact"`, `"OnContactFF"`, `"OnBallContact"`, `"OnBallContactSilent"`, `"OnBallContactFF"`, or `"OnBallContactFFSilent"`.
     - `respawn_time` - Demolition respawn time. Either `"ThreeSeconds"` (default), `"TwoSeconds"`, `"OneSecond"`, or `"DisableGoalReset"`.
     - `max_time` - Max real-time duration of match including kickoff, replays, and more. If the score is tied upon time-out, the number of shots determine the winner. Either `"Unlimited"` (default) or `"ElevenMinutes"`.
     - `game_event` - Additional game behavior for custom modes. Either `"Default"`, `"Haunted"`, or `"Rugby"`.
@@ -219,6 +219,7 @@ A match config file, e.g. `match.toml`, define a match and its settings, closely
     - `stale_ball` - Disallow the ball to stay on one half of the field by teleporting it to the other half after the given amount of time. Usually combined with the `territory` mutator. Either `"Unlimited"` (default) or `"ThirtySeconds"`.
     - `jump` - How many times you can jump and dodge/double jump. Either `"Default"`, `"Grounded"`, `"Two"`, `"Three"`, `"Four"`, `"Unlimited"`, or `"NoJumps"`.
     - `dodge_timer` - How long you can wait before dodging or double jumping. Either `"OnePointTwentyFiveSeconds"` (default), `"TwoSeconds"`, `"ThreeSeconds"`, or `"Unlimited"`.
+    - `scoring_rule` - Whether the ball should be able to interact with goals. Either `"Default"` or `"Disabled"`.
     - `possession_score` - Modifies how often possession gives points. Specifically, the team that touched the ball most recently gains a point every *X* seconds until the other team touches the ball. Either `"Off"` (default), `"OneSecond"`, `"TwoSeconds"`, or `"ThreeSeconds"`.
     - `demolish_score` - Modifies how many points demolitions score. Either `"Zero"` (default), `"One"`, `"Two"`, or `"Three"`.
     - `normal_goal_score` - Modifies how many points a normal goal score. Either `"One"` (default), `"Zero"`, `"Two"`, `"Three"`, `"Five"`, or `"Ten"`
@@ -304,15 +305,16 @@ A match config file, e.g. `match.toml`, define a match and its settings, closely
     max_time = "Unlimited"
     game_event = "Default"
     audio = "Default"
-    ball_gravity = "Default";
-    territory = "Off";
-    stale_ball = "Unlimited";
-    jump = "Default";
-    dodge_timer = "OnePointTwentyFiveSeconds";
-    possession_score = "Off";
-    demolish_score = "Zero";
-    normal_goal_score = "One";
-    aerial_goal_score = "One";
-    assist_goal_score = "Zero";
-    input_restriction = "Default";
+    ball_gravity = "Default"
+    territory = "Off"
+    stale_ball = "Unlimited"
+    jump = "Default"
+    dodge_timer = "OnePointTwentyFiveSeconds"
+    scoring_rule = "Deafult"
+    possession_score = "Off"
+    demolish_score = "Zero"
+    normal_goal_score = "One"
+    aerial_goal_score = "One"
+    assist_goal_score = "Zero"
+    input_restriction = "Default"
     ```
