@@ -1,0 +1,13 @@
+/* Make some RLBot colored changes */
+
+:root {
+  /* This green is just picked from the logo, is there a rlbot green? */
+  --md-primary-fg-color: #4b9a44;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-weight: 400 !important; /* default is 300 for some reason */
+}
