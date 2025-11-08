@@ -22,7 +22,7 @@ Currently only broadcasting to all participants is supported.
 
 *TMCP* stands for the *Team Match Communication Protocol*. It is an attempt at standardizing inter-bot communication via the match comms system.
 
-[See this wiki page for implementation details](/botmaking/team-match-communication-protocol).
+[See this wiki page for implementation details](../team-match-communication-protocol).
 
 ### Supported Languages
 

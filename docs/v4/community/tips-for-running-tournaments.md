@@ -6,7 +6,7 @@ Normally tournament organizers will publish some kind of rules document. Google 
 - Submission deadline(s)
 - How to submit (upload to google drive folder is a popular technique)
 - Stream time and twitch channel
-- Your intended tick rate (read and understand [Tick Rate](/tick-rate))
+- Your intended tick rate (read and understand [Tick Rate](/v4/botmaking/tick-rate))
 - Whether or not hive mind style bots are allowed
 
 [Here's](https://docs.google.com/document/d/1sgaRh_KYlAUTdrSmCLFqTPUKhifiOTQiAFEPkHyOfsw/edit) an example document

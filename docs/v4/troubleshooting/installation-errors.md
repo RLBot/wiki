@@ -5,7 +5,7 @@
 RLBotGUI may open for a second before closing, it may install but fail to work, or produce other weird behavior.
 A list of known antivirus-related error messages is listed down below under Miscellaneous Issues
 
-1. Check out our other wiki page: [Antivirus Notes](/troubleshooting/antivirus-notes)
+1. Check out our other wiki page: [Antivirus Notes](../antivirus-notes)
 
 ### RLBotGUI gets stuck updating/collecting packages during installation
 
@@ -64,7 +64,7 @@ This currently happens to people with strange letters/characters in their Steam 
 
 For all of the above:
 
-1. Check out our other wiki page for this issue: [Antivirus Notes](/troubleshooting/antivirus-notes)
+1. Check out our other wiki page for this issue: [Antivirus Notes](../antivirus-notes)
 
 ### Cannot proceed because VCRUNTIME140.dll was not found
 

@@ -32,7 +32,11 @@ theme:
     - navigation.expand
     # Enable the footer
     - navigation.footer
-    # Enale 'Edit this page' button
+    # Enables navigation without page reload
+    - navigation.instant
+    # Enable v4/v5 to be tabs at the top
+    - navigation.tabs
+    # Enable 'Edit this page' button
     - content.action.edit
 
 extra:
@@ -61,3 +65,8 @@ markdown_extensions:
       use_pygments: true
   # Enable code blocks in multiple language
   - pymdownx.superfences
+
+plugins:
+  - redirects:
+      redirect_maps:
+        'index.md': 'v5/index.md'

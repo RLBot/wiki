@@ -1,6 +1,6 @@
 # Useful game values
 
-_If you are making a bot, some of these values are given in FieldInfo. You can find more information on that [here](/botmaking/input-and-output-data)_.
+_If you are making a bot, some of these values are given in FieldInfo. You can find more information on that [here](../game-data)_.
 
 Rocket League is made in Unreal Engine, which means any dimensions will be in unreal units (uu).
 
@@ -160,7 +160,7 @@ More information on car bodies [in this spreadsheet](https://onedrive.live.com/v
     - due to braking (any amount): -3500.0 uu/s^2
     - due to slowing during zero-throttle coasting: -525.0 uu/s^2
 - Acceleration in the air due to throttle: ~66.667 uu/s^2   (yes, throttling accelerates the car in the air)
-- [Jumping](/botmaking/jumping-physics)
+- [Jumping](../jumping-physics)
 - Double jump
     - An instantaneous velocity increase of ~291.667 uu/s in the direction of your roof.
 - Minimum and maximum rotation (in radians):
@@ -177,13 +177,13 @@ More information on car bodies [in this spreadsheet](https://onedrive.live.com/v
     - Turn radius: https://samuelpmish.github.io/notes/RocketLeague/ground_control/#turning. Python implementation:
 
 ```python
-def turn_radius(v):
+def turn_radius(v: float) -> float:
     if v == 0:
         return 0
     return 1.0 / curvature(v)
 
 # v is the magnitude of the velocity in the car's forward direction
-def curvature(v):
+def curvature(v: float) -> float:
     if 0.0 <= v < 500.0:
         return 0.006900 - 5.84e-6 * v
     if 500.0 <= v < 1000.0:
@@ -214,10 +214,10 @@ import math
 VMAX = 1234
 TAU = 0.74704
 
-def get_speed_from_time_turning(time):
+def get_speed_from_time_turning(time: float) -> float:
     return VMAX * (1 - math.exp(-(time / TAU)))
 
-def get_turn_time_from_speed(speed):
+def get_turn_time_from_speed(speed: float) -> float:
     speed_adj = -(speed / VMAX - 1)
     return -math.log(speed_adj, math.e) * TAU
 
@@ -233,7 +233,7 @@ def get_turn_time_from_speed(speed):
     Example Python implementation:
 
 ```python
-def get_speed_from_time_turning(time):
+def get_speed_from_time_turning(time: float) -> float:
     if time >= 7.5:
         return 1234
 
@@ -263,7 +263,7 @@ def get_speed_from_time_turning(time):
 
     return 2300
 
-def get_time_turning_from_speed(speed):
+def get_time_turning_from_speed(speed: float) -> float:
     if speed <= 1234:
         return 7.5
 

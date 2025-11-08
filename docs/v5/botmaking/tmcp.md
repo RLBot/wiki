@@ -1,6 +1,6 @@
 # TMCP
 
-*TMCP* stands for the *Team Match Communication Protocol*. It is an attempt at standardizing inter-bot communication over the match communications system, or "match comms" for short. See [MatchComms](/matchcomms) for more information on how to use it.
+*TMCP* stands for the *Team Match Communication Protocol*. It is an attempt at standardizing inter-bot communication over the match communications system, or "match comms" for short. See [MatchComms](../matchcomms) for more information on how to use it.
 
 Specifically, TMCP puts a protocol on the `content` byte string of MatchComm messages using JSON.
 
@@ -45,7 +45,7 @@ This is what a message's content looks like following TMCP:
 
     - `type` - A string declaring type of the action. See valid types below.
 
-If you are sending messages from a [hivemind](/hiveminds), make sure it is sent from the `index` the bot which is carrying out the action.
+If you are sending messages from a [hivemind](../hiveminds), make sure it is sent from the `index` the bot which is carrying out the action.
 
 ### "BALL"
 

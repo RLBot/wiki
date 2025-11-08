@@ -13,7 +13,7 @@ This section is poorly named at this point, but oh well. It includes:
 - supports_early_start: Optional. Indicates whether your bot can handle the early start system. Read below for details.
 - requirements_file: Optional. The location of a requirements.txt for your bot. If specified, RLBotGUI will use it to warn people if there's a missing dependency, and they'll have the option to install your requirements.txt file.
 - use_virtual_environment: Optional, defaults to False. Installs your bot's requirements from the requirements.txt file into a python venv so they're isolated from potentially conflicting requirements from other bots. See [pr #535](https://github.com/RLBot/RLBot/pull/536)
-- loadout_generator: Optional. Location of a script that can influence your bot's appearance on startup for randomization / index-dependent changes. See [loadout generator](/bot-customization#loadout-generator)
+- loadout_generator: Optional. Location of a script that can influence your bot's appearance on startup for randomization / index-dependent changes. See [loadout generator](../bot-customization#loadout-generator)
 - requires_tkinter: Optional. Set it to true if your bot needs tkinter, and if the user is running a GUI which lacks tkinter, they will be warned.
 
 ### Bot Parameters
