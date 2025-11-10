@@ -1,5 +1,3 @@
-As of August 19. 2018 the RLBot framework officially supports Dropshot with access to locations of floor tiles. This page contains information and useful values related to the Dropshot game mode.
-
 To make RLBot start a Dropshot game you have to set the following values in `match.toml`:
 
 ```toml
@@ -8,10 +6,24 @@ game_mode = "Dropshot"
 game_map_upk = "ShatterShot_P"
 ```
 
+??? warning "RLBot doesn't have access to individual tile data"
+    RLBot v5 currently doesn't have access to the position or state information of individual dropshot tiles. This is a known issue that was present in RLBot v4, but this information might return.
+
 ## Tiles
 
 There are 140 tiles in total.
-Locations and owning team can be found in the agent's FieldInfo as GoalInfo objects. In Python `self.field_info.goals` will be a list of the floor tiles with following attributes:
+
+A list of all locations can be found [here](https://pastebin.com/w79VhU8W).
+
+The tiles are hexagonal in shape. The distance between centres is 768 uu (except for the middle where the distance from blue tiles to orange tiles is 256 uu. A neutral strip about 128 uu wide covers the tiles partially). The image below shows the relative dimensions of a Dropshot tile.
+
+![A Dropshot tile's dimensions](/img/dropshot/tiles.png)
+
+## Goals
+
+There are 2 goals under the floor, one per team.
+
+Locations and owning team can be found in the agent's FieldInfo as GoalInfo objects. In Python `self.field_info.goals` will be a list of the goals with following attributes:
 
 ```python
 class GoalInfo:
@@ -24,15 +36,46 @@ class GoalInfo:
 
 Example: To access the location of tile 0 in Python, write: `self.field_info.goals[0].location`
 
-A list of all locations can be found [here](https://pastebin.com/w79VhU8W).
+The goals provided are as follows:
 
-The tiles are hexagonal in shape. The distance between centres is 768 uu (except for the middle where the distance from blue tiles to orange tiles is 256 uu. A neutral strip about 128 uu wide covers the tiles partially). The image below shows the relative dimensions of a Dropshot tile.
-
-![A Dropshot tile's dimensions](/img/dropshot/tiles.png)
+```rust
+[
+    GoalInfo {
+        team_num: 0,
+        location: Vector3 {
+            x: 0.0,
+            y: -4430.0,
+            z: -1040.0,
+        },
+        direction: Vector3 {
+            x: -8.742278e-8,
+            y: -0.0,
+            z: 1.0,
+        },
+        width: 5408.0,
+        height: 12640.0,
+    },
+    GoalInfo {
+        team_num: 1,
+        location: Vector3 {
+            x: 0.0,
+            y: 4430.0,
+            z: -1040.0,
+        },
+        direction: Vector3 {
+            x: -8.742278e-8,
+            y: -0.0,
+            z: 1.0,
+        },
+        width: 5408.0,
+        height: 12640.0,
+    },
+]
+```
 
 ## Arena
 
-The tiles are layed out in rows of 7,8,9,10,11,12,13 |middle| 13,12,11,10,9,8,7. Where tile 0 is in the blue corner (back left if you are on blue team) and tile 139 is in an orange corner (back left if you are on the orange team).
+The tiles are layed out in rows of `7,8,9,10,11,12,13 |middle| 13,12,11,10,9,8,7`. Where tile 0 is in the blue corner (back left if you are on blue team) and tile 139 is in an orange corner (back left if you are on the orange team).
 
 The overall layout of the arena and tile indices can be seen below.
 
