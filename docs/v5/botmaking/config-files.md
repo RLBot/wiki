@@ -91,7 +91,7 @@ It should also be noted that whatever prefixes the `.bot.toml`/`.script.toml` fi
 
 ## Loadout Config Files
 
-Loadout config files, e.g. `loadout.toml`, define a bot's default loadout. They are tedious to make by hand, so we recommend using the [GUI's loadout maker](/botmaking/bot-customization). The item ids can be found [here](https://github.com/RLBot/RLBotGUI/blob/master/rlbot_gui/gui/csv/items.csv). Note that it is also possible to set your bots loadout through code. See [Set Loadout](botmaking/manipulating-game-state).
+Loadout config files, e.g. `loadout.toml`, define a bot's default loadout. They are tedious to make by hand, so we recommend using the [GUI's loadout maker](/v4/botmaking/bot-customization). The item ids can be found [here](https://github.com/RLBot/RLBotGUI/blob/master/rlbot_gui/gui/csv/items.csv). Note that it is also possible to set your bots loadout through code. See [Set Loadout](../manipulating-game-state).
 
 
 ??? example "Example `loadout.toml`"

@@ -8,7 +8,7 @@ The remainder of this page contains some example use cases.
 
 ## Cap the in game FPS to 120 for RLBot, uncap the FPS during normal play
 
-This is useful to create the most consistent environment for RLBot. See [Tick Rate](/tick-rate) for more info.
+This is useful to create the most consistent environment for RLBot. See [Tick Rate](/v4/botmaking/tick-rate) for more info.
 
 - The FPS will have to be uncapped during normal play. This is achieved by setting `AllowPerFrameSleep=False` in *TASystemSettings.ini*.
 - In the game pause screen, the fps cap has to be set to 120 exactly.

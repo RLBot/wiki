@@ -4,7 +4,7 @@
 
 *TMCP* stands for the *Team Match Communication Protocol*. It is an attempt at standardizing inter-bot communication.
 
-Currently, the match communication system, or match comms, is only supported by Python bots. See [Matchcomms](/matchcomms) for more information on how to use it.
+Currently, the match communication system, or match comms, is only supported by Python bots. See [Matchcomms](../matchcomms) for more information on how to use it.
 
 Match comms do not allow for team-only messages. Until this is implemented, TMCP operates on an honor system: a bot should not look at packets from bots on another team.
 

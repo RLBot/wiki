@@ -25,28 +25,28 @@ This wiki primarily houses resources for bot development, but you can also find 
 ## Language-specific wikis
 
 - **[Officially supported languages](http://rlbot.org/)**
-- [Other community supported languages](/framework/supported-programming-languages#community-supported-languages)
-- [Machine Learning FAQ](/botmaking/machine-learning-faq)
+- [Other community supported languages](/v4/framework/supported-programming-languages#community-supported-languages)
+- [Machine Learning FAQ](/v4/botmaking/machine-learning-faq)
 - [RLGym](https://rlgym.org/)
 
 ## Text tutorials
 
-- [Shooting the ball towards or away from a target](/botmaking/shooting-the-ball-towards-or-away-from-a-target)
+- [Shooting the ball towards or away from a target](/v4/botmaking/shooting-the-ball-towards-or-away-from-a-target)
 - [Dodges (C#)](https://tangil.me/posts/dodges)
 - [State systems (C#)](https://tangil.me/posts/state)
 
 # Commonly Used Resources
 
-- [GameTickPacket, FieldInfo, and Controllers](/botmaking/input-and-output-data)
-- [Useful Game Values (Field Size, Boost Pad Locations, and more)](/botmaking/useful-game-values)
+- [GameTickPacket, FieldInfo, and Controllers](/v4/botmaking/input-and-output-data)
+- [Useful Game Values (Field Size, Boost Pad Locations, and more)](/v4/botmaking/useful-game-values)
 - [Quickchats](https://github.com/RLBot/RLBotPythonExample/wiki/Quickchat)
-- [Rendering](/botmaking/rendering)
-- [Dropshot and Related Information](/botmaking/dropshot)
-- [Appearance Customization](/botmaking/bot-customization)
-- [Ball Prediction](/botmaking/ball-path-prediction)
+- [Rendering](/v4/botmaking/rendering)
+- [Dropshot and Related Information](/v4/botmaking/dropshot)
+- [Appearance Customization](/v4/botmaking/bot-customization)
+- [Ball Prediction](/v4/botmaking/ball-path-prediction)
 - [The RLBotPack](https://github.com/RLBot/RLBotPack)
-- [Team Match Communication Protocol (TMCP)](/botmaking/team-match-communication-protocol)
-- [Troubleshooting](/troubleshooting/installation-errors)
+- [Team Match Communication Protocol (TMCP)](/v4/botmaking/team-match-communication-protocol)
+- [Troubleshooting](/v4/troubleshooting/installation-errors)
 
 ## Physics
 
@@ -59,8 +59,8 @@ This wiki primarily houses resources for bot development, but you can also find 
 - [Aerial ball intercept/hit by @Chip](https://samuelpmish.github.io/rocket_league/aerial_hit/)
 - [How Car and Ball Interact by @Chip](https://samuelpmish.github.io/rocket_league/ball_simulation_3/)
 - [How to Analyze Drivable Paths by @Chip](https://samuelpmish.github.io/rocket_league/path_analysis/)
-- [The Physics Of Jumping by Impossibum](/botmaking/jumping-physics)
-- [Extracting Map Meshes by Virx](/miscellaneous/extracting-map-meshes)
+- [The Physics Of Jumping by Impossibum](/v4/botmaking/jumping-physics)
+- [Extracting Map Meshes by Virx](/v4/miscellaneous/extracting-map-meshes)
 
 # Unofficial but Helpful Code Repositories
 

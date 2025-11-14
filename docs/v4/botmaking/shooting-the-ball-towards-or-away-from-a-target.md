@@ -21,7 +21,7 @@ Firstly, a *target* is something that we want to hit the ball towards, and an *a
 
 We're using two points instead of just one, central point that represents the target because just one point is unrealistic and restricts our options. Two points, however, gives us a range to work with and some room for error.
 
-[Useful game values](/useful-game-values)
+[Useful game values](../useful-game-values)
 
 For example, our left-most target vector could be `[800, 5213, 321.3875]` (orange's left goal post) and our right-most target vector could be `[-800, 5213, 321.3875]` (orange's right goal post). These values have been adjusted to account for the ball's radius (which is 92.75).
 
@@ -69,7 +69,7 @@ You will also have to implement your own dotProduct and crossProduct functions. 
 
 - Similar to integer clamping, clamp2D forces a direction between `start` and `end`, such that `start` \< `direction` \< `end` in terms of clockwise rotation.
 - Note that this is only in the x-axis and y-axis - clamping the z-axis isn't necessary for this problem.
-- For the math nerds: Why does this work? This function relies on Rocket League's inverted X-axis (positive X is left and negative X is right). [See this page](/useful-game-values#basic-dimensions) for a top-down view of the Rocket League field and different coordinates pertaining to the field.
+- For the math nerds: Why does this work? This function relies on Rocket League's inverted X-axis (positive X is left and negative X is right). [See this page](../useful-game-values#basic-dimensions) for a top-down view of the Rocket League field and different coordinates pertaining to the field.
 
 Now we can use the `clamp2D` function.
 
