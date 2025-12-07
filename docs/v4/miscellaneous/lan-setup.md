@@ -16,7 +16,7 @@ Please help cover the server expenses by supporting [JetFox on Patreon](https://
 ### Requirements
 
 - [BakkesMod](http://www.bakkesmod.com/)
-- [Rocket Host](https://bakkesplugins.com/plugins/view/216) installed in Bakkesmod
+- [Rocket Host](https://bakkesplugins.com/plugins/216) installed in Bakkesmod
 
 ### Instructions for Host
 
