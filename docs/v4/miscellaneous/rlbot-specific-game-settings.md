@@ -1,3 +1,8 @@
+---
+search:
+  boost: 0.5
+---
+
 RLBot has the ability to change game settings only when RLBot is active. This can be useful when a different environment is desired for developing or running bots compared to playing the game yourself.
 
 This is achieved by briefly altering *TASystemSettings.ini* as RLBot starts up Rocket League. This feature is currently only available on windows, and for the default *TASystemSettings.ini* location of *%USERPROFILE%\\Documents\\My Games\\Rocket League\\TAGame\\Config*.

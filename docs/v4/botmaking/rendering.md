@@ -1,3 +1,8 @@
+---
+search:
+  boost: 0.5
+---
+
 # Rendering
 
 An incredibly useful new addition to RLBot v4 is the rendering feature. It allows you to draw objects on screen, which can make debugging and testing your bot so much easier. For example, you could draw the predicted ball path, or draw where the bot wants to go.

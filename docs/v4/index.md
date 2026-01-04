@@ -1,3 +1,8 @@
+---
+search:
+  boost: 0.5
+---
+
 # Overview
 
 !!! tip "RLBot v5 is in pre-release!"

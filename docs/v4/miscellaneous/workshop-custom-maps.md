@@ -1,3 +1,8 @@
+---
+search:
+  boost: 0.5
+---
+
 ## Automated Solution
 
 RLBot has built in support for custom maps. It allows you to select a folder that has custom map (\`\*.upk) files anywhere in the directory. Once added, you can select any of the custom maps in the directory and play with bots on that map.

@@ -1,3 +1,8 @@
+---
+search:
+  boost: 0.5
+---
+
 ## This tutorial is NOT language-specific!
 
 This tutorial is based on the systems used by [VirxERLU](https://github.com/VirxEC/VirxERLU) which is a fork of [GoslingUtils](https://github.com/ddthj/GoslingUtils).

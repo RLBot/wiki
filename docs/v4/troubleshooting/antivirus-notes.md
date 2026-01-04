@@ -1,3 +1,8 @@
+---
+search:
+  boost: 0.5
+---
+
 If RLBotGUI can't open, won't start a match, or acts in other strange ways it may be related to your antivirus software. Do not disable your antivirus.
 
 ### If you suspect your antivirus has broken RLBot:

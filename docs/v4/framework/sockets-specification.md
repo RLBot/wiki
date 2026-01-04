@@ -1,3 +1,8 @@
+---
+search:
+  boost: 0.5
+---
+
 Sockets are currently available with Windows and Mac support only. Linux coming soon.
 
 You can use https://github.com/RLBot/RLBot/tree/master/src/main/cpp/RLBotInterface/src as a reference implementation in c++.

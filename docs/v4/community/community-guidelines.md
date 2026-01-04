@@ -1,3 +1,8 @@
+---
+search:
+  boost: 0.5
+---
+
 ## Social Conduct
 
 - No harassment

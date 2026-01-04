@@ -1,3 +1,8 @@
+---
+search:
+  boost: 0.5
+---
+
 # Installation errors
 
 ### You are using a third-party antivirus

@@ -1,3 +1,8 @@
+---
+search:
+  boost: 0.5
+---
+
 ## Summary
 
 Rocket League, Music, and Programming: It all comes together in the 2021 Rocket League Air Show, hosted by [Rocket Sledge](https://www.youtube.com/channel/UC9t5ff1rz71eC4ZObmq6Yqg)!

@@ -1,3 +1,8 @@
+---
+search:
+  boost: 0.5
+---
+
 The following wiki pages are not moved yet:
 
 - [Deploying Changes](https://github.com/RLBot/RLBot/wiki/Deploying-Changes) (maybe this should stay on the github wiki?)

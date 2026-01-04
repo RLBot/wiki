@@ -1,3 +1,8 @@
+---
+search:
+  boost: 0.5
+---
+
 Hello everyone! We're proud to announce that the Psyonix bot API has finally been integrated into RLBot! We hope you're just as excited as we are about this milestone! 🎉
 
 ## Details
