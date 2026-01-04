@@ -38,6 +38,8 @@ theme:
     - navigation.tabs
     # Enable 'Edit this page' button
     - content.action.edit
+    # search will display the likeliest completion for the last word
+    - search.suggest
 
 extra:
   social:
@@ -67,6 +69,7 @@ markdown_extensions:
   - pymdownx.superfences
 
 plugins:
+  - search
   - redirects:
       redirect_maps:
         'index.md': 'v5/index.md'
