@@ -1,3 +1,8 @@
+---
+search:
+  boost: 0.5
+---
+
 Bots have a function like `get_output(packet)` or something similar, depending on language. This gets called some number of times per second, I will refer to this as the tick rate.
 
 There are several factors which influence tick rate:

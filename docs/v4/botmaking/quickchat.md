@@ -1,3 +1,8 @@
+---
+search:
+  boost: 0.5
+---
+
 ## Overview
 
 You can make your bot send quickchat! We support sending all standard quickchats, and also some custom ones! You can find the full list [here](https://github.com/RLBot/RLBot/blob/master/src/main/flatbuffers/rlbot.fbs#L376).

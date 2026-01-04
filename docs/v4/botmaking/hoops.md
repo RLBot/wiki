@@ -1,3 +1,8 @@
+---
+search:
+  boost: 0.5
+---
+
 The RLBot framework support the Hoops game mode. This page contains useful values specifically about Hoops.
 
 To make RLBot start a Hoops game you have to set the following values in `rlbot.cfg`:

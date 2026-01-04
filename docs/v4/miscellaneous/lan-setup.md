@@ -1,3 +1,7 @@
+---
+search:
+  boost: 0.5
+---
 
 There are three ways to play with custom bots together with other players. They are:
 

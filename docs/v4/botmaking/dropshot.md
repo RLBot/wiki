@@ -1,3 +1,8 @@
+---
+search:
+  boost: 0.5
+---
+
 As of August 19. 2018 the RLBot framework officially supports Dropshot with access to locations and states of floor tiles. This page contains information and useful values related to the Dropshot game mode.
 
 To make RLBot start a Dropshot game you have to set the following values in `rlbot.cfg`:

@@ -1,3 +1,8 @@
+---
+search:
+  boost: 0.5
+---
+
 ![screenshot](/img/rocket-league-story-mode/screenshot.png)
 
 ## Playing Rocket League Story Mode

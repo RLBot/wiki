@@ -1,3 +1,8 @@
+---
+search:
+  boost: 0.5
+---
+
 # Useful game values
 
 _If you are making a bot, some of these values are given in FieldInfo. You can find more information on that [here](../input-and-output-data)_.

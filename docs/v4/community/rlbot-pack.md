@@ -1,3 +1,8 @@
+---
+search:
+  boost: 0.5
+---
+
 # RLBot Pack
 
 The RLBotPack is a repository holding frequently requested bots in one convenient place. The main intended users are people joining the discord looking for a fun bot to try out. It may also be useful as a way for people running streams to get an up-to-date version of your bot.

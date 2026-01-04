@@ -1,3 +1,8 @@
+---
+search:
+  boost: 0.5
+---
+
 # The Physics Of Jumping
 
 There are several forces that can be acting on a Rocket League car at any moment and understanding their influence is an important step towards giving your bot accurate and dependable utilities. This section will be focused on the mechanics of jumping and how these forces interact to allow you to accurately simulate a jump and provide useful information such as how high your bot can reach and at what time they'll get there. So let's get started by first declaring these "_forces_" I've been referring to thus far.

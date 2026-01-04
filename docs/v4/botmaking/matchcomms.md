@@ -1,3 +1,8 @@
+---
+search:
+  boost: 0.5
+---
+
 ## Matchcomms allows communication between participants in a match.
 
 Use cases:

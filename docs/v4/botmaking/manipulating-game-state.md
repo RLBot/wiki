@@ -1,3 +1,8 @@
+---
+search:
+  boost: 0.5
+---
+
 ## Overview
 
 We have a feature that lets you set exact positions, velocities, etc. for the ball and cars. You may be familiar with [BakkesMod](http://bakkesmod.com/), this is very similar. It won't be enabled during tournaments, but it's very useful when building and debugging your bot.

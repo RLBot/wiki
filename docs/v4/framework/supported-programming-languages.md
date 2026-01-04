@@ -1,3 +1,8 @@
+---
+search:
+  boost: 0.5
+---
+
 ## Main Languages
 
 The following list of languages are supported by core developers of the RLBot framework, or have reached a very high level of documentation and support from the community. They are featured on rlbot.org.

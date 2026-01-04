@@ -1,3 +1,8 @@
+---
+search:
+  boost: 0.5
+---
+
 ## Sending a Console Command
 
 To send a console command from a python bot, e.g. `Stat FPS`, you would do this:

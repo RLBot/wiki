@@ -1,3 +1,8 @@
+---
+search:
+  boost: 0.5
+---
+
 ## Announcing the Tournament
 
 Normally tournament organizers will publish some kind of rules document. Google docs has been popular for that so far. Consider including the following:

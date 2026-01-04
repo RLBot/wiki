@@ -1,3 +1,8 @@
+---
+search:
+  boost: 0.5
+---
+
 Q: I'm new to ML, where should I start?
 
 A: There are a lot of helpful resources pinned to the #ml-discussion channel of the [RLBot discord](https://discord.gg/S2Y2Kdr). You should also join the [RLGym discord](https://discord.gg/t7xcJnvgfa), which is more specifically for ML.

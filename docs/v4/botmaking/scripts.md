@@ -1,3 +1,8 @@
+---
+search:
+  boost: 0.5
+---
+
 Sometimes it can be useful to have access to game values, debug rendering or state setting while not being a bot playing within the match. The framework has an easy solution for that - scripts.
 
 Scripts are very similiar to normal bots. They need a config file and a python executable. The config file can be loaded by RLBotGUI like a normal bot - to enable it, just click the checkbox next to its name. The script will be automatically started and terminated by the framework.
