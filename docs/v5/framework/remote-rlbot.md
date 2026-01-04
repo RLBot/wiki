@@ -11,7 +11,7 @@ For example, to have RLBot listen on port `12345` instead, you would run `RLBotS
 This means that external processes can connect to RLBot from other machines on the same network by specifying the IP address of the machine running RLBot and the port number RLBot is listening on.
 By utilizing RLBot's IPv6 support, you can also connect to RLBot instances running on different networks over the internet, provided that the necessary port forwarding and firewall configurations are in place.
 
-!!! warning "RLBot on untrusted networks"
+!!! danger "RLBot on untrusted networks"
     Exposing RLBot to untrusted networks may pose significant security risks.
     Malicious actors could exploit currently unknown vulnerabilities in RLBot or the underlying system.
     It is crucial to implement robust security measures, such as _**running RLBot inside a secure virtual machine**_ and _**restricting network access using firewalls**_, to mitigate potential threats.
