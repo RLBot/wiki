@@ -9,7 +9,7 @@ Note: It is not possible to play with console players.
 
 ## Option 1 - Rocket Host
 
-Rocket Host is a match hosting service eliminating the need for Hamachi and similar. As of 2024-12-12 it supports RLBot allowing you to add custom bots to the matches.
+Rocket Host is a match hosting service eliminating the need for Radmin and similar. As of 2024-12-12 it supports RLBot allowing you to add custom bots to the matches.
 
 Please help cover the server expenses by supporting [JetFox on Patreon](https://www.patreon.com/c/WcW).
 
@@ -41,25 +41,23 @@ Please help cover the server expenses by supporting [JetFox on Patreon](https://
 
 ### Requirements
 
-- [Hamachi](https://www.vpn.net/)
+- [Radmin](https://www.radmin-vpn.com/)
 - [BakkesMod](http://www.bakkesmod.com/)
 - [Rocket Plugin](https://bakkesplugins.com/plugins/view/26) installed in Bakkesmod
 - [RLBotGUI](http://rlbot.org/) (only needed for the host)
-
-Quick Note: If the host can forward port 7777 / configure their firewall, then neither the host nor the clients need to use Hamachi. Then the host only has to provide their IP address to the clients who enter it into Rocket Plugin to connect. This allows more connections than the free version of Hamachi.
 
 ### Instructions for Host
 
 Only the host can load bots into the game!
 
-1. Create a network in Hamachi and note the network ID (tutorials can be found online).
+1. Create a network in Radmin and note the network ID (tutorials can be found online).
 2. Make sure that BakkesMod is running.
 3. Start Rocket League with RLBotGUI (start a match, then quit the match to the menu).
 4. Use the Rocket Plugin to host a LAN match
     - Press the "Home" key to open the Rocket Plugin menu.
     - Setting a large team size helps, otherwise bots may de-spawn after demos.
     - Click Host after setting the game options (and password if desired).
-5. Tell your friends to join the match via Hamachi + Rocket Plugin (see below for details).
+5. Tell your friends to join the match via Radmin + Rocket Plugin (see below for details).
     - If they get a message saying that they could not connect to the host, make sure that you're using the same password for the match as your password for private matches or delete your private match password. See [this post](https://www.reddit.com/r/bakkesmod/comments/iuyqyc/rocket_plugin_not_working_with_multiplayer/g67kiti/) for details.
 6. In RLBotGUI, set Extra -> Existing Match Behaviour -> Continue And Spawn.
 7. Drag desired bots onto teams in RLBotGUI.
@@ -72,7 +70,7 @@ The setup is basically the same as playing custom maps. If the instructions abov
 
 Use the standard procedure for joining a LAN match via Rocket Plugin. You can find more detailed tutorials elsewhere, here's a short summary:
 
-1. Open Hamachi and join the host's network via the network ID they tell you.
+1. Open Radmin and join the host's network via the network ID they tell you.
 2. Right-click on the host and click "Copy IPv4 Address".
 3. Open Rocket League
 4. Open the Rocket Plugin menu with the "Home" key.
