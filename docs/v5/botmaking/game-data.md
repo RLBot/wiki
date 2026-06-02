@@ -14,12 +14,36 @@ In short:
 - **BallPrediction:** A highly accurate array of the ball's coming states, assuming no car hits it. It is sent alongside the game packet. See [BallPrediction](/v5/botmaking/ball-path-prediction/).
 - **Controller:** Contains a combination of pressed buttons. The bots send this to the RLBot server as often as possible in reponse to the GamePacket. If a tick is missed, the controller from previous tick is used.
 
+### Notable v5 Renames from v4
+
+Several fields were renamed from v4 to v5. The flatbuffer schema is the authoritative reference, but here are the most impactful:
+
+| v4 Name             | v5 Name             | Notes                                      |
+|---------------------|---------------------|--------------------------------------------|
+| `GameTickPacket`    | `GamePacket`        |                                            |
+| `game_cars`         | `players`           |                                            |
+| `game_boosts`       | `boost_pads`        |                                            |
+| `game_info`         | `match_info`        |                                            |
+| `ball`              | `balls`             | Now a list (multi-ball support)            |
+| `num_*` fields      | *(removed)*         | Use `len(list)` instead                    |
+| `is_round_active`   | `match_phase`       | Compare against `MatchPhase.Active`        |
+| `is_kickoff_pause`  | `match_phase`       | Compare against `MatchPhase.Kickoff`       |
+| `is_match_ended`    | `match_phase`       | Compare against `MatchPhase.Ended`         |
+| `has_wheel_contact` | `air_state`         | Compare against `AirState.OnGround`        |
+| `spawn_id`          | `player_id`         | In `ControllableTeamInfo`                  |
+| `MatchSettings`     | `MatchConfiguration`|                                            |
+| `FieldInfoPacket`   | `FieldInfo`         |                                            |
+| `CollisionShape`    | `shape`             | Now a direct union type                    |
+
 ### Language-Specific Guides
 
-**V4:**
+- [Python (v5)](https://github.com/RLBot/python-interface/wiki/Migration)
+- [Rust](https://github.com/RLBot/rust-interface)
+- [C#](https://github.com/RLBot/csharp-interface)
+
+**V4 (legacy):**
 
 - [Python](https://github.com/RLBot/RLBotPythonExample/wiki/Input-and-Output-Data)
 - [Java](https://github.com/RLBot/RLBotJavaExample/wiki/Input-and-Output-Data)
 - [C#](https://github.com/RLBot/RLBotCSharpExample/wiki/Input-and-Output-Data)
-- [Rust](https://docs.rs/rlbot/0.5.0/rlbot/#structs)
 - [Nim](https://github.com/RecruitMain707/NimExampleBot/wiki/Data-structure)

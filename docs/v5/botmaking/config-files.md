@@ -9,6 +9,26 @@ The framework uses four types of config files, commonly known as:
 - `loadout.toml` [GOTO](#loadout-config-files)
 - `match.toml` [GOTO](#match-config-files)
 
+### Schema validation in IDEs
+
+RLBot publishes JSON schemas that provide autocompletion, validation, and documentation for your config files directly in your editor.
+
+Add a `#:schema` comment at the top of your config file to enable it:
+
+```toml
+#:schema https://rlbot.org/schemas/agent.json
+```
+
+- **`bot.toml` and `script.toml`** — use `https://rlbot.org/schemas/agent.json`
+- **`match.toml`** — use `https://rlbot.org/schemas/match.json`
+- **`loadout.toml`** — no schema is currently published
+
+!!! tip "Editor setup"
+    Not all editors support `#:schema` natively.
+    - **VS Code** — works out of the box with the [Even Better TOML](https://marketplace.visualstudio.com/items?itemName=tamasfe.even-better-toml) extension.
+    - **Zed** — requires the [Tombli](https://github.com/schpet/tombli) extension to be installed.
+    - **Other editors** — check if your TOML plugin supports the `#:schema` comment directive.
+
 ## Bot & Script Config Files
 
 A bot/script config file defines a bot/script and its attributes, closely resembling the `PlayerConfiguration`/`ScriptConfiguration` from the [flatbuffer schema](https://github.com/RLBot/flatbuffers-schema/blob/main/schema/matchconfig.fbs).

@@ -1,7 +1,8 @@
 # Overview
 
 !!! info "RLBot v5 is in pre-release!"
-    Learn more about v5 in the [RLBot v5 Overview](/v5/framework/v5) and start converting your bot today!
+    v5 is nearly feature-complete and many bots have already migrated.
+    Learn more in the [RLBot v5 Overview](/v5/framework/v5) and start converting your bot today!
 
 Welcome to the RLBot v5 wiki!
 RLBot is a framework for creating offline Rocket League bots.
@@ -17,7 +18,7 @@ This wiki primarily houses resources for bot development, but you can also find 
 
 - [Getting started with RLBot v5 in Python](https://www.youtube.com/watch?v=GLqvodQ942A)
 
-## Commomly Used Resources
+## Commonly Used Resources
 
 - [Useful Game Values (Field Dimensions, Boost Pad Locations, and more)](/v5/botmaking/useful-game-values)
 - [GamePacket, FieldInfo, and Controllers](/v5/botmaking/game-data)
