@@ -1,7 +1,7 @@
 
 There are three ways to play with custom bots together with other players. They are:
 
-1. [Rocket Host](#option-1-rocket-host)
+1. [Rocket Host](rocket-host.md)
 1. [LAN Private Matches](#option-2-lan-private-match)
 1. [LAN Splitscreen](#option-3-lan-splitscreen)
 
@@ -9,33 +9,7 @@ Note: It is not possible to play with console players.
 
 ## Option 1 - Rocket Host
 
-Rocket Host is a match hosting service eliminating the need for Radmin and similar. As of 2024-12-12 it supports RLBot allowing you to add custom bots to the matches.
-
-Please help cover the server expenses by supporting [JetFox on Patreon](https://www.patreon.com/c/WcW).
-
-### Requirements
-
-- [BakkesMod](http://www.bakkesmod.com/)
-- [Rocket Host](https://bakkesplugins.com/plugin/216) installed in Bakkesmod
-
-### Instructions for Host
-
-1. Start Rocket League and make sure Bakkesmod is running.
-1. Open the Rocket Host plugin window (F8) and navigate to the RLBot tab.
-1. Pick a nearby server.
-1. Add some bots (note: some combinations are unsupported by request of bot developers).
-1. Request a server. This will give you an IP/port that you and your friends can join.
-1. Useful quick chat commands:
-    - Use `!claim` to ensure only you can use commands.
-    - Use `!lock` to make the server appear as full (preventing random people from joining).
-    - Use `!kick <playername>` to kick a player (part of name works too).
-
-
-### Instructions for Others
-
-1. Start Rocket League and make sure Bakkesmod is running.
-1. Wait for host to send an IP/port.
-1. Join the server in the Rocket Host plugin window (F8).
+RocketHost is a free match hosting service that runs dedicated Rocket League servers in the cloud, eliminating the need for LAN workarounds like Radmin, Hamachi, or port forwarding. See [RocketHost](rocket-host.md) for full setup instructions.
 
 ## Option 2 - LAN Private Match
 
