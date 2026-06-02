@@ -6,7 +6,7 @@ Rendering allows you to draw objects on screen, which can make debugging and tes
 
 When installing the RLBotGUI, rendering will be disabled by default. You can turn it on by clicking 'Extra' and ticking 'Enable Rendering' in the GUI.
 
-RLBot v5 doesn't have any keybinds to toggle rendering mid-match. Mid-match render toggling is a todo item as we figure out the best way to do this.
+RLBot v5 doesn't have keybinds to toggle rendering mid-match, but bots and scripts can programmatically request a change. Doing this in the GUI is a work in progress. See [Rendering status](#rendering-status) below.
 
 ## Render anchors
 
@@ -65,6 +65,27 @@ There are a few ways to get around this.
     Using this, you can send parts of your render every frame, and that render will persist until the match ends (or a new render from the same process gets sent with the same group id).
 
 If you absolutely have to re-render a lot of items every frame, you're out of luck.
+
+## Rendering status
+
+In RLBot v5, bots and scripts can check whether rendering is enabled and request changes:
+
+- `renderer.can_render` — Returns `True` if your agent is allowed to render, `False` if rendering has been disabled.
+- `update_rendering_status(status, index, is_bot)` — Request that rendering be enabled or disabled for your agent.
+  Has no effect if rendering is set to `DebugRendering.AlwaysOff` in the match configuration.
+  - `status` — `True` to request rendering enabled, `False` to disable it.
+  - `index` and `is_bot` — Optional; leave as defaults to target your own agent.
+
+See the [RenderingStatus flatbuffer](https://github.com/RLBot/flatbuffers-schema/blob/main/schema/rendering.fbs) for the underlying message structure.
+
+## Text alignment
+
+String renders support horizontal and vertical alignment:
+
+- **`TextHAlign`**: `Left`, `Center`, or `Right`
+- **`TextVAlign`**: `Top`, `Center`, or `Bottom`
+
+These work for both `String2D` and `String3D` renders. For example, `Center`/`Center` will center the text on the anchor point.
 
 ## Language-specific examples
 

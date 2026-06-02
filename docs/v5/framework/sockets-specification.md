@@ -45,11 +45,11 @@ If this is not performed, then various functionality will be limited, for exampl
     - `CoreMessage.FieldInfo`
     - `CoreMessage.ControllableTeamInfo` - sent for bots & scripts. If `AgentId` was invalid or blank, this will be empty.
     If this was intentional, continue as normal.
-1. Parse `CoreMessage.ControllableTeamInfo` for your `team`, `index`(s), and `spawnId`(s).
+1. Parse `CoreMessage.ControllableTeamInfo` for your `team`, `index`(s), and `playerId`(s).
   There will be multiple if this is a bot that was designated as a hivemind.
     - If `team` is `0` or `1`: `index` will be the index of your bot in `CoreMessage.GamePacket`
     - If `team` is `2`: `index` will be the index of your script in `CoreMessage.MatchConfiguration`
-1. `identifier` can be used to find your bot/scripts's name in `MatchConfiguration`.
+1. `identifier` can be used to find your bot/script's name in `MatchConfiguration`.
     - For bots and scripts, `identifier` corresponds to `playerId`/`scriptId` (respectively).
     - **DO NOT USE `index` FOR BOTS**, they are not in the correct order in `MatchConfiguration`. Using `index` is ok for scripts but `identifier` can be used for both.
 1. Perform heavy initialization.
@@ -68,3 +68,9 @@ Requires the connection handshake to have been performed first. Depending on wha
 - Every tick, `BallPrediction` will always be sent before `GamePacket`.
   - If `BallPrediction` is not sent, it's because it was disabled in `ConnectionSettings`
 - `MatchComm` will arrive in between ticks. The sending of these packets can be disabled in `ConnectionSettings`
+- `RenderingStatus` is sent whenever the rendering permission for your agent changes (e.g. the user toggles it in the GUI).
+  Your agent can also request a change by sending `InterfaceMessage.RenderingStatus` with a new `value`.
+  If rendering is set to `DebugRendering.AlwaysOff`, requests will be ignored.
+- `Ping` packets can be sent by either side to verify connectivity.
+  - Send `InterfaceMessage.Ping` to RLBotServer. RLBotServer will respond with `CoreMessage.Ping` containing the same `cookie` value.
+  - The `cookie` field is an arbitrary byte string that can be used to correlate requests with responses.

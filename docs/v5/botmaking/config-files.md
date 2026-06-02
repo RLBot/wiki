@@ -2,6 +2,26 @@
 
 RLBot uses the standard `.toml` format for all configuration files. To see how TOML works, check out the [TOML spec](https://toml.io/en/).
 
+### Schema validation in IDEs
+
+RLBot publishes JSON schemas that provide autocompletion, validation, and documentation for your config files directly in your editor.
+
+Add a `#:schema` comment at the top of your config file to enable it:
+
+```toml
+#:schema https://rlbot.org/schemas/agent.json
+```
+
+- **`bot.toml` and `script.toml`** — use `https://rlbot.org/schemas/agent.json`
+- **`match.toml`** — use `https://rlbot.org/schemas/match.json`
+- **`loadout.toml`** — no schema is currently published
+
+!!! tip "Editor setup"
+    Not all editors support `#:schema` natively.
+    - **VS Code** — works out of the box with the [Even Better TOML](https://marketplace.visualstudio.com/items?itemName=tamasfe.even-better-toml) extension.
+    - **Zed** — requires the [Tombli](https://github.com/schpet/tombli) extension to be installed.
+    - **Other editors** — check if your TOML plugin supports the `#:schema` comment directive.
+
 The framework uses four types of config files, commonly known as:
 
 - `bot.toml` [GOTO](#bot-script-config-files)
