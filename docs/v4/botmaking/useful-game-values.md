@@ -149,6 +149,10 @@ More information on car bodies [in this spreadsheet](https://onedrive.live.com/v
 - Mass: 30.0 (unit is arbitrary)
 - Coefficient of restitution: 60% (it loses 40% of the component of its velocity that's toward the surface)
 - Maximum ball angular velocity: 6.0 radians/s
+- Terminal velocity: ~21,268.220703125uu/s (normal settings without top speed constraint)
+- Drag coefficient: ~0,030562030038766 (terminal velocity at "Low" gravity mutator was 10,634.1103515625uu/s)
+    - Cars don't experience wind resistance, only the ball.
+    - Drag is directly proportional to ball velocity.
 
 ### Car
 
