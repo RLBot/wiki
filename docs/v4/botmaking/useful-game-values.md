@@ -30,8 +30,8 @@ Rocket League uses a coordinate system (X, Y, Z), where Z is upwards. Note also 
 - Goal center-to-post: 892.755
 - Goal depth: 880
 - Corner wall length: 1629.174
-- The corner planes intersect the axes at ±8064 at a 45 degrees angle
-- Wall bottom ramp radius: Aprox. 256 (but they are not circular)
+- The corner planes intersect the axes at ±8064 at a 45 degree angle
+- Wall bottom ramp radius: Approximately. 256 (non-circular)
 
 For wall lengths, the curvature at the intersections is ignored.
 
