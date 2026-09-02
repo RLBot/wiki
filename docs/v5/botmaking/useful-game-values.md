@@ -20,7 +20,7 @@ Rocket League uses a coordinate system (X, Y, Z), where Z is upwards. Note also 
 - Side wall length: 7936
 - Back wall: y=±5120
 - Back wall length: 5888
-- Ceiling: z=2044
+- Ceiling: z=2048
 - Goal height: z=642.775
 - Goal center-to-post: 892.755
 - Goal depth: 880
