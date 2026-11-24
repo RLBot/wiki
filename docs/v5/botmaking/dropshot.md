@@ -1,6 +1,6 @@
-!!! warning "RLBot does not have access to tile data or ball energy levels"
-    Currently, RLBot v5 does not have access to the position or state information of individual dropshot tiles nor the ball energy level described on this page.
-    These features were lost with the Psyoninx API. Long term, we hope to return this data to RLBot.
+!!! warning "RLBot does not have access to ball energy"
+    Currently, RLBot v5 does not have access to the ball energy or `force_accum_recent` field described on this page (only charge levels).
+    This feature was lost with the Psyonix API. Long term, we hope to return this data to RLBot.
 
 To make RLBot start a Dropshot game you have to set the following values in `match.toml`:
 
@@ -68,23 +68,23 @@ def is_within_arena(point: Vector3) -> bool:
 
 Ball radius: 102.24 uu
 
-The ball has three stages of charge.
+The ball has three levels of charge.
 
 - 0: Normal
 - 1: Charged
 - 2: Super Charged
 
-The ball gains charge as it is hit by cars. When a car exerts a force on the ball, the ball charges up equal to the magnitude of the force (energy). The ball enters the next stage when it reaches a certain threshold:
+The ball gains charge as it is hit by cars. When a car exerts a force on the ball, the ball charges up by an amount equal to the magnitude of the force (energy). The ball enters the next charge level when it reaches a certain threshold:
 
 - Charged: 2500 energy
 - Super Charged: 11000 energy
 
-However, a hit does not always charge the ball. To make the ball charge up, the impact must be at least 500 energy, otherwise the ball will not charge at all. Furthermore, when the ball gets hit, it will temporarily accept less energy. The variable `force_accum_recent` stores the accumulated absorbed force (energy), but no more than 2500 energy. It decays over time at a rate of 2500 energy per second, and the ball will at most absorb `2500 - force_accum_recent` energy on a hit. Combined, this prevents players from charging the ball too quickly, limited to 2500 energy every second.
+However, a hit does not always charge the ball. To make the ball charge up, the impact must be at least 500 energy. Otherwise, the ball will not charge at all. Furthermore, when the ball gets hit, it will temporarily accept less energy. The variable `force_accum_recent` stores the accumulated absorbed force (energy), but no more than 2500 energy. It decays over time at a rate of 2500 energy per second, and the ball will at most absorb `2500 - force_accum_recent` energy on a hit. Combined, this prevents players from charging the ball too quickly, limited to 2500 energy every second.
 
 ??? example "Ball Charging Example"
     If you hit the ball with an impact of 2000 uu/s at t=0, then the balls energy as well as `force_accum_recent` becomes 2000. A half second later at t=0.5, the `force_accum_recent` has decreased by 1250 and is at 750. If you at t=0.5 hit the ball again with a force of 2000 uu/s, the ball will not accept more than 1750 energy (2500 - `force_accum_recent`), which means 250 energy gets lost.
 
-The ball's charge is reset, whenever it damages a floor tile owned by the opponent of whoever last touched the ball. To make damage the ball must hit the tile with a velocity of 250 uu/s or more perpendicular to the surface of contact. The side of a tile can only be hit if there's an open tile next to it, so usually the ball will hit the top of the tiles, and in those cases only the Z velocity matters, and must be 250 uu/s or more to make damage. There is also must have passed 0.2 seconds since the last time the ball damaged a tile.
+The ball's charge is reset, whenever it damages a floor tile owned by the opponent of whoever last touched the ball. To make damage, the ball must hit the tile with a velocity of 250 uu/s or more perpendicular to the surface of contact. The side of a tile can only be hit if there's an open tile next to it, so usually the ball will hit the top of the tiles, and in those cases only the Z velocity matters, and must be 250 uu/s or more to make damage. There must also have passed 0.2 seconds since the last time the ball damaged a tile.
 
 At kickoff the ball is launched straight up into the air with a velocity of 1000 uu/s and reaches a height of about 847 uu in 1.54 seconds.
 
