@@ -18,6 +18,11 @@ Use cases:
 - `display` - The message that will be displayed on the screen in quick chat. This is intended for communication with humans. Use the `content` field for communication with bots and scripts.
 - `content` - The contents of the message. Use the `display` field for messages in quick chat.
 
+!!! info "Clients and Hiveminds"
+    MatchComms messages are sent by clients, and a message is never sent back to the client that sent it.
+    So if a bot client is a hivemind, the message is not sent to the hivemind even if it consists of multiple bots.
+    The hivemind can, however, choose which of its controlled indices the message originates from.
+
 ## Language-specific wikis
 
 - [Python](https://github.com/RLBot/python-interface/wiki/Match-Comm)
